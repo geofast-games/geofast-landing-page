@@ -21,7 +21,7 @@ export const Newsletter = () => {
           </span>
           Us
         </h3>
-        <p className="text-sm text-muted-foreground mt-2">help@geofastgames.com</p>
+        <p className="text-sm text-muted-foreground mt-2">geofast.help@gmail.com</p>
         <div className="grid gap-8 mt-12 mx-auto md:grid-cols-2 md:gap-12 md:w-3/4">
           {/* Questions Card */}
           <Card className="relative bg-muted/50 drop-shadow-md shadow-black/10">
@@ -38,7 +38,7 @@ export const Newsletter = () => {
             </CardHeader>
             <CardContent>
               <a
-                href="mailto:help@geofastgames.com?subject=Support Request"
+                href="mailto:geofast.help@gmail.com?subject=Support Request"
                 className="w-full"
               >
                 <Button
@@ -66,7 +66,7 @@ export const Newsletter = () => {
             </CardHeader>
             <CardContent>
               <a
-                href="mailto:help@geofastgames.com?subject=Business Inquiry"
+                href="mailto:geofast.help@gmail.com?subject=Business Inquiry"
                 className="w-full"
               >
                 <Button
