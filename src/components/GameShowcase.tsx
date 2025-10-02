@@ -7,14 +7,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import image1 from "../assets/online_multiplayer_screenshot.webp";
-import image2 from "../assets/quick_battle_screenshot.webp";
+import image2 from "../assets/worldwar_screenshot.webp";
 import image3 from "../assets/sandbox_screenshot.webp";
 import image_appstore from "../assets/appstore.webp";
 import image_playstore from "../assets/playstore.webp";
 import appIcon from "../assets/playstore_logo.png"; // Import the app icon
 
 import onlineIcon from "../assets/global_green.webp";
-import quickBattleIcon from "../assets/quickbattle_green.webp";
+import worldWarIcon from "../assets/worldwar_green.webp";
 import sandboxIcon from "../assets/sandbox_green.webp";
 
 interface FeatureProps {
@@ -33,11 +33,11 @@ const features: FeatureProps[] = [
     icon: onlineIcon,
   },
   {
-    title: "Quick Battle",
+    title: "World War",
     description:
-      "Set up fast-paced battles and control multiple countries yourself or with friends on a single device. Perfect for quick, chaotic fun!",
+      "Compete in global seasonal tournaments! Represent your nation, climb the worldwide leaderboards, and earn medals to unlock exclusive rewards in ranked competitive battles.",
     image: image2,
-    icon: quickBattleIcon,
+    icon: worldWarIcon,
   },
   {
     title: "Sandbox",
