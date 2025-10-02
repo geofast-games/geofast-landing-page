@@ -35,7 +35,7 @@ const features: FeatureProps[] = [
   {
     title: "World War",
     description:
-      "Compete in global seasonal tournaments! Represent your nation, climb the worldwide leaderboards, and earn medals to unlock exclusive rewards in ranked competitive battles.",
+      "Compete in global tournaments! Represent your nation, climb the worldwide leaderboards, and earn medals in ranked competitive battles.",
     image: image2,
     icon: worldWarIcon,
   },
