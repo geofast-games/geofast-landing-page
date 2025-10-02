@@ -182,7 +182,7 @@ export const PrivacyPolicy = () => {
             href="mailto:help@geofastgames.com"
             className="text-primary hover:underline"
           >
-            help@geofastgames.com
+            contact@geofastgames.com
           </a>
           .
         </p>

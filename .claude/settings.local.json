@@ -5,7 +5,9 @@
       "Bash(npm run build:*)",
       "Bash(npm install)",
       "Bash(timeout 10 npm run dev)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: Add prominent download CTAs to boost app store conversions\n\nImplemented 3 high-impact features to increase traffic from TikTok/Instagram:\n\n1. Navbar Download Button\n   - Added prominent gradient \"Download Now\" CTA in navbar (desktop & mobile)\n   - Dropdown menu with both Play Store and App Store links\n   - Always visible as users scroll\n\n2. Enhanced Hero Store Badges\n   - Increased store badge size from 10x10 to h-14/h-16 (official badges)\n   - Added \"Download Now - It 's Free!\" heading with gradient\n   - Added social proof: \"Join 300K+ players worldwide\"\n   - Hover scale animation for better interactivity\n\n3. Sticky Mobile Download Button\n   - Fixed bottom bar for mobile devices only\n   - Full-width gradient button with dropdown store options\n   - Dismissable with X button\n   - Auto-hides after scrolling past game showcase section\n\nThese changes optimize for mobile-first conversion, perfect for social media traffic.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
