@@ -93,33 +93,7 @@ export const Hero = () => {
           </div>
         </div>
 
-
-        {/* Title */}
-        <main className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold">
-          <h1 className="inline">
-            <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
-              Accessible
-            </span>{" "}
-            Gaming,
-          </h1>
-          <br />
-          Unlimited{" "}
-          <h2 className="inline">
-            <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-              Fun
-            </span>{" "}
-          </h2>
-        </main>
-
-        <p className="text-xl text-muted-foreground md:w-10/12 lg:mx-0">
-          <b>Geofast Games</b> is a game development studio based in Belgium,
-          creating engaging mobile games designed for players from all over the world.
-          Our goal is to develop games accessible to everyone, regardless of experience or language.
-          Our first mobile game, <em>Geofast: Battle of Nations</em>, had a strong and successful launch,
-          capturing the interest of players globally.
-        </p>
-
-        {/* Download CTA */}
+        {/* Download CTA - Moved to top for immediate visibility */}
         <div className="space-y-3">
           <h3 className="text-2xl font-bold bg-gradient-to-r from-[#F596D3] to-[#D247BF] text-transparent bg-clip-text">
             Download Now - It's Free!
@@ -154,6 +128,31 @@ export const Hero = () => {
             ⭐ Join 300K+ players worldwide
           </p>
         </div>
+
+        {/* Title */}
+        <main className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold">
+          <h1 className="inline">
+            <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
+              Accessible
+            </span>{" "}
+            Gaming,
+          </h1>
+          <br />
+          Unlimited{" "}
+          <h2 className="inline">
+            <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
+              Fun
+            </span>{" "}
+          </h2>
+        </main>
+
+        <p className="text-xl text-muted-foreground md:w-10/12 lg:mx-0">
+          <b>Geofast Games</b> is a game development studio based in Belgium,
+          creating engaging mobile games designed for players from all over the world.
+          Our goal is to develop games accessible to everyone, regardless of experience or language.
+          Our first mobile game, <em>Geofast: Battle of Nations</em>, had a strong and successful launch,
+          capturing the interest of players globally.
+        </p>
 
         {/* Social Media Icons */}
         <div className="flex justify-start gap-6 mt-6">
