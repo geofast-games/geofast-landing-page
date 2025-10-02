@@ -3,8 +3,8 @@ import discordIcon from "../assets/discord_green.webp";
 import tiktokIcon from "../assets/tiktok_green.webp";
 import instagramIcon from "../assets/instagram_green.webp";
 import youtubeIcon from "../assets/youtube_green.webp";
-import playstoreIcon from "../assets/playstore2.webp";
-import appstoreIcon from "../assets/appstore2.webp";
+import playstoreBadge from "../assets/playstore.webp";
+import appstoreBadge from "../assets/appstore.webp";
 import revivalIcon from "../assets/revival.webp";
 import grenadeIcon from "../assets/grenade.webp";
 import heartIcon from "../assets/heart.webp";
@@ -119,30 +119,40 @@ export const Hero = () => {
           capturing the interest of players globally.
         </p>
 
-        {/* Store Icons */}
-        <div className="flex justify-start gap-6 mt-8">
-          <a
-            href="https://play.google.com/store/apps/dev?id=7184241621050076321"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={playstoreIcon}
-              alt="Play Store"
-              className="h-10 w-10 object-contain"
-            />
-          </a>
-          <a
-            href="https://apps.apple.com/app/geofast-battle-of-nations/id6740595527"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={appstoreIcon}
-              alt="App Store"
-              className="h-10 w-10 object-contain"
-            />
-          </a>
+        {/* Download CTA */}
+        <div className="space-y-3">
+          <h3 className="text-2xl font-bold bg-gradient-to-r from-[#F596D3] to-[#D247BF] text-transparent bg-clip-text">
+            Download Now - It's Free!
+          </h3>
+          <div className="flex flex-col sm:flex-row justify-start gap-4">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.geofast.geofastbattleofnations"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:scale-105 transition-transform"
+            >
+              <img
+                src={playstoreBadge}
+                alt="Get it on Google Play"
+                className="h-14 sm:h-16 w-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://apps.apple.com/app/geofast-battle-of-nations/id6740595527"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:scale-105 transition-transform"
+            >
+              <img
+                src={appstoreBadge}
+                alt="Download on the App Store"
+                className="h-14 sm:h-16 w-auto object-contain"
+              />
+            </a>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            ⭐ Join 300K+ players worldwide
+          </p>
         </div>
 
         {/* Social Media Icons */}

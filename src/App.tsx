@@ -28,6 +28,7 @@ import { ReportBugPage } from "./components/ReportBug";
 import { ReportTranslationErrorPage } from "./components/ReportTranslationError";
 import FeedbackPage from "./components/Feedback";
 import { InternalLinksHandler } from "./components/InternalLinksHandler";
+import { StickyDownload } from "./components/StickyDownload";
 
 function Home() {
   return (
@@ -75,6 +76,7 @@ function App() {
       </Routes>
       <Footer />
       <ScrollToTop />
+      <StickyDownload />
     </Router>
   );
 }

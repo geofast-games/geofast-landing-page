@@ -11,9 +11,16 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 import { buttonVariants } from "./ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Download } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import { LogoIcon } from "./Icons";
 
@@ -83,6 +90,38 @@ export const Navbar = () => {
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button className="bg-gradient-to-r from-[#F596D3] to-[#D247BF] hover:opacity-90 w-full">
+                        <Download className="mr-2 h-4 w-4" />
+                        Download Now
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="center" className="w-56">
+                      <DropdownMenuItem asChild>
+                        <a
+                          href="https://play.google.com/store/apps/details?id=com.geofast.geofastbattleofnations"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center cursor-pointer"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <span>📱 Google Play Store</span>
+                        </a>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <a
+                          href="https://apps.apple.com/app/geofast-battle-of-nations/id6740595527"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center cursor-pointer"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <span>🍎 Apple App Store</span>
+                        </a>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                   {routeList.map(({ href, label }: RouteProps) => (
                     <a
                       rel="noreferrer noopener"
@@ -116,6 +155,36 @@ export const Navbar = () => {
           </nav>
 
           <div className="hidden md:flex gap-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button className="bg-gradient-to-r from-[#F596D3] to-[#D247BF] hover:opacity-90">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Now
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem asChild>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.geofast.geofastbattleofnations"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center cursor-pointer"
+                  >
+                    <span>📱 Google Play Store</span>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a
+                    href="https://apps.apple.com/app/geofast-battle-of-nations/id6740595527"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center cursor-pointer"
+                  >
+                    <span>🍎 Apple App Store</span>
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <ModeToggle />
           </div>
         </NavigationMenuList>
