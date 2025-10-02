@@ -31,13 +31,6 @@ const testimonials: TestimonialProps[] = [
     country: "Turkey"
   },
   {
-    name: "Sina Kazeminia",
-    date: "Sep 9, 2025",
-    rating: 5,
-    comment: "It is a good game, but I would like to add better tools to the game or add some maps with more updates",
-    country: "Iran"
-  },
-  {
     name: "رهام سعدی",
     date: "Sep 8, 2025",
     rating: 5,
@@ -59,13 +52,6 @@ const testimonials: TestimonialProps[] = [
     country: "Spain"
   },
   {
-    name: "Irfan Karademir",
-    date: "Sep 3, 2025",
-    rating: 5,
-    comment: "Very good",
-    country: "Turkey"
-  },
-  {
     name: "Дима",
     date: "Aug 29, 2025",
     rating: 5,
@@ -85,13 +71,6 @@ const testimonials: TestimonialProps[] = [
     rating: 5,
     comment: "Excellent, unique",
     country: "Iran"
-  },
-  {
-    name: "Тимофей",
-    date: "Aug 8, 2025",
-    rating: 5,
-    comment: "Overall, the game is good. You can even laugh a little. Some of the skins are funny. By the way, the game only works with the internet.",
-    country: "Russia"
   },
   {
     name: "Felix Troy",
