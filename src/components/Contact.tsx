@@ -9,7 +9,7 @@ import supportIcon from "../assets/support.webp";
 import businessIcon from "../assets/business.webp";
 import { Button } from "@/components/ui/button";
 
-export const Newsletter = () => {
+export const Contact = () => {
   return (
     <section id="contact">
       <hr className="w-11/12 mx-auto" />

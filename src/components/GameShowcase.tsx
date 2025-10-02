@@ -57,7 +57,7 @@ const featureList: string[] = [
   "Mobile",
 ];
 
-export const Features = () => {
+export const GameShowcase = () => {
   return (
     <section id="battleofnations" className="container py-24 sm:py-32 space-y-8">
       {/* App Icon and Title */}
