@@ -21,7 +21,7 @@ export const Contact = () => {
           </span>
           Us
         </h3>
-        <p className="text-sm text-muted-foreground mt-2">geofast.help@gmail.com</p>
+        <p className="text-sm text-muted-foreground mt-2">contact@geofastgames.com</p>
         <div className="grid gap-8 mt-12 mx-auto md:grid-cols-2 md:gap-12 md:w-3/4">
           {/* Questions Card */}
           <Card className="relative bg-muted/50 drop-shadow-md shadow-black/10">
@@ -38,7 +38,7 @@ export const Contact = () => {
             </CardHeader>
             <CardContent>
               <a
-                href="mailto:geofast.help@gmail.com?subject=Support Request"
+                href="mailto:contact@geofastgames.com?subject=Support Request"
                 className="w-full"
               >
                 <Button
@@ -66,7 +66,7 @@ export const Contact = () => {
             </CardHeader>
             <CardContent>
               <a
-                href="mailto:geofast.help@gmail.com?subject=Business Inquiry"
+                href="mailto:contact@geofastgames.com?subject=Business Inquiry"
                 className="w-full"
               >
                 <Button

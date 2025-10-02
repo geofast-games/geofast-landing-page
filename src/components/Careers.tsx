@@ -36,7 +36,7 @@ const pricingList: PricingProps[] = [
     description: "Develop engaging gameplay and mechanics for our games.",
     buttonText: "Apply Now",
     icon: developerIcon,
-    mailto: "mailto:geofast.help@gmail.com?subject=Geofast Games Application for Game Developer", // Pre-filled email
+    mailto: "mailto:contact@geofastgames.com?subject=Geofast Games Application for Game Developer", // Pre-filled email
   },
   {
     title: "Gameplay Writer",
@@ -44,7 +44,7 @@ const pricingList: PricingProps[] = [
     description: "Design exciting new gameplay features.",
     buttonText: "Apply Now",
     icon: gameplayIcon,
-    mailto: "mailto:geofast.help@gmail.com?subject=Geofast Games Application for Gameplay Writer", // Pre-filled email
+    mailto: "mailto:contact@geofastgames.com?subject=Geofast Games Application for Gameplay Writer", // Pre-filled email
   },
   {
     title: "Game Artist",
@@ -52,7 +52,7 @@ const pricingList: PricingProps[] = [
     description: "Create skins, effects, and visuals to bring our games to life.",
     buttonText: "Apply Now",
     icon: artistIcon,
-    mailto: "mailto:geofast.help@gmail.com?subject=Geofast Games Application for Game Artist", // Pre-filled email
+    mailto: "mailto:contact@geofastgames.com?subject=Geofast Games Application for Game Artist", // Pre-filled email
   },
   {
     title: "Marketing Specialist",
@@ -60,7 +60,7 @@ const pricingList: PricingProps[] = [
     description: "Drive user acquisition and manage marketing campaigns.",
     buttonText: "Apply Now",
     icon: marketingIcon,
-    mailto: "mailto:geofast.help@gmail.com?subject=Geofast Games Application for Marketing Specialist", // Pre-filled email
+    mailto: "mailto:contact@geofastgames.com?subject=Geofast Games Application for Marketing Specialist", // Pre-filled email
   },
   {
     title: "Community Manager",
@@ -68,7 +68,7 @@ const pricingList: PricingProps[] = [
     description: "Engage with players and manage our social media presence.",
     buttonText: "Apply Now",
     icon: communityIcon,
-    mailto: "mailto:geofast.help@gmail.com?subject=Geofast Games Application for Community Manager", // Pre-filled email
+    mailto: "mailto:contact@geofastgames.com?subject=Geofast Games Application for Community Manager", // Pre-filled email
   },
 ];
 
