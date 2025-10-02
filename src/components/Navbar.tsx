@@ -106,7 +106,7 @@ export const Navbar = () => {
                           className="flex items-center cursor-pointer"
                           onClick={() => setIsOpen(false)}
                         >
-                          <span>📱 Google Play Store</span>
+                          <span>Google Play Store</span>
                         </a>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
@@ -117,7 +117,7 @@ export const Navbar = () => {
                           className="flex items-center cursor-pointer"
                           onClick={() => setIsOpen(false)}
                         >
-                          <span>🍎 Apple App Store</span>
+                          <span>Apple App Store</span>
                         </a>
                       </DropdownMenuItem>
                     </DropdownMenuContent>

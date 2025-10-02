@@ -49,7 +49,7 @@ export const StickyDownload = () => {
                 rel="noreferrer"
                 className="flex items-center cursor-pointer py-3"
               >
-                <span className="text-base">📱 Google Play Store</span>
+                <span className="text-base">Google Play Store</span>
               </a>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
@@ -59,7 +59,7 @@ export const StickyDownload = () => {
                 rel="noreferrer"
                 className="flex items-center cursor-pointer py-3"
               >
-                <span className="text-base">🍎 Apple App Store</span>
+                <span className="text-base">Apple App Store</span>
               </a>
             </DropdownMenuItem>
           </DropdownMenuContent>
