@@ -179,7 +179,7 @@ export const PrivacyPolicy = () => {
           If you have any questions about this Privacy Policy, please contact us
           at:{" "}
           <a
-            href="mailto:help@geofastgames.com"
+            href="mailto:contact@geofastgames.com"
             className="text-primary hover:underline"
           >
             contact@geofastgames.com
