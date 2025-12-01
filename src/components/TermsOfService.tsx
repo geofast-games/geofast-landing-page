@@ -150,8 +150,7 @@ const termsData: SectionProps[] = [
     title: "7. User-Generated Content",
     content: (
       <div>
-        If the Game allows you to create, upload, or share content (such as
-        custom maps in Sandbox mode or messages), you retain ownership of your
+        If the Game allows you to create, upload, or share content, you retain ownership of your
         content but grant us a worldwide, royalty-free, non-exclusive license to
         use, reproduce, modify, and display such content in connection with the
         Game.
@@ -278,22 +277,7 @@ const termsData: SectionProps[] = [
       </div>
     ),
   },
-  {
-    title: "16. Contact Us",
-    content: (
-      <div>
-        If you have any questions about these Terms of Service, please contact
-        us at:{" "}
-        <a
-          href="mailto:contact@geofastgames.com"
-          className="text-primary hover:underline"
-        >
-          contact@geofastgames.com
-        </a>
-      </div>
-    ),
-  },
-];
+  ];
 
 export const TermsOfService = () => {
   useLayoutEffect(() => {

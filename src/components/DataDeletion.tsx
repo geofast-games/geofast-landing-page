@@ -65,13 +65,12 @@ const sectionData: SectionProps[] = [
     content: (
       <div>
         We will process your data deletion request within 14 days of receiving
-        it. You will receive a confirmation email once your data has been
-        successfully deleted.
+        it.
         <br />
         <br />
         Please note that once your data is deleted, this action cannot be
-        undone. You will lose all game progress, purchases history records, and
-        any other associated data permanently.
+        undone. You will lose all game progress and any other associated data
+        permanently.
       </div>
     ),
   },
