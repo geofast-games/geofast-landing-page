@@ -97,6 +97,22 @@ export const Footer = () => {
               Privacy Policy
             </Link>
           </div>
+          <div>
+            <Link
+              to="/termsofservice"
+              className="opacity-60 hover:opacity-100"
+            >
+              Terms of Service
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="/datadeletion"
+              className="opacity-60 hover:opacity-100"
+            >
+              Data Deletion
+            </Link>
+          </div>
         </div>
 
       </section>

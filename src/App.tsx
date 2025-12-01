@@ -24,6 +24,8 @@ import { Team } from "./components/Team";
 import { Reviews } from "./components/Reviews";
 import "./App.css";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsOfService from "./components/TermsOfService";
+import DataDeletion from "./components/DataDeletion";
 import { ReportBugPage } from "./components/ReportBug";
 import { ReportTranslationErrorPage } from "./components/ReportTranslationError";
 import FeedbackPage from "./components/Feedback";
@@ -65,6 +67,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/termsofservice" element={<TermsOfService />} />
+        <Route path="/datadeletion" element={<DataDeletion />} />
         <Route path="/feedback" element={<FeedbackPage />} />
         <Route path="/suggestions" element={<SuggestionsPage />} />
         <Route
