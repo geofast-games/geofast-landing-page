@@ -23,6 +23,16 @@ export const Footer = () => {
           <div>
             <a
               rel="noreferrer noopener"
+              href="https://discord.gg/czV5cM8rux"
+              target="_blank"
+              className="opacity-60 hover:opacity-100"
+            >
+              Discord
+            </a>
+          </div>
+          <div>
+            <a
+              rel="noreferrer noopener"
               href="https://www.tiktok.com/@geofast_"
               target="_blank"
               className="opacity-60 hover:opacity-100"
