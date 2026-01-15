@@ -31,6 +31,7 @@ import { ReportTranslationErrorPage } from "./components/ReportTranslationError"
 import FeedbackPage from "./components/Feedback";
 import { InternalLinksHandler } from "./components/InternalLinksHandler";
 import { StickyDownload } from "./components/StickyDownload";
+import ResetPasswordPage from "./components/ResetPassword";
 
 function Home() {
   return (
@@ -76,6 +77,7 @@ function App() {
           element={<ReportTranslationErrorPage />}
         />
         <Route path="/reportBug" element={<ReportBugPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/?/:page" element={<RedirectHandler />} />
       </Routes>
       <Footer />
