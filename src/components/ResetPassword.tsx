@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 // Nakama server configuration
-const NAKAMA_SERVER_URL = import.meta.env.VITE_NAKAMA_SERVER_URL || "https://api.geofastgames.com";
+const NAKAMA_SERVER_URL = import.meta.env.VITE_NAKAMA_SERVER_URL || "https://nakamacdn.geofastgames.com";
 const NAKAMA_SERVER_KEY = import.meta.env.VITE_NAKAMA_SERVER_KEY || "";
 
 type ResetState = "form" | "loading" | "success" | "error" | "invalid-token";
