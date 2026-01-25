@@ -11,10 +11,10 @@ import image_playstore from "../assets/playstore.webp";
 import appIcon from "../assets/playstore_logo.png";
 
 // Feature screenshots
-import featureBattle from "../assets/feature_battle.png";
-import featureRankings from "../assets/feature_rankings.png";
-import featureCountry from "../assets/feature_country.png";
-import featureWeapons from "../assets/feature_weapons.png";
+import featureBattle from "../assets/feature_battle.webp";
+import featureRankings from "../assets/feature_rankings.webp";
+import featureCountry from "../assets/feature_country.webp";
+import featureWeapons from "../assets/feature_weapons.webp";
 
 interface FeatureProps {
   title: string;

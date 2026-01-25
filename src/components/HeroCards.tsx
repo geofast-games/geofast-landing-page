@@ -79,7 +79,7 @@ export const HeroCards = () => {
           </div>
       
           <CardDescription>
-            Pick a country and conquer the world in a thrilling battle royale showdown!
+            Pick a nation and battle players worldwide in online multiplayer combat!
           </CardDescription>
         </CardHeader>
       
