@@ -126,17 +126,19 @@ export const GameShowcase = () => {
         </a>
       </div>
 
-      {/* Feature Cards - 4 columns on xl, 2 on md, 1 on mobile */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+      {/* Feature Cards - 2x2 grid on desktop, 1 column on mobile */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {features.map(({ title, description, image, icon }: FeatureProps) => (
-          <Card key={title} className="flex flex-col relative">
-            <img
-              src={icon}
-              alt={`${title} icon`}
-              className="absolute top-2 right-2 h-8 w-8"
-            />
+          <Card key={title} className="flex flex-col">
             <CardHeader>
-              <CardTitle className="text-xl">{title}</CardTitle>
+              <CardTitle className="text-xl flex items-center gap-2">
+                <img
+                  src={icon}
+                  alt={`${title} icon`}
+                  className="h-6 w-6"
+                />
+                {title}
+              </CardTitle>
             </CardHeader>
 
             <CardContent className="flex-grow">
