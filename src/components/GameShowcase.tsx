@@ -16,10 +16,17 @@ import featureRankings from "../assets/feature_rankings.webp";
 import featureCountry from "../assets/feature_country.webp";
 import featureWeapons from "../assets/feature_weapons.webp";
 
+// Feature icons
+import iconBattle from "../assets/quickbattle_green.webp";
+import iconRankings from "../assets/leaderboard.webp";
+import iconStrong from "../assets/strong.webp";
+import iconUpgrade from "../assets/upgrade.webp";
+
 interface FeatureProps {
   title: string;
   description: string;
   image: string;
+  icon: string;
 }
 
 const features: FeatureProps[] = [
@@ -28,24 +35,28 @@ const features: FeatureProps[] = [
     description:
       "Get matched automatically with players worldwide. Use grenades, nukes, poison, drones, and more to eliminate your rivals and be the last player standing. Make friends, form alliances, and defeat your enemies. Earn medals and battle rewards!",
     image: featureBattle,
+    icon: iconBattle,
   },
   {
     title: "Climb the Rankings!",
     description:
       "Compete in weekly World War seasons. Earn medals to rise through player rankings and lead your nation to glory on the nation leaderboards!",
     image: featureRankings,
+    icon: iconRankings,
   },
   {
-    title: "Strengthen Your Country!",
+    title: "Get Stronger!",
     description:
       "Invest in extra hearts and nukes to become harder to defeat. Become a heavyweight and dominate the battlefield!",
     image: featureCountry,
+    icon: iconStrong,
   },
   {
     title: "Unlock & Upgrade Weapons!",
     description:
       "Start with 6 core weapons and unlock 15 special weapons as you play. You have 3 special weapon slots, so find the perfect combo to defeat your opponents! Upgrade weapons to boost your chances.",
     image: featureWeapons,
+    icon: iconUpgrade,
   },
 ];
 
@@ -117,8 +128,13 @@ export const GameShowcase = () => {
 
       {/* Feature Cards - 4 columns on xl, 2 on md, 1 on mobile */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-        {features.map(({ title, description, image }: FeatureProps) => (
-          <Card key={title} className="flex flex-col">
+        {features.map(({ title, description, image, icon }: FeatureProps) => (
+          <Card key={title} className="flex flex-col relative">
+            <img
+              src={icon}
+              alt={`${title} icon`}
+              className="absolute top-2 right-2 h-8 w-8"
+            />
             <CardHeader>
               <CardTitle className="text-xl">{title}</CardTitle>
             </CardHeader>
