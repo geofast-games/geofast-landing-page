@@ -6,53 +6,52 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import image1 from "../assets/online_multiplayer_screenshot.webp";
-import image2 from "../assets/worldwar_screenshot.webp";
-import image3 from "../assets/sandbox_screenshot.webp";
 import image_appstore from "../assets/appstore.webp";
 import image_playstore from "../assets/playstore.webp";
-import appIcon from "../assets/playstore_logo.png"; // Import the app icon
+import appIcon from "../assets/playstore_logo.png";
 
-import onlineIcon from "../assets/global_green.webp";
-import worldWarIcon from "../assets/worldwar_green.webp";
-import sandboxIcon from "../assets/sandbox_green.webp";
+// Feature screenshots
+import featureBattle from "../assets/feature_battle.png";
+import featureRankings from "../assets/feature_rankings.png";
+import featureCountry from "../assets/feature_country.png";
+import featureWeapons from "../assets/feature_weapons.png";
 
 interface FeatureProps {
   title: string;
   description: string;
   image: string;
-  icon: string;
 }
 
 const features: FeatureProps[] = [
   {
-    title: "Online Multiplayer",
+    title: "Battle in Real-Time",
     description:
-      "Battle players from around the world! Host or join lobbies, pick your country, and use the in-game chat to strategize, or taunt.",
-    image: image1,
-    icon: onlineIcon,
+      "Get matched automatically with players worldwide. Use grenades, nukes, poison, drones, and more to eliminate your rivals and be the last player standing. Make friends, form alliances, and defeat your enemies. Earn medals and battle rewards!",
+    image: featureBattle,
   },
   {
-    title: "World War",
+    title: "Climb the Rankings",
     description:
-      "Compete in global tournaments! Represent your nation, climb the worldwide leaderboards, and earn medals in ranked competitive battles.",
-    image: image2,
-    icon: worldWarIcon,
+      "Compete in weekly World War seasons. Earn medals to rise through player rankings and lead your nation to glory on the nation leaderboards!",
+    image: featureRankings,
   },
   {
-    title: "Sandbox",
+    title: "Strengthen Your Country",
     description:
-      "Design your own wars by tweaking country strengths. Unlock limitless battle scenarios in this premium game mode!",
-    image: image3,
-    icon: sandboxIcon,
+      "Invest in extra hearts and nukes to become harder to defeat. Become a heavyweight and dominate the battlefield!",
+    image: featureCountry,
+  },
+  {
+    title: "Unlock & Upgrade Weapons",
+    description:
+      "Start with 6 core weapons and unlock 15 special weapons as you play. You have 3 special weapon slots, so find the perfect combo to defeat your opponents! Upgrade weapons to increase your odds of using them when it's your turn.",
+    image: featureWeapons,
   },
 ];
-
 
 const featureList: string[] = [
   "Battle Royale",
   "Online Multiplayer",
-  "Geopolitics",
   "Strategy",
   "Mobile",
 ];
@@ -65,7 +64,7 @@ export const GameShowcase = () => {
         <img
           src={appIcon}
           alt="Geofast App Icon"
-          className="w-32 h-32 mx-auto rounded-2xl mb-6" // Increased size and rounded corners
+          className="w-32 h-32 mx-auto rounded-2xl mb-6"
         />
         <h2 className="text-3xl lg:text-4xl font-bold">
           Geofast:{" "}
@@ -77,8 +76,7 @@ export const GameShowcase = () => {
 
       {/* Descriptive text under the title */}
       <p className="text-muted-foreground md:text-center text-lg mx-auto max-w-3xl">
-        Pick a nation and conquer the world in a thrilling multiplayer battle royale!<br />
-        In <em>Geofast: Battle of Nations</em>, choose from real-world countries—each with unique strengths—and clash with players from around the globe in intense, strategic showdowns. Use powerful special shots like grenades, nukes, poison, and revival spells to outlast your rivals and emerge as the last nation standing!
+        Pick a nation and dominate the battlefield in online multiplayer combat! Battle players worldwide in strategic turn-based showdowns. Unlock powerful weapons, upgrade your arsenal, and climb the global rankings.
       </p>
 
       <div className="flex flex-wrap md:justify-center gap-4">
@@ -117,26 +115,23 @@ export const GameShowcase = () => {
         </a>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map(({ title, description, image, icon }: FeatureProps) => (
-          <Card key={title} className="relative">
-            {/* Icon in the top-right corner */}
-            <img
-              src={icon}
-              alt={`${title} icon`}
-              className="absolute top-2 right-2 h-8 w-8"
-            />
+      {/* Feature Cards - 4 columns on xl, 2 on md, 1 on mobile */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        {features.map(({ title, description, image }: FeatureProps) => (
+          <Card key={title} className="flex flex-col">
             <CardHeader>
-              <CardTitle>{title}</CardTitle>
+              <CardTitle className="text-xl">{title}</CardTitle>
             </CardHeader>
 
-            <CardContent>{description}</CardContent>
+            <CardContent className="flex-grow">
+              <p className="text-muted-foreground">{description}</p>
+            </CardContent>
 
             <CardFooter>
               <img
                 src={image}
-                alt="About feature"
-                className="w-[200px] lg:w-[300px] mx-auto rounded-xl"
+                alt={title}
+                className="w-full max-w-[250px] mx-auto rounded-xl"
               />
             </CardFooter>
           </Card>
