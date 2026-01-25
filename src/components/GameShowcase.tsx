@@ -24,27 +24,27 @@ interface FeatureProps {
 
 const features: FeatureProps[] = [
   {
-    title: "Battle in Real-Time",
+    title: "Battle in Real-Time!",
     description:
       "Get matched automatically with players worldwide. Use grenades, nukes, poison, drones, and more to eliminate your rivals and be the last player standing. Make friends, form alliances, and defeat your enemies. Earn medals and battle rewards!",
     image: featureBattle,
   },
   {
-    title: "Climb the Rankings",
+    title: "Climb the Rankings!",
     description:
       "Compete in weekly World War seasons. Earn medals to rise through player rankings and lead your nation to glory on the nation leaderboards!",
     image: featureRankings,
   },
   {
-    title: "Strengthen Your Country",
+    title: "Strengthen Your Country!",
     description:
       "Invest in extra hearts and nukes to become harder to defeat. Become a heavyweight and dominate the battlefield!",
     image: featureCountry,
   },
   {
-    title: "Unlock & Upgrade Weapons",
+    title: "Unlock & Upgrade Weapons!",
     description:
-      "Start with 6 core weapons and unlock 15 special weapons as you play. You have 3 special weapon slots, so find the perfect combo to defeat your opponents! Upgrade weapons to increase your odds of using them when it's your turn.",
+      "Start with 6 core weapons and unlock 15 special weapons as you play. You have 3 special weapon slots, so find the perfect combo to defeat your opponents! Upgrade weapons to boost your chances.",
     image: featureWeapons,
   },
 ];
