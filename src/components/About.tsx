@@ -1,6 +1,5 @@
 import { Statistics } from "./Statistics";
-import Map from "../assets/map.webp"; // Import the WEBP image
-import GeofastLogo from "../assets/geofast_round.webp"; // Import your logo
+import GeofastLogo from "../assets/geofast_round.webp";
 
 export const About = () => {
   return (
@@ -28,11 +27,11 @@ export const About = () => {
                 Geofast Games
               </h2>
               <p className="text-xl text-muted-foreground mt-4">
-              Geofast Games was founded in 2024 with a passion for creating engaging gaming experiences for a global audience.
-              Our first game, Geofast: Battle of Nations, was released on the Google Play Store on December 7, 2024, and is now also available on the Apple App Store.
+              Geofast Games was founded in Belgium in 2024 with a passion for creating engaging gaming experiences for a global audience.
+              Our first game, <em>Geofast: Battle of Nations</em>, was released on the Google Play Store in December 2024, followed by the Apple App Store in February 2025.
               Even before its release, the game went viral on TikTok and Instagram, where videos garnered millions of views and built a wave of anticipation.
               This early excitement translated into a strong launch, with players from all over the world joining to form a vibrant and diverse community.
-              Since launch, we've continued expanding the experience—most recently with the addition of full online multiplayer, allowing players to battle friends and rivals across the globe in real time. <em>Geofast: Battle of Nations</em> is still just getting started, and we’re actively working on even more features, content, and updates to keep the war raging!
+              Since launch, we've continued expanding the experience—adding ranked online multiplayer, weapon unlocking and upgrading, skins, and much more. The battlefield keeps evolving, and the best is yet to come!
               </p>
             </div>
 
@@ -40,14 +39,6 @@ export const About = () => {
           </div>
         </div>
 
-        {/* Add the map image below the text */}
-        <div className="flex justify-center mt-8">
-          <img
-            src={Map}
-            alt="Map"
-            className="w-full max-w-3xl rounded-lg"
-          />
-        </div>
       </div>
     </section>
   );

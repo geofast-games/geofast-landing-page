@@ -10,7 +10,7 @@ export const Statistics = () => {
       description: "Installs",
     },
     {
-      quantity: "158",
+      quantity: "193",
       description: "Player Countries",
     },
     {
