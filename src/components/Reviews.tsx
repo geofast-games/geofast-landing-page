@@ -17,67 +17,46 @@ interface TestimonialProps {
 
 const testimonials: TestimonialProps[] = [
   {
-    name: "اصر المقرحي",
-    date: "Sep 23, 2025",
+    name: "Gor",
+    date: "Jan 25, 2026",
     rating: 5,
-    comment: "🤩🫶The best game in the world",
+    comment: "Great game",
+    country: "Russia"
+  },
+  {
+    name: "Артур Тимофiєнко",
+    date: "Jan 25, 2026",
+    rating: 5,
+    comment: "Good game, lots of features and lots of possibilities, this game is my favorite.",
+    country: "Ukraine"
+  },
+  {
+    name: "Hashim Jahuri",
+    date: "Jan 24, 2026",
+    rating: 5,
+    comment: "The Longer, The Better👏",
+    country: "Indonesia"
+  },
+  {
+    name: "أنس ans",
+    date: "Jan 21, 2026",
+    rating: 5,
+    comment: "Honestly, the game is much better than before, and all the problems have been fixed. Thank you to the developers, and we wish you all the best! ❤️🥰🥰👍",
     country: "Saudi Arabia"
   },
   {
-    name: "Nebithron",
-    date: "Sep 9, 2025",
+    name: "Norbert Dávid Csendes",
+    date: "Jan 17, 2026",
     rating: 5,
-    comment: "The game is very good and this meme increases the pleasure very well (so good that I stood upright and suggested it to my grandmother)",
-    country: "Turkey"
+    comment: "It's a pretty good and complex game. It can keep you hooked for hours, we need more active & persistent Hungarians, come as many as possible. ( ZuZoKinG )",
+    country: "Hungary"
   },
   {
-    name: "رهام سعدی",
-    date: "Sep 8, 2025",
+    name: "Samuel Wielganczuk Lopes",
+    date: "Jan 7, 2026",
     rating: 5,
-    comment: "It's very good, be sure to install it, it has all the languages, even Persian, Iran.",
-    country: "Iran"
-  },
-  {
-    name: "Никита Кайзер",
-    date: "Sep 6, 2025",
-    rating: 5,
-    comment: "Good game. Cool physics. I managed to win against the USA with a nuke for Russia.",
-    country: "Russia"
-  },
-  {
-    name: "Julian Campo",
-    date: "Sep 4, 2025",
-    rating: 5,
-    comment: "A gem, but they should add more weapons, more things, and put an offline mode that allows you to play quick games without internet. Please stretch it even better. 🗿",
-    country: "Spain"
-  },
-  {
-    name: "Дима",
-    date: "Aug 29, 2025",
-    rating: 5,
-    comment: "There are very few games like this, especially with countries, thank you 🔶️🔶️🔶️🔶️🔶️",
-    country: "Russia"
-  },
-  {
-    name: "Skg Skg",
-    date: "Aug 15, 2025",
-    rating: 5,
-    comment: "Very fun, enjoyable to play.",
-    country: "Thailand"
-  },
-  {
-    name: "Pourya sanami",
-    date: "Aug 15, 2025",
-    rating: 5,
-    comment: "Excellent, unique",
-    country: "Iran"
-  },
-  {
-    name: "Felix Troy",
-    date: "Aug 2, 2025",
-    rating: 5,
-    comment: "fun and easy to play. really appreciated tournaments via world war mode",
-    country: "United Kingdom"
+    comment: "Wow, I loved this game!",
+    country: "Brazil"
   },
 ];
 
