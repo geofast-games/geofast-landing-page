@@ -21,87 +21,145 @@ const policyData: PolicySectionProps[] = [
       </div>
     ),
   },
-   {
-    title: "Data Collection and Use",
-    content: (
-      <div>
-        <em>Geofast: Battle of Nations</em> collects and uses data to improve your
-        experience and support the app’s functionality. Below is a summary of
-        data collection practices:
-        <br />
-        <br />
-        <ol className="list-decimal pl-6 space-y-2">
-          <li>
-            <strong>AdMob</strong> - AdMob is used to serve interstitial ads in
-            our game. It collects:
-            <ul className="list-disc pl-6">
-              <li>Device IDs (e.g., Advertising ID or IDFA)</li>
-              <li>Coarse location (based on IP address)</li>
-              <li>Product interaction data (e.g., ad clicks and impressions)</li>
-            </ul>
-            This data is used for third-party advertising, ad performance
-            measurement, and analytics. For details on how AdMob handles data, please review their{" "} 
-            <a 
-              href="https://policies.google.com/privacy" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-primary hover:underline"
-            >
-              Privacy Policy
-            </a>.
-          </li>
-          <li>
-            <strong>In-App Analytics</strong> - We collect product interaction
-            data, such as:
-            <ul className="list-disc pl-6">
-              <li>Frequency and duration of gameplay sessions</li>
-              <li>Game mode preferences</li>
-              <li>User engagement with game features</li>
-            </ul>
-            This data helps us:
-            <ul className="list-disc pl-6">
-              <li>Evaluate user behavior</li>
-              <li>Understand feature performance</li>
-              <li>Plan future updates and improvements</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Google Play Store & Apple App Store</strong> - These
-            platforms may collect data required for in-app purchases under their
-            own privacy policies. Geofast Games does not access or store this data.
-          </li>
-        </ol>
-        <br />
-        <p>
-          By using <em>Geofast: Battle of Nations</em>, you consent to the collection 
-          and processing of data as described in this policy. Users can adjust their 
-          ad preferences and tracking permissions through their device settings.
-        </p>
-      </div>
-    ),
-  },
   {
-    title: "Data Security",
+    title: "Account Data",
     content: (
       <div>
-        We take appropriate measures to protect the data collected from unauthorized access, use, or disclosure.
-        This includes using secure communication protocols, and limiting data access to authorized personnel only.
-        Data collected by third-party providers is handled under their own privacy and security policies. 
-      </div>
-    ),
-  },
-  {
-    title: "Tracking Disclosure",
-    content: (
-      <div>
-        Our app uses <strong>AdMob</strong> and in-app analytics, which involve
-        tracking for the following purposes:
-        <ul className="list-disc pl-6">
-          <li>Displaying third-party ads</li>
-          <li>Measuring ad performance</li>
-          <li>Linking ad-related data to Third-Party Data for personalized advertising</li>
-          <li>Evaluating gameplay behavior to improve app features</li>
+        To access online multiplayer features, an account is created automatically. By default, accounts are linked to your device ID, requiring no personal information.
+        <br />
+        <br />
+        If you choose to create an email account or link your account, we collect:
+        <ul className="list-disc pl-6 mt-2">
+          <li><strong>Email address</strong> - Used for account verification, password recovery, and important account-related communications</li>
+          <li><strong>Password</strong> - Stored securely using industry-standard encryption (hashed)</li>
         </ul>
+        <br />
+        For all accounts, we store:
+        <ul className="list-disc pl-6 mt-2">
+          <li><strong>Username/Display name</strong> - Your chosen in-game name, visible to other players</li>
+          <li><strong>Nation selection</strong> - The country you choose to represent in the game</li>
+          <li><strong>Friends list</strong> - Other players you have added as friends</li>
+        </ul>
+        <br />
+        You may also sign in using third-party authentication (Google, Apple). In this case, we receive only the information necessary to link your account as permitted by those services.
+      </div>
+    ),
+  },
+  {
+    title: "Gameplay Data",
+    content: (
+      <div>
+        To provide online multiplayer features and leaderboards, your game progress is stored on our servers. This includes your rankings, match results, achievements, in-game items, and other gameplay-related data. This data is necessary for the multiplayer experience.
+      </div>
+    ),
+  },
+  {
+    title: "Chat and Communication",
+    content: (
+      <div>
+        The game includes live chat features that allow players to communicate during matches and in nation chats. Chat messages may be:
+        <ul className="list-disc pl-6 mt-2">
+          <li>Transmitted in real-time to other players in the same match or nation chat</li>
+          <li>Temporarily stored on our servers to deliver messages</li>
+          <li>Subject to moderation to maintain a safe and respectful environment</li>
+        </ul>
+        <br />
+        Please be mindful of what you share in chat. Do not share personal information with other players.
+      </div>
+    ),
+  },
+  {
+    title: "Advertising (AdMob)",
+    content: (
+      <div>
+        <strong>AdMob</strong> is used to serve ads in our game. It collects:
+        <ul className="list-disc pl-6 mt-2">
+          <li>Device IDs (e.g., Advertising ID or IDFA)</li>
+          <li>Coarse location (based on IP address)</li>
+          <li>Product interaction data (e.g., ad clicks and impressions)</li>
+        </ul>
+        <br />
+        This data is used for third-party advertising, ad performance measurement, and analytics. For details on how AdMob handles data, please review their{" "}
+        <a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          Privacy Policy
+        </a>.
+        <br />
+        <br />
+        Users can adjust their ad preferences and tracking permissions through their device settings.
+      </div>
+    ),
+  },
+  {
+    title: "Analytics",
+    content: (
+      <div>
+        We collect analytics data to understand how players interact with the game, identify issues, and plan improvements. This includes gameplay patterns, feature usage, and crash reports.
+      </div>
+    ),
+  },
+  {
+    title: "In-App Purchases",
+    content: (
+      <div>
+        <strong>Google Play Store</strong> and <strong>Apple App Store</strong> handle all payment processing for in-app purchases. Geofast Games does not collect or store payment information such as credit card numbers.
+        <br />
+        <br />
+        We receive confirmation of purchases to deliver the purchased items to your account. Purchase history may be stored to provide customer support and restore purchases.
+      </div>
+    ),
+  },
+  {
+    title: "Data Storage and Security",
+    content: (
+      <div>
+        Your data is stored on secure servers. We implement appropriate technical and organizational measures to protect your data, including:
+        <ul className="list-disc pl-6 mt-2">
+          <li>Encryption of sensitive data (passwords, authentication tokens)</li>
+          <li>Secure communication protocols (HTTPS/TLS)</li>
+          <li>Access controls limiting data access to authorized personnel</li>
+          <li>Regular security reviews and updates</li>
+        </ul>
+        <br />
+        Data collected by third-party providers (AdMob, app stores) is handled under their own privacy and security policies.
+      </div>
+    ),
+  },
+  {
+    title: "Data Retention",
+    content: (
+      <div>
+        We retain your data for as long as your account is active or as needed to provide services. If you request account deletion, we will delete your personal data within 30 days, except where we are required to retain it for legal purposes.
+        <br />
+        <br />
+        Anonymous analytics data may be retained indefinitely for statistical purposes.
+      </div>
+    ),
+  },
+  {
+    title: "Your Rights",
+    content: (
+      <div>
+        Depending on your location, you may have the following rights:
+        <ul className="list-disc pl-6 mt-2">
+          <li><strong>Access</strong> - Request a copy of your personal data</li>
+          <li><strong>Correction</strong> - Request correction of inaccurate data</li>
+          <li><strong>Deletion</strong> - Request deletion of your account and data</li>
+          <li><strong>Data portability</strong> - Request your data in a portable format</li>
+        </ul>
+        <br />
+        To exercise these rights, please contact us at{" "}
+        <a href="mailto:contact@geofastgames.com" className="text-primary hover:underline">
+          contact@geofastgames.com
+        </a>{" "}
+        or use our{" "}
+        <a href="/datadeletion" className="text-primary hover:underline">
+          data deletion request page
+        </a>.
       </div>
     ),
   },
@@ -109,21 +167,16 @@ const policyData: PolicySectionProps[] = [
     title: "Children's Privacy",
     content: (
       <div>
-        Geofast: Battle of Nations may display age restrictions on the Google
-        Play Store and the Apple App Store, which vary based on regional
-        regulations.
+        Geofast: Battle of Nations may display age restrictions on the Google Play Store and the Apple App Store, which vary based on regional regulations.
         <br />
         <br />
-        We encourage parents to monitor children's activities online to ensure a
-        safe experience.
+        We encourage parents to monitor children's activities online to ensure a safe experience.
         <br />
         <br />
-        Please note that this app includes ads, in-app purchases, analytics,
-        and tracking.
+        Please note that this app includes ads, in-app purchases, analytics, and online multiplayer features.
         <br />
         <br />
-        Geofast Games does not knowingly collect personal data from children under the age of 13.
-        If you believe that a child has provided us with data, please contact us so we can take steps to delete it.
+        Geofast Games does not knowingly collect personal data from children under the age of 13. If you believe that a child has provided us with data, please contact us so we can take steps to delete it.
       </div>
     ),
   },
@@ -131,12 +184,10 @@ const policyData: PolicySectionProps[] = [
     title: "Changes to this Privacy Policy",
     content: (
       <div>
-        We may update this policy to reflect changes in our practices or legal
-        requirements.
+        We may update this policy to reflect changes in our practices or legal requirements.
         <br />
         <br />
-        Any updates will be posted on this page, so please check back
-        periodically.
+        Any updates will be posted on this page. We encourage you to review this policy periodically.
       </div>
     ),
   },
@@ -158,7 +209,7 @@ export const PrivacyPolicy = () => {
       </h2>
 
       <p className="text-xl text-muted-foreground mb-8">
-        Last updated: January 26, 2025
+        Last updated: January 26, 2026
       </p>
 
       <div className="space-y-6">
@@ -184,7 +235,11 @@ export const PrivacyPolicy = () => {
           >
             contact@geofastgames.com
           </a>
-          .
+        </p>
+        <p className="mt-4">
+          <a href="/" className="text-primary hover:underline">
+            Back to Geofast Games
+          </a>
         </p>
       </div>
     </section>

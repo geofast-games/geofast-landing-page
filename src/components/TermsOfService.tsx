@@ -26,7 +26,18 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "2. License to Use",
+    title: "2. Age Requirements",
+    content: (
+      <div>
+        The Game is subject to age restrictions as displayed on the Google Play Store and Apple App Store, which may vary by region. By using the Game, you confirm that you meet the minimum age requirements set by the applicable app store in your region.
+        <br />
+        <br />
+        If you are under the age of majority in your jurisdiction, you should review these Terms with your parent or guardian to ensure they understand and agree to them.
+      </div>
+    ),
+  },
+  {
+    title: "3. License to Use",
     content: (
       <div>
         Subject to your compliance with these Terms, we grant you a limited,
@@ -41,7 +52,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "3. User Accounts",
+    title: "4. User Accounts",
     content: (
       <div>
         Some features of the Game may require you to create an account or link
@@ -59,7 +70,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "4. Prohibited Conduct",
+    title: "5. Prohibited Conduct",
     content: (
       <div>
         You agree not to:
@@ -102,7 +113,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "5. Virtual Items and In-App Purchases",
+    title: "6. Virtual Items and In-App Purchases",
     content: (
       <div>
         The Game may offer virtual currency, items, or other content ("Virtual
@@ -132,7 +143,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "6. Intellectual Property",
+    title: "7. Intellectual Property",
     content: (
       <div>
         The Game and all of its content, including but not limited to graphics,
@@ -147,7 +158,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "7. User-Generated Content",
+    title: "8. User-Generated Content",
     content: (
       <div>
         If the Game allows you to create, upload, or share content, you retain ownership of your
@@ -164,7 +175,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "8. Privacy",
+    title: "9. Privacy",
     content: (
       <div>
         Your use of the Game is also governed by our{" "}
@@ -178,7 +189,45 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "9. Disclaimers",
+    title: "10. Third-Party Services",
+    content: (
+      <div>
+        The Game uses third-party services including advertising (AdMob), authentication (Google, Apple), and payment processing (Google Play Store, Apple App Store). Your use of these services is subject to their respective terms and privacy policies.
+        <br />
+        <br />
+        We are not responsible for the practices or content of these third-party services. We encourage you to review their terms before using them.
+      </div>
+    ),
+  },
+  {
+    title: "11. Service Availability",
+    content: (
+      <div>
+        We strive to keep the Game available at all times, but we do not guarantee uninterrupted access. The Game's online services may be temporarily unavailable due to:
+        <ul className="list-disc pl-6 mt-2 space-y-1">
+          <li>Scheduled or emergency maintenance</li>
+          <li>Server issues or technical difficulties</li>
+          <li>Updates or improvements to the Game</li>
+          <li>Factors beyond our reasonable control</li>
+        </ul>
+        <br />
+        We are not liable for any loss or inconvenience caused by service interruptions.
+      </div>
+    ),
+  },
+  {
+    title: "12. Updates and Modifications",
+    content: (
+      <div>
+        We may update, modify, or discontinue the Game or any of its features at any time without prior notice. This includes changes to gameplay mechanics, virtual items, features, and content.
+        <br />
+        <br />
+        Continued use of the Game after any modifications constitutes your acceptance of such changes.
+      </div>
+    ),
+  },
+  {
+    title: "13. Disclaimers",
     content: (
       <div>
         THE GAME IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF
@@ -194,7 +243,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "10. Limitation of Liability",
+    title: "14. Limitation of Liability",
     content: (
       <div>
         TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, GEOFAST GAMES AND ITS
@@ -210,7 +259,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "11. Indemnification",
+    title: "15. Indemnification",
     content: (
       <div>
         You agree to indemnify, defend, and hold harmless Geofast Games and its
@@ -222,7 +271,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "12. Termination",
+    title: "16. Termination",
     content: (
       <div>
         We may terminate or suspend your access to the Game at any time, with or
@@ -246,7 +295,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "13. Governing Law",
+    title: "17. Governing Law",
     content: (
       <div>
         These Terms shall be governed by and construed in accordance with the
@@ -257,7 +306,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "14. Severability",
+    title: "18. Severability",
     content: (
       <div>
         If any provision of these Terms is found to be unenforceable or invalid,
@@ -268,7 +317,7 @@ const termsData: SectionProps[] = [
     ),
   },
   {
-    title: "15. Entire Agreement",
+    title: "19. Entire Agreement",
     content: (
       <div>
         These Terms, together with our Privacy Policy, constitute the entire
@@ -277,7 +326,7 @@ const termsData: SectionProps[] = [
       </div>
     ),
   },
-  ];
+];
 
 export const TermsOfService = () => {
   useLayoutEffect(() => {
@@ -295,7 +344,7 @@ export const TermsOfService = () => {
       </h2>
 
       <p className="text-xl text-muted-foreground mb-8">
-        Last updated: December 1, 2025
+        Last updated: January 26, 2026
       </p>
 
       <div className="space-y-6">
@@ -321,7 +370,11 @@ export const TermsOfService = () => {
           >
             contact@geofastgames.com
           </a>
-          .
+        </p>
+        <p className="mt-4">
+          <Link to="/" className="text-primary hover:underline">
+            Back to Geofast Games
+          </Link>
         </p>
       </div>
     </section>
