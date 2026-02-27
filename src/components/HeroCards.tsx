@@ -113,7 +113,7 @@ export const HeroCards = () => {
       
         <CardFooter className="flex">
           <div className="space-y-4">
-            {["Free", "Online Multiplayer", "Premium Sandbox Mode", "57 Supported Languages", "Frequent Updates"].map(
+            {["Free", "Online Multiplayer", "No Interstitial Ads", "Frequent Updates"].map(
               (benefit: string) => (
                 <span key={benefit} className="flex">
                   <Check className="text-green-500" />{" "}
