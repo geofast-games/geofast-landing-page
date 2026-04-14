@@ -111,8 +111,12 @@ const ResetPasswordPage = () => {
   };
 
   const handleOpenApp = () => {
-    // Try to open the app via deep link
-    window.location.href = "geofast://login";
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (/iphone|ipad|ipod/.test(userAgent)) {
+      window.location.href = "https://apps.apple.com/app/geofast-battle-of-nations/id6740595527";
+    } else {
+      window.location.href = "https://play.google.com/store/apps/details?id=com.geofast.geofastbattleofnations";
+    }
   };
 
   // Invalid token state
