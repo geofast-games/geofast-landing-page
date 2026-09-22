@@ -1,7 +1,7 @@
 import { ChevronRight, Star } from "lucide-react";
 import playstoreBadge from "../assets/playstore_badge.svg";
 import appstoreBadge from "../assets/appstore_badge.svg";
-import heroIphone from "../assets/hero_iphone.webp";
+import heroShot from "../assets/hero_shot.webp";
 import { SocialLinks } from "./SocialIcons";
 import { Reveal } from "./Reveal";
 import { usePublicStats, formatDownloads } from "@/lib/usePublicStats";
@@ -133,15 +133,12 @@ export const Hero = () => {
         </div>
       </Reveal>
 
-      {/* Apple's official iPhone bezel with the game running in it. Per
-          Apple's marketing guidelines the bezel is used AS IS: scaled only,
-          never tilted, shadowed, cropped or overlapped. The screenshot sits
-          behind it, positioned by the aperture measured from the asset. */}
+      {/* Frameless, rounded the same way as the gallery shots. */}
       <Reveal delay={150} className="mx-auto hidden lg:block">
         <img
-          src={heroIphone}
-          alt="Geofast: Battle of Nations running on iPhone"
-          className="w-[20rem]"
+          src={heroShot}
+          alt="A Geofast: Battle of Nations match in progress"
+          className="w-[20rem] rounded-3xl border border-border shadow-sm"
         />
       </Reveal>
     </section>
