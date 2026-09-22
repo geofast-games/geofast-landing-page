@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- The studio mark, not the game icon: this is geofastgames.com.
+         Order matters, browsers take the first format they support. The SVG
+         is transparent so the mark sits on the tab strip itself rather than
+         in a white box, and scales instead of being resampled. The .ico is
+         the fallback for old browsers and for crawlers that only look for
+         /favicon.ico; it stays opaque because that path is also what Google
+         renders, and transparency there is what produced the black square. -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Primary Meta Tags. The page leads with the game, so the search and
+         link-preview copy does too. -->
+    <title>Geofast: Battle of Nations | Free Multiplayer Strategy Game</title>
+    <meta
+      name="title"
+      content="Geofast: Battle of Nations | Free Multiplayer Strategy Game"
+    />
+    <meta
+      name="description"
+      content="Pick your nation and take on players worldwide in quick turn-based battles. Free to play, no ads, on iOS and Android. 600K+ downloads."
+    />
+    <link rel="canonical" href="https://geofastgames.com/" />
+    <meta name="theme-color" content="#f0eeeb" />
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://geofastgames.com/" />
+    <meta property="og:site_name" content="Geofast Games" />
+    <meta
+      property="og:title"
+      content="Geofast: Battle of Nations | Free Multiplayer Strategy Game"
+    />
+    <meta
+      property="og:description"
+      content="Pick your nation and take on players worldwide in quick turn-based battles. Free to play, no ads, on iOS and Android. 600K+ downloads."
+    />
+    <meta
+      property="og:image"
+      content="https://geofastgames.com/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Geofast: Battle of Nations running on an iPhone"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://geofastgames.com/" />
+    <meta
+      name="twitter:title"
+      content="Geofast: Battle of Nations | Free Multiplayer Strategy Game"
+    />
+    <meta
+      name="twitter:description"
+      content="Pick your nation and take on players worldwide in quick turn-based battles. Free to play, no ads, on iOS and Android. 600K+ downloads."
+    />
+    <meta
+      name="twitter:image"
+      content="https://geofastgames.com/og-image.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Geofast: Battle of Nations running on an iPhone"
+    />
+    <!-- Structured data: lets search engines treat this as an app listing
+         (free, mobile, two stores) rather than a generic page. No rating is
+         declared here on purpose, because the ratings shown on the page are
+         live and a hardcoded copy would drift out of sync with them. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "MobileApplication",
+            "name": "Geofast: Battle of Nations",
+            "applicationCategory": "GameApplication",
+            "operatingSystem": "iOS, Android",
+            "url": "https://geofastgames.com/",
+            "image": "https://geofastgames.com/og-image.png",
+            "description": "Pick your nation and take on players worldwide in quick turn-based battles. Free to play, no ads.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "publisher": { "@id": "https://geofastgames.com/#studio" },
+            "sameAs": [
+              "https://apps.apple.com/app/geofast-battle-of-nations/id6740595527",
+              "https://play.google.com/store/apps/details?id=com.geofast.geofastbattleofnations"
+            ]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://geofastgames.com/#studio",
+            "name": "Geofast Games",
+            "url": "https://geofastgames.com/",
+            "foundingDate": "2024",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "BE"
+            },
+            "email": "contact@geofastgames.com",
+            "sameAs": [
+              "https://discord.gg/czV5cM8rux",
+              "https://www.tiktok.com/@geofast_",
+              "https://www.instagram.com/geofast_/",
+              "https://www.facebook.com/profile.php?id=61593948552710",
+              "https://www.youtube.com/@geofast_"
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+    <script type="module" crossorigin src="/assets/index-B-6xY4UH.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BtB8HXcw.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
