@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useLayoutEffect } from "react";
 import { Mail } from "lucide-react";
 
 interface SectionProps {
@@ -76,6 +77,10 @@ const sectionData: SectionProps[] = [
 ];
 
 export const DataDeletion = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const emailSubject = encodeURIComponent("Data Deletion Request - Geofast: Battle of Nations");
   const emailBody = encodeURIComponent(
     `Hello Geofast Games Support,

@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 
 interface SectionProps {
@@ -328,6 +329,10 @@ const termsData: SectionProps[] = [
 ];
 
 export const TermsOfService = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <section id="terms-of-service" className="container py-24 sm:py-32">
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
