@@ -3,31 +3,45 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DownloadMenu } from "./DownloadMenu";
 
+// Mobile-only bar that follows the reader down the page. It stays away while
+// the hero is on screen, because the hero already carries both store badges,
+// and slides up once the reader has passed them and has no download link in
+// reach any more.
 export const StickyDownload = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [hasScrolledPast, setHasScrolledPast] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const [showBar, setShowBar] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Hide button after scrolling past GameShowcase section (approximately 2000px)
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 2000) {
-        setHasScrolledPast(true);
-      } else {
-        setHasScrolledPast(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Tied to the hero itself rather than a pixel count: section heights move
+    // every time the page is edited, and a hardcoded threshold silently
+    // stops meaning what it was set to mean.
+    const hero = document.getElementById("battleofnations");
+    if (hero) {
+      const observer = new IntersectionObserver(
+        ([entry]) => setShowBar(!entry.isIntersecting),
+        { threshold: 0 }
+      );
+      observer.observe(hero);
+      return () => observer.disconnect();
+    }
+    // Pages without a hero (privacy, terms) get a plain distance fallback.
+    const onScroll = () => setShowBar(window.scrollY > 600);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (!isVisible || hasScrolledPast) {
-    return null;
-  }
+  if (dismissed) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background border-t border-border shadow-lg p-3">
+    <div
+      // Kept mounted and slid out of view, so appearing and leaving are
+      // animated rather than a pop.
+      aria-hidden={!showBar}
+      className={`fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background p-3 shadow-lg transition-transform duration-300 ease-out md:hidden ${
+        showBar ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
       <div className="container flex items-center justify-between gap-2">
         {/* Same label, motion and menu as the navbar button: only the width
             differs, because this one spans the bar. */}
@@ -41,7 +55,8 @@ export const StickyDownload = () => {
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => setIsVisible(false)}
+          onClick={() => setDismissed(true)}
+          aria-label="Hide the download bar"
           className="flex-shrink-0"
         >
           <X className="h-4 w-4" />
