@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Password reset is reached from an emailed token and has nothing to index.
+Disallow: /reset-password
+
+Sitemap: https://geofastgames.com/sitemap.xml
