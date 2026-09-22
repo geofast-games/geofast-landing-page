@@ -137,19 +137,19 @@ export const Hero = () => {
       {/* Two screens, staggered: the headline promises a world, so a single
           battle screenshot undersells it. Frameless and rounded like the
           gallery shots, cropped to one aspect so the pair stays even. */}
-      <Reveal
-        delay={150}
-        className="mx-auto hidden items-start justify-center gap-4 lg:flex"
-      >
+      <Reveal delay={150} className="mx-auto flex items-start justify-center gap-4">
         <img
           src={heroShot}
           alt="A Geofast: Battle of Nations match in progress"
-          className="aspect-[9/20] w-[13rem] rounded-3xl border border-border object-cover shadow-sm xl:w-[15rem]"
+          className="aspect-[9/20] w-[13rem] rounded-3xl border border-border object-cover shadow-sm sm:w-[15rem] lg:w-[13rem] xl:w-[15rem]"
         />
+        {/* The pair is a desktop composition. On a phone there is only room
+            for one screen at a size worth looking at, and the gallery below
+            carries the rest. */}
         <img
           src={heroMap}
           alt="The world map, with territory held by each nation"
-          className="mt-12 aspect-[9/20] w-[13rem] rounded-3xl border border-border object-cover shadow-sm xl:w-[15rem]"
+          className="mt-12 hidden aspect-[9/20] w-[13rem] rounded-3xl border border-border object-cover shadow-sm lg:block xl:w-[15rem]"
         />
       </Reveal>
     </section>
