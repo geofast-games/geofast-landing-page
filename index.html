@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <!-- The studio mark, not the game icon: this is geofastgames.com.
-         Order matters, browsers take the first format they support. The SVG
-         is transparent so the mark sits on the tab strip itself rather than
-         in a white box, and scales instead of being resampled. The .ico is
-         the fallback for old browsers and for crawlers that only look for
-         /favicon.ico; it stays opaque because that path is also what Google
-         renders, and transparency there is what produced the black square. -->
+         Order matters, browsers take the first format they support. Every
+         file here is the same hatched circle: RGB is flat #4CFC97 and only
+         the alpha channel carries the shape, so nothing but green can ever
+         render and no white or black fringe appears on any background.
+         The .ico carries true 32-bit RGBA entries (16-64px) — if a black
+         square ever comes back, suspect how the alpha was encoded there,
+         not transparency itself. apple-touch-icon is the one exception:
+         iOS flattens alpha onto black, so it is filled with the same green. -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <meta
       name="viewport"
