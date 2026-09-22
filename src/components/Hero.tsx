@@ -137,22 +137,23 @@ export const Hero = () => {
       {/* Two screens, staggered: the headline promises a world, so a single
           battle screenshot undersells it. Frameless and rounded like the
           gallery shots, cropped to one aspect so the pair stays even. */}
-      {/* Stacked on phones, staggered side by side once there is width for
-          it: two screens shrunk to fit a phone row would be too small to
-          read. */}
+      {/* Always the pair, because the two screens together say battle game
+          AND world map, which neither says alone. They scale to the viewport
+          rather than stacking: stacked on a phone they cost some 950px of
+          scroll before the gallery, which shows the same screens larger. */}
       <Reveal
         delay={150}
-        className="mx-auto flex flex-col items-center justify-center gap-6 lg:flex-row lg:items-start lg:gap-4"
+        className="mx-auto flex items-start justify-center gap-3 lg:gap-4"
       >
         <img
           src={heroShot}
           alt="A Geofast: Battle of Nations match in progress"
-          className="aspect-[9/20] w-[13rem] rounded-3xl border border-border object-cover shadow-sm sm:w-[15rem] lg:w-[13rem] xl:w-[15rem]"
+          className="aspect-[9/20] w-[9rem] rounded-3xl border border-border object-cover shadow-sm sm:w-[12rem] lg:w-[13rem] xl:w-[15rem]"
         />
         <img
           src={heroMap}
           alt="The world map, with territory held by each nation"
-          className="aspect-[9/20] w-[13rem] rounded-3xl border border-border object-cover shadow-sm sm:w-[15rem] lg:mt-12 lg:w-[13rem] xl:w-[15rem]"
+          className="mt-6 aspect-[9/20] w-[9rem] rounded-3xl border border-border object-cover shadow-sm sm:w-[12rem] lg:mt-12 lg:w-[13rem] xl:w-[15rem]"
         />
       </Reveal>
     </section>
