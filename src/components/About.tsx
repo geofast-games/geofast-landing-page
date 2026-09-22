@@ -21,13 +21,13 @@ const team = [
   {
     imageUrl: valentijnPhoto,
     name: "Valentijn Hoornaert",
-    position: "CEO",
+    position: "Lead Developer",
     linkedin: "https://www.linkedin.com/in/valentijn-hoornaert-a6a511343",
   },
   {
     imageUrl: utkarshPhoto,
     name: "Utkarsh Trivedi",
-    position: "CTO",
+    position: "Developer",
     linkedin: "https://www.linkedin.com/in/utkarshtrivedi/",
   },
 ];
