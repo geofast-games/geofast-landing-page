@@ -11,9 +11,13 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
-// Nakama server configuration
+// Nakama server configuration. Defaults are prod, because reset tokens live in
+// prod's database. The default key is the client-shipped http_key, the same one
+// usePublicStats falls back to: public by design, it's in every APK. Defaulting
+// to "" instead meant any build without the CI secret shipped a page that could
+// only answer "HTTP key invalid".
 const NAKAMA_SERVER_URL = import.meta.env.VITE_NAKAMA_SERVER_URL || "https://nakamacdn.geofastgames.com";
-const NAKAMA_SERVER_KEY = import.meta.env.VITE_NAKAMA_SERVER_KEY || "";
+const NAKAMA_SERVER_KEY = import.meta.env.VITE_NAKAMA_SERVER_KEY || "GeofastHttpKey2026SecureAccess";
 
 type ResetState = "form" | "loading" | "success" | "error" | "invalid-token";
 
