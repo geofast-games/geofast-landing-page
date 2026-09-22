@@ -1,5 +1,6 @@
 import { Linkedin, ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { usePublicStats, formatDownloads } from "@/lib/usePublicStats";
 import valentijnPhoto from "../assets/valentijn.jpg";
 import utkarshPhoto from "../assets/utkarsh.jpg";
 
@@ -32,6 +33,8 @@ const team = [
 ];
 
 export const About = () => {
+  // Same live figure as the hero pill, from the daily store sweep.
+  const downloadsTotal = usePublicStats()?.store_ratings?.downloads_total;
   return (
     <section id="studio" className="container py-24 sm:py-32">
       {/* Legacy anchor: the pre-redesign site linked here as /#about */}
@@ -47,8 +50,9 @@ export const About = () => {
           Geofast Games is an independent game studio from Belgium, founded in
           2024. Our goal is to develop games accessible to everyone, regardless
           of experience or language. <em>Battle of Nations</em> went viral on
-          social media before it even launched, and has since grown into a
-          worldwide community of 600K+ players.
+          social media before it even launched, and has since passed{" "}
+          {downloadsTotal ? formatDownloads(downloadsTotal) : "600K+"} downloads
+          worldwide.
         </p>
       </Reveal>
 

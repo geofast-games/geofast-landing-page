@@ -53,6 +53,16 @@ const GoogleFormIntegration: React.FC<GoogleFormProps> = ({
     }
   }, [formUrl]);
 
+  // An embed that never loads (blocked network, a region where Google is
+  // unreachable) would otherwise leave a skeleton pulsing forever. After
+  // this long, stop waiting and offer the form as a plain link instead.
+  const [embedStalled, setEmbedStalled] = React.useState(false);
+  React.useEffect(() => {
+    if (!isLoading) return;
+    const timer = setTimeout(() => setEmbedStalled(true), 12000);
+    return () => clearTimeout(timer);
+  }, [isLoading]);
+
   return (
     <Card className="w-full">
       <CardHeader>
@@ -64,6 +74,20 @@ const GoogleFormIntegration: React.FC<GoogleFormProps> = ({
           <Alert variant="destructive">
             <AlertDescription>{error}</AlertDescription>
           </Alert>
+        ) : isLoading && embedStalled ? (
+          <div className="space-y-3">
+            <p className="text-muted-foreground">
+              The form could not be loaded here.
+            </p>
+            <a
+              href={formUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
+            >
+              Open the form in a new tab
+            </a>
+          </div>
         ) : (
           <>
             {isLoading && <Skeleton className="w-full h-96" />}

@@ -1,6 +1,14 @@
-import { MessagesSquare, Lightbulb, Sparkles, Bug } from "lucide-react";
+import {
+  MessagesSquare,
+  Lightbulb,
+  Sparkles,
+  Gift,
+  Bug,
+  ChevronRight,
+} from "lucide-react";
 import { SocialIcon, socialLinks } from "./SocialIcons";
 import { Reveal } from "./Reveal";
+import { useDiscordStats } from "@/lib/useDiscordStats";
 
 const DISCORD_URL = "https://discord.gg/czV5cM8rux";
 const discordIconPath = socialLinks.find((s) => s.name === "Discord")!.path;
@@ -9,24 +17,53 @@ const perks = [
   {
     icon: MessagesSquare,
     title: "Talk with players worldwide",
-    text: "Trade tactics, find rivals, and argue about the best nation with players from all over the world.",
+    text: "Ask for advice, share what works, and meet the players you keep running into on the battlefield.",
   },
   {
     icon: Lightbulb,
     title: "Shape the game",
-    text: "Suggest new features, weapons, and additions — and debate them with the community and the team.",
+    text: "Suggest new features and additions, then debate them with the community and the team. Player input changes what gets built.",
   },
   {
     icon: Sparkles,
-    title: "Developer sneak peeks",
-    text: "See what the developers are building before anyone else. New weapons, skins, and seasons drop in Discord first.",
+    title: "Sneak peeks",
+    text: "Features in the making get shown in the server long before they reach the game.",
+  },
+  {
+    icon: Gift,
+    title: "Giveaways and events",
+    text: "Prizes and community events run from time to time, announced in the server first.",
   },
   {
     icon: Bug,
     title: "Direct line to the devs",
-    text: "Report bugs and issues straight to the people who fix them — and watch them get fixed.",
+    text: "Report bugs straight to the people who fix them, and hear back when they do.",
   },
 ];
+
+// Live server counts under the heading. Fixed height so the cards below
+// never shift when the numbers arrive; hidden entirely if Discord is
+// unreachable.
+const ServerCounts = () => {
+  const stats = useDiscordStats();
+  return (
+    <div className="flex h-7 items-center justify-center gap-3 text-sm">
+      {stats && (
+        <>
+          <span className="rounded-full bg-ink-surface px-3 py-1 text-cream">
+            {stats.members.toLocaleString("en-US")} members
+          </span>
+          {stats.online > 0 && (
+            <span className="inline-flex items-center gap-2 rounded-full bg-ink-surface px-3 py-1 text-cream">
+              <span className="h-2 w-2 rounded-full bg-brand" aria-hidden="true" />
+              {stats.online.toLocaleString("en-US")} online now
+            </span>
+          )}
+        </>
+      )}
+    </div>
+  );
+};
 
 export const DiscordCommunity = () => {
   return (
@@ -37,41 +74,50 @@ export const DiscordCommunity = () => {
             Community
           </p>
           <h2 className="text-3xl font-bold md:text-4xl">
-            The battle continues on <span className="text-brand">Discord</span>
+            Players and developers meet on{" "}
+            <span className="text-brand">Discord</span>
           </h2>
           <p className="pt-4 text-xl text-ink-muted">
-            The Geofast Discord is where the community lives — strategy talk,
-            game suggestions, sneak peeks, and the developers themselves, every
-            day.
+            Hang out with other players, suggest features, and talk to the
+            people building the game.
           </p>
         </Reveal>
 
-        <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
+        {/* Flex, not grid: with an odd number of cards the last one centres
+            on its own row instead of being stranded in a column. */}
+        <div className="mx-auto mt-12 flex max-w-4xl flex-wrap justify-center gap-6">
           {perks.map(({ icon: Icon, title, text }, index) => (
             <Reveal
               key={title}
               delay={(index % 2) * 100}
-              className="rounded-xl border border-ink-border bg-ink-surface p-6"
+              className="w-full rounded-xl border border-ink-border bg-ink-surface p-6 sm:w-[calc(50%-0.75rem)]"
             >
-              <Icon className="h-6 w-6 text-brand" aria-hidden="true" />
-              <h3 className="mt-3 font-semibold text-cream">{title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
+              <div className="flex items-center gap-2.5">
+                <Icon className="h-5 w-5 shrink-0 text-brand" aria-hidden="true" />
+                <h3 className="font-semibold text-cream">{title}</h3>
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
                 {text}
               </p>
             </Reveal>
           ))}
         </div>
 
-        <Reveal delay={150} className="mt-12 flex justify-center">
+        <Reveal
+          delay={150}
+          className="mt-12 flex flex-col items-center gap-4"
+        >
           <a
             href={DISCORD_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-3 rounded-full bg-brand px-8 py-3.5 font-semibold text-ink transition-transform hover:scale-105"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-brand px-7 py-3.5 font-semibold text-ink transition-all hover:scale-105 hover:brightness-105 active:scale-100 active:brightness-90"
           >
             <SocialIcon path={discordIconPath} className="h-5 w-5" />
             Join the Discord
+            <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
+          <ServerCounts />
         </Reveal>
       </div>
     </section>

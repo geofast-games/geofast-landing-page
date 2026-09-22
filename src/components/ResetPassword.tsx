@@ -78,6 +78,9 @@ const ResetPasswordPage = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(payload), // RPC payloads are stringified JSON
+          // Without this a hung server leaves the button spinning forever
+          // with no way back; the catch below turns it into a retryable error.
+          signal: AbortSignal.timeout(15000),
         }
       );
 

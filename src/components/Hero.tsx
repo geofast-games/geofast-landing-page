@@ -1,10 +1,11 @@
 import { ChevronRight, Star } from "lucide-react";
 import playstoreBadge from "../assets/playstore_badge.svg";
 import appstoreBadge from "../assets/appstore_badge.svg";
-import screenshot1 from "../assets/screenshot_1.webp";
+import heroIphone from "../assets/hero_iphone.webp";
 import { SocialLinks } from "./SocialIcons";
 import { Reveal } from "./Reveal";
-import { usePublicStats } from "@/lib/usePublicStats";
+import { usePublicStats, formatDownloads } from "@/lib/usePublicStats";
+import { livePillClass } from "@/lib/ui";
 
 // Tiny non-clickable proof line under each store badge: live rating and
 // exact count. Fixed height so it never shifts the hero while loading.
@@ -36,10 +37,7 @@ const LiveBattlesBadge = () => {
     .reduce((sum, d) => sum + d.value, 0);
   if (weekBattles === 0) return null;
   return (
-    <a
-      href="/#livestats"
-      className="group inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary/15"
-    >
+    <a href="/#livestats" className={livePillClass}>
       {weekBattles.toLocaleString("en-US")} battles played this week
       <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
     </a>
@@ -48,12 +46,13 @@ const LiveBattlesBadge = () => {
 
 // Selling points + genre tags, shown as quiet pills between the pitch and
 // the download buttons. One array — reorder/trim freely.
-// One row of claims, nothing else: the player count carries "global
-// community" better with a number in it, and the genre line moved to the
-// screenshots below — the hero was stacking four separate small-text rows.
-const sellingPoints = ["No Ads", "Free to Play", "600K+ Players"];
+// One row of claims. The download count is live (see the backend's
+// storeDownloads.go) and falls back to the baked snapshot, so the pill is
+// never blank and never stale-by-months.
+const staticSellingPoints = ["No Ads", "Free to Play"];
 
 export const Hero = () => {
+  const downloadsTotal = usePublicStats()?.store_ratings?.downloads_total;
   return (
     <section
       id="battleofnations"
@@ -77,7 +76,12 @@ export const Hero = () => {
 
         {/* What the game promises */}
         <div className="flex max-w-xl flex-wrap gap-2">
-          {sellingPoints.map((s) => (
+          {[
+            ...staticSellingPoints,
+            ...(downloadsTotal
+              ? [`${formatDownloads(downloadsTotal)} Downloads`]
+              : []),
+          ].map((s) => (
             <span
               key={s}
               className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary"
@@ -129,17 +133,16 @@ export const Hero = () => {
         </div>
       </Reveal>
 
-      {/* Phone-frame mockup */}
+      {/* Apple's official iPhone bezel with the game running in it. Per
+          Apple's marketing guidelines the bezel is used AS IS: scaled only,
+          never tilted, shadowed, cropped or overlapped. The screenshot sits
+          behind it, positioned by the aperture measured from the asset. */}
       <Reveal delay={150} className="mx-auto hidden lg:block">
-        <div className="relative rotate-2 rounded-[3rem] border border-ink-border bg-ink p-3 shadow-2xl">
-          {/* Punch-hole camera */}
-          <div className="absolute left-1/2 top-6 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-ink" />
-          <img
-            src={screenshot1}
-            alt="Battle of Nations gameplay"
-            className="aspect-[9/16] w-80 rounded-[2.25rem]"
-          />
-        </div>
+        <img
+          src={heroIphone}
+          alt="Geofast: Battle of Nations running on iPhone"
+          className="w-[20rem]"
+        />
       </Reveal>
     </section>
   );

@@ -26,6 +26,8 @@ export interface StoreRating {
 export interface StoreRatings {
   play?: StoreRating;
   apple?: StoreRating;
+  /** Both stores combined, already rounded down to 100k by the backend. */
+  downloads_total?: number;
   updated_at: string; // RFC3339 UTC
 }
 
@@ -40,8 +42,16 @@ export interface PublicStats {
   generated_at: string;
 }
 
+/** "600K+" from a total the backend already rounded down to 100k. */
+export const formatDownloads = (total: number): string =>
+  `${Math.floor(total / 1000).toLocaleString("en-US")}K+`;
+
 // One fetch per page load, shared by every component that shows stats.
 let statsPromise: Promise<PublicStats | null> | null = null;
+
+// A hung request is as bad as a failed one: without this the page would sit
+// on its loading placeholders forever instead of falling back.
+const FETCH_TIMEOUT_MS = 8000;
 
 const fetchStats = async (): Promise<PublicStats | null> => {
   try {
@@ -51,6 +61,7 @@ const fetchStats = async (): Promise<PublicStats | null> => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(""), // RPC payloads are stringified JSON
+        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
       }
     );
     if (!response.ok) return fallbackStats();
@@ -58,6 +69,14 @@ const fetchStats = async (): Promise<PublicStats | null> => {
     const stats: PublicStats =
       typeof data.payload === "string" ? JSON.parse(data.payload) : data.payload;
     if (!stats?.battles_daily?.length) return fallbackStats();
+    // Per-field fallback, not just per-response: a live payload can be
+    // complete except for ratings (a fresh server mid-sweep, or the first
+    // start before any sweep finished). Show the baked ones rather than
+    // nothing; their own updated_at keeps the "Updated ..." note honest.
+    if (!stats.store_ratings) {
+      const baked = fallbackStats();
+      if (baked?.store_ratings) stats.store_ratings = baked.store_ratings;
+    }
     return stats;
   } catch {
     return fallbackStats();

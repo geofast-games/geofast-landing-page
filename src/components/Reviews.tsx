@@ -2,6 +2,7 @@ import { Star, ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SocialIcon, appleIconPath, googlePlayIconPath } from "./SocialIcons";
 import { usePublicStats, type StoreRating } from "@/lib/usePublicStats";
+import { livePillClass } from "@/lib/ui";
 
 type Store = "appstore" | "playstore";
 
@@ -29,7 +30,7 @@ const testimonials: TestimonialProps[] = [
   { store: "playstore", name: "Reda Talaa", date: "Sep 16, 2026", rating: 5, comment: "The game was already legendary, and since it went online it's gotten so much better ❤️😍", translated: true },
   { store: "appstore", name: "EXB dual", country: "United Kingdom", date: "Oct 13, 2025", rating: 5, comment: "Great game! Maybe downgrade shields a bit, they can be unfair at times." },
   { store: "playstore", name: "carl johnson", date: "Aug 25, 2026", rating: 5, comment: "dope game 🎮 & good 👍 job Devs" },
-  { store: "appstore", name: "Bodie!353", country: "Australia", date: "Mar 9, 2025", rating: 5, comment: "I love it — the person that made it listens to suggestions. I love this game" },
+  { store: "appstore", name: "Bodie!353", country: "Australia", date: "Mar 9, 2025", rating: 5, comment: "I love it, the person that made it listens to suggestions. I love this game" },
   { store: "playstore", name: "Jadranka Kajfes", date: "Sep 1, 2026", rating: 5, comment: "It's great and fun, I recommend it to everyone", translated: true },
   { store: "playstore", name: "Robert Marin", date: "Sep 10, 2026", rating: 5, comment: "I love this game it's so much fun" },
   { store: "appstore", name: "Frocour", country: "Belgium", date: "Aug 25, 2025", rating: 5, comment: "Incredible game with great potential", translated: true },
@@ -59,21 +60,23 @@ const storeMeta: Record<Store, { icon: string; label: string; listingUrl: string
 
 // Live authority chips: each store's average rating and EXACT rating count,
 // refreshed server-side once a day (see backend storeRatings.go). Clickable
-// through to the store listing — verifiable proof beats a static claim.
+// through to the store listing: verifiable proof beats a static claim.
 const RatingChip = ({ store, data }: { store: Store; data: StoreRating }) => (
   <a
     href={storeMeta[store].listingUrl}
     target="_blank"
     rel="noreferrer"
-    className="group flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-2 transition-colors hover:border-primary/50 hover:bg-primary/10"
+    className={livePillClass}
   >
+    {/* Store mark and score in ink, not green: brand logos read wrong
+        tinted, and the dark pair anchors the left of the pill. */}
     <SocialIcon path={storeMeta[store].icon} className="h-4 w-4 text-charcoal" />
-    <span className="font-semibold">{data.rating.toFixed(1)}</span>
+    <span className="font-semibold text-charcoal">{data.rating.toFixed(1)}</span>
     <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-    <span className="text-sm text-muted-foreground">
+    <span>
       {data.count.toLocaleString("en-US")} ratings on {storeMeta[store].label}
     </span>
-    <ChevronRight className="h-4 w-4 text-charcoal-muted transition-all group-hover:translate-x-0.5 group-hover:text-primary" />
+    <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
   </a>
 );
 

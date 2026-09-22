@@ -22,8 +22,10 @@ export const DownloadMenu = ({
   campaign,
   className = "",
   itemClassName = "",
-  contentClassName = "w-56",
-  align = "end",
+  // Hugs its content: a fixed width left the two short labels stranded
+  // against a wide empty panel.
+  contentClassName = "min-w-[11rem]",
+  align = "center",
   scaleOnHover = false,
   onNavigate,
 }: {
@@ -70,7 +72,7 @@ export const DownloadMenu = ({
             href={appleURL(campaign)}
             target="_blank"
             rel="noreferrer"
-            className={`flex cursor-pointer items-center gap-2 ${itemClassName}`}
+            className={`flex cursor-pointer items-center gap-2.5 py-2 ${itemClassName}`}
             onClick={onNavigate}
           >
             <SocialIcon path={appleIconPath} className="h-4 w-4" />
@@ -82,7 +84,7 @@ export const DownloadMenu = ({
             href={playURL(campaign)}
             target="_blank"
             rel="noreferrer"
-            className={`flex cursor-pointer items-center gap-2 ${itemClassName}`}
+            className={`flex cursor-pointer items-center gap-2.5 py-2 ${itemClassName}`}
             onClick={onNavigate}
           >
             <SocialIcon path={googlePlayIconPath} className="h-4 w-4" />
