@@ -2,6 +2,7 @@ import { ChevronRight, Star } from "lucide-react";
 import playstoreBadge from "../assets/playstore_badge.svg";
 import appstoreBadge from "../assets/appstore_badge.svg";
 import heroShot from "../assets/hero_shot.webp";
+import heroMap from "../assets/hero_map.webp";
 import { SocialLinks } from "./SocialIcons";
 import { Reveal } from "./Reveal";
 import { usePublicStats, formatDownloads } from "@/lib/usePublicStats";
@@ -133,12 +134,22 @@ export const Hero = () => {
         </div>
       </Reveal>
 
-      {/* Frameless, rounded the same way as the gallery shots. */}
-      <Reveal delay={150} className="mx-auto hidden lg:block">
+      {/* Two screens, staggered: the headline promises a world, so a single
+          battle screenshot undersells it. Frameless and rounded like the
+          gallery shots, cropped to one aspect so the pair stays even. */}
+      <Reveal
+        delay={150}
+        className="mx-auto hidden items-start justify-center gap-4 lg:flex"
+      >
         <img
           src={heroShot}
           alt="A Geofast: Battle of Nations match in progress"
-          className="w-[20rem] rounded-3xl border border-border shadow-sm"
+          className="aspect-[9/20] w-[13rem] rounded-3xl border border-border object-cover shadow-sm xl:w-[15rem]"
+        />
+        <img
+          src={heroMap}
+          alt="The world map, with territory held by each nation"
+          className="mt-12 aspect-[9/20] w-[13rem] rounded-3xl border border-border object-cover shadow-sm xl:w-[15rem]"
         />
       </Reveal>
     </section>

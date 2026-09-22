@@ -14,7 +14,7 @@ import territoryRanking from "../assets/shots/territory_ranking.webp";
 import dailyChallenges from "../assets/shots/daily_challenges.webp";
 import battlePass from "../assets/shots/battle_pass.webp";
 
-const genreTags = ["Online Multiplayer", "Battle Royale", "Strategy", "Mobile"];
+const genreTags = ["Mobile", "Strategy", "Online Multiplayer", "Battle Royale"];
 
 // Grouped so the scroller reads as a tour of the game. Captions stay short
 // because the group label already says what section you are looking at.
