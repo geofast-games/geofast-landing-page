@@ -16,7 +16,27 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Geist", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
       colors: {
+        // The logo green, exactly — readable only on dark (ink) surfaces;
+        // on cream/white use `primary` (same hue, deepened).
+        brand: "#4CFC97",
+        cream: {
+          DEFAULT: "#f0efeb",
+          muted: "#d9d8d3",
+        },
+        ink: {
+          DEFAULT: "#131010",
+          surface: "#1b1818",
+          border: "#3d3838",
+          muted: "#b8b2b2",
+        },
+        charcoal: {
+          DEFAULT: "#2d2d2d",
+          muted: "#6b6b6b",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -65,10 +85,18 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        // Seamless loop: the track holds its content TWICE, so sliding by
+        // exactly half the track lands on an identical frame.
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee 60s linear infinite",
+        "marquee-reverse": "marquee 60s linear infinite reverse",
       },
     },
   },

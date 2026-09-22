@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
-import { Download, X } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DownloadMenu } from "./DownloadMenu";
 
 export const StickyDownload = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -34,36 +29,14 @@ export const StickyDownload = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background border-t border-border shadow-lg p-3">
       <div className="container flex items-center justify-between gap-2">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button className="flex-1 bg-gradient-to-r from-[#F596D3] to-[#D247BF] hover:opacity-90 text-white font-bold">
-              <Download className="mr-2 h-4 w-4" />
-              Download Game - Free!
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="center" className="w-64 mb-2">
-            <DropdownMenuItem asChild>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.geofast.geofastbattleofnations&utm_source=website&utm_medium=organic&utm_campaign=sticky_download"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center cursor-pointer py-3"
-              >
-                <span className="text-base">Google Play Store</span>
-              </a>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <a
-                href="https://apps.apple.com/app/geofast-battle-of-nations/id6740595527?ct=website-sticky_download"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center cursor-pointer py-3"
-              >
-                <span className="text-base">Apple App Store</span>
-              </a>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <DownloadMenu
+          label="Download Game - Free!"
+          campaign="sticky_download"
+          className="flex-1 font-bold"
+          align="center"
+          contentClassName="w-64 mb-2"
+          itemClassName="py-3 text-base"
+        />
         <Button
           variant="ghost"
           size="icon"

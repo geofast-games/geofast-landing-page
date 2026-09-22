@@ -7,20 +7,15 @@ import {
 } from "react-router-dom";
 
 import { About } from "./components/About";
-//import { Cta } from "./components/Cta";
-//import { FAQ } from "./components/FAQ";
 import { GameShowcase } from "./components/GameShowcase";
+import { LiveStats } from "./components/LiveStats";
+import { DiscordCommunity } from "./components/DiscordCommunity";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { SuggestionsPage } from "./components/Suggestions";
-//import { HowItWorks } from "./components/HowItWorks";
 import { Navbar } from "./components/Navbar";
 import { Contact } from "./components/Contact";
-import { Careers } from "./components/Careers";
 import { ScrollToTop } from "./components/ScrollToTop";
-//import { Services } from "./components/Services";
-//import { Sponsors } from "./components/Sponsors";
-import { Team } from "./components/Team";
 import { Reviews } from "./components/Reviews";
 import "./App.css";
 import PrivacyPolicy from "./components/PrivacyPolicy";
@@ -38,19 +33,12 @@ function Home() {
     <>
       <Hero />
       <GameShowcase />
+      <LiveStats />
       <Reviews />
+      <DiscordCommunity />
       <About />
-      <Careers />
-      <Team />
       <Contact />
       <ScrollToTop />
-      {/**
-      <Sponsors />
-      <HowItWorks />
-      <Services />
-      <Cta />
-      <FAQ />
-      **/}
     </>
   );
 }
