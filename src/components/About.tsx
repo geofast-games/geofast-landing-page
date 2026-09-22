@@ -1,45 +1,114 @@
-import { Statistics } from "./Statistics";
-import GeofastLogo from "../assets/geofast_round.webp";
+import { Linkedin, ChevronRight } from "lucide-react";
+import { Reveal } from "./Reveal";
+import valentijnPhoto from "../assets/valentijn.jpg";
+import utkarshPhoto from "../assets/utkarsh.jpg";
+
+const openRoles = [
+  "Game Developer",
+  "Gameplay Writer",
+  "Game Artist",
+  "Marketing Specialist",
+  "Community Manager",
+];
+
+const roleMailto = (role: string) =>
+  `mailto:contact@geofastgames.com?subject=${encodeURIComponent(
+    `Geofast Games Application for ${role}`
+  )}`;
+
+const team = [
+  {
+    imageUrl: valentijnPhoto,
+    name: "Valentijn Hoornaert",
+    position: "CEO",
+    linkedin: "https://www.linkedin.com/in/valentijn-hoornaert-a6a511343",
+  },
+  {
+    imageUrl: utkarshPhoto,
+    name: "Utkarsh Trivedi",
+    position: "CTO",
+    linkedin: "https://www.linkedin.com/in/utkarshtrivedi/",
+  },
+];
 
 export const About = () => {
   return (
-    <section
-      id="about"
-      className="container py-24 sm:py-32"
-    >
-      <div className="bg-muted/50 border rounded-lg py-12">
-        {/* Add the company logo */}
-        <div className="flex justify-center">
-          <img
-            src={GeofastLogo}
-            alt="Geofast Logo"
-            className="w-32 h-32 md:w-40 md:h-40 object-contain mb-8"
-          />
-        </div>
+    <section id="studio" className="container py-24 sm:py-32">
+      {/* Legacy anchor: the pre-redesign site linked here as /#about */}
+      <span id="about" />
+      <Reveal>
+        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
+          The studio
+        </p>
+        <h2 className="text-3xl font-bold md:text-4xl">
+          The <span className="text-primary">team</span> behind Battle of Nations
+        </h2>
+        <p className="mt-4 max-w-3xl text-xl text-muted-foreground">
+          Geofast Games is an independent game studio from Belgium, founded in
+          2024. Our goal is to develop games accessible to everyone, regardless
+          of experience or language. <em>Battle of Nations</em> went viral on
+          social media before it even launched, and has since grown into a
+          worldwide community of 600K+ players.
+        </p>
+      </Reveal>
 
-        <div className="px-6 flex flex-col-reverse md:flex-row gap-8 md:gap-12">
-          <div className="bg-green-0 flex flex-col justify-between">
-            <div className="pb-6">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-                  About{" "}
-                </span>
-                Geofast Games
-              </h2>
-              <p className="text-xl text-muted-foreground mt-4">
-              Geofast Games was founded in Belgium in 2024 with a passion for creating engaging gaming experiences for a global audience.
-              Our first game, <em>Geofast: Battle of Nations</em>, was released on the Google Play Store in December 2024, followed by the Apple App Store in February 2025.
-              Even before its release, the game went viral on TikTok and Instagram, where videos garnered millions of views and built a wave of anticipation.
-              This early excitement translated into a strong launch, with players from all over the world joining to form a vibrant and diverse community.
-              Since launch, we've continued expanding the experience—adding ranked online multiplayer, weapon unlocking and upgrading, skins, and much more. The battlefield keeps evolving, and the best is yet to come!
+      {/* The people */}
+      <div id="team" className="mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+        {team.map(({ imageUrl, name, position, linkedin }, index) => (
+          <Reveal
+            key={name}
+            delay={index * 100}
+            className="flex items-center gap-5 rounded-xl border border-border bg-card p-6"
+          >
+            <img
+              src={imageUrl}
+              alt={name}
+              className="h-20 w-20 rounded-full object-cover"
+            />
+            <div className="min-w-0 flex-1">
+              <p className="font-semibold leading-tight">{name}</p>
+              <p className="mt-0.5 text-sm font-medium text-primary">
+                {position}
               </p>
             </div>
-
-            <Statistics />
-          </div>
-        </div>
-
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${name} on LinkedIn`}
+              className="text-charcoal-muted transition-colors hover:text-primary"
+            >
+              <Linkedin size={20} />
+            </a>
+          </Reveal>
+        ))}
       </div>
+
+      {/* Open roles, folded in from the old Careers section */}
+      <Reveal delay={120} className="mt-6 max-w-3xl rounded-xl border border-border bg-card p-6">
+        <span id="careers" />
+        <p className="font-semibold">Join the team</p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          There's a lot still to build.
+        </p>
+        <div className="mt-3 divide-y divide-border">
+          {openRoles.map((role) => (
+            <a
+              key={role}
+              href={roleMailto(role)}
+              className="group flex items-center justify-between py-2.5"
+            >
+              <span className="text-sm font-medium transition-colors group-hover:text-primary">
+                {role}
+              </span>
+              <span className="inline-flex items-center gap-1 text-sm font-medium text-charcoal-muted transition-colors group-hover:text-primary">
+                Apply
+                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </a>
+          ))}
+        </div>
+      </Reveal>
     </section>
   );
 };

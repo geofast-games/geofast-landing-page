@@ -1,215 +1,146 @@
-import { HeroCards } from "./HeroCards";
-import discordIcon from "../assets/discord_green.webp";
-import tiktokIcon from "../assets/tiktok_green.webp";
-import instagramIcon from "../assets/instagram_green.webp";
-import youtubeIcon from "../assets/youtube_green.webp";
-import playstoreBadge from "../assets/playstore.webp";
-import appstoreBadge from "../assets/appstore.webp";
-import revivalIcon from "../assets/revival.webp";
-import grenadeIcon from "../assets/grenade.webp";
-import heartIcon from "../assets/heart.webp";
-import poisonIcon from "../assets/poison.webp";
-import allianceIcon from "../assets/alliance2.webp";
-import revivalBIcon from "../assets/revivalb.webp";
-import grenadeBIcon from "../assets/grenadeb.webp";
-import heartBIcon from "../assets/heartb.webp";
-import poisonBIcon from "../assets/poisonb.webp";
-import allianceBIcon from "../assets/alliance2b.webp";
+import { ChevronRight, Star } from "lucide-react";
+import playstoreBadge from "../assets/playstore_badge.svg";
+import appstoreBadge from "../assets/appstore_badge.svg";
+import screenshot1 from "../assets/screenshot_1.webp";
+import { SocialLinks } from "./SocialIcons";
+import { Reveal } from "./Reveal";
+import { usePublicStats } from "@/lib/usePublicStats";
+
+// Tiny non-clickable proof line under each store badge: live rating and
+// exact count. Fixed height so it never shifts the hero while loading.
+const StoreRatingLine = ({ store }: { store: "apple" | "play" }) => {
+  const stats = usePublicStats();
+  const r = stats?.store_ratings?.[store];
+  return (
+    <span className="flex h-4 items-center gap-1 text-xs text-muted-foreground">
+      {r && (
+        <>
+          <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+          {r.rating.toFixed(1)} · {r.count.toLocaleString("en-US")} ratings
+        </>
+      )}
+    </span>
+  );
+};
+
+// Zernio-style live badge: rolling last-7-days battle count, linking to the
+// stats section. Hidden until the stats load (or if they never do).
+const LiveBattlesBadge = () => {
+  const stats = usePublicStats();
+  // Reserve the badge's height while loading so the hero doesn't shift
+  // down when it pops in; collapse only on genuine failure.
+  if (stats === undefined) return <div className="h-9" />;
+  if (!stats) return null;
+  const weekBattles = stats.battles_daily
+    .slice(-7)
+    .reduce((sum, d) => sum + d.value, 0);
+  if (weekBattles === 0) return null;
+  return (
+    <a
+      href="/#livestats"
+      className="group inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary/15"
+    >
+      {weekBattles.toLocaleString("en-US")} battles played this week
+      <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+    </a>
+  );
+};
+
+// Selling points + genre tags, shown as quiet pills between the pitch and
+// the download buttons. One array — reorder/trim freely.
+// One row of claims, nothing else: the player count carries "global
+// community" better with a number in it, and the genre line moved to the
+// screenshots below — the hero was stacking four separate small-text rows.
+const sellingPoints = ["No Ads", "Free to Play", "600K+ Players"];
 
 export const Hero = () => {
   return (
-    <section className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
-      <div className="text-start space-y-6">
-        {/* Icon Row with Hover Effect */}
-        <div className="flex justify-start gap-6">
-          {/* Revival Icon */}
-          <div className="relative">
-            <img
-              src={revivalBIcon}
-              alt="Revival"
-              className="h-10 w-10 object-contain opacity-50 hover:opacity-0 transition-opacity absolute"
-            />
-            <img
-              src={revivalIcon}
-              alt="Revival Hover"
-              className="h-10 w-10 object-contain opacity-0 hover:opacity-100 transition-opacity"
-            />
-          </div>
-
-          {/* Grenade Icon */}
-          <div className="relative">
-            <img
-              src={grenadeBIcon}
-              alt="Grenade"
-              className="h-10 w-10 object-contain opacity-50 hover:opacity-0 transition-opacity absolute"
-            />
-            <img
-              src={grenadeIcon}
-              alt="Grenade Hover"
-              className="h-10 w-10 object-contain opacity-0 hover:opacity-100 transition-opacity"
-            />
-          </div>
-
-          {/* Heart Icon */}
-          <div className="relative">
-            <img
-              src={heartBIcon}
-              alt="Heart"
-              className="h-10 w-10 object-contain opacity-50 hover:opacity-0 transition-opacity absolute"
-            />
-            <img
-              src={heartIcon}
-              alt="Heart Hover"
-              className="h-10 w-10 object-contain opacity-0 hover:opacity-100 transition-opacity"
-            />
-          </div>
-
-          {/* Poison Icon */}
-          <div className="relative">
-            <img
-              src={poisonBIcon}
-              alt="Poison"
-              className="h-10 w-10 object-contain opacity-50 hover:opacity-0 transition-opacity absolute"
-            />
-            <img
-              src={poisonIcon}
-              alt="Poison Hover"
-              className="h-10 w-10 object-contain opacity-0 hover:opacity-100 transition-opacity"
-            />
-          </div>
-
-          {/* Alliance Icon */}
-          <div className="relative">
-            <img
-              src={allianceBIcon}
-              alt="Alliance"
-              className="h-10 w-10 object-contain opacity-50 hover:opacity-0 transition-opacity absolute"
-            />
-            <img
-              src={allianceIcon}
-              alt="Alliance Hover"
-              className="h-10 w-10 object-contain opacity-0 hover:opacity-100 transition-opacity"
-            />
-          </div>
-        </div>
-
-        {/* Download CTA - Moved to top for immediate visibility */}
-        <div className="space-y-3">
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-[#F596D3] to-[#D247BF] text-transparent bg-clip-text">
-            Download Now - It's Free!
-          </h3>
-          <div className="flex flex-col sm:flex-row justify-start gap-4">
-            <a
-              href="https://play.google.com/store/apps/details?id=com.geofast.geofastbattleofnations&utm_source=website&utm_medium=organic&utm_campaign=hero"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:scale-105 transition-transform"
-            >
-              <img
-                src={playstoreBadge}
-                alt="Get it on Google Play"
-                className="h-14 sm:h-16 w-auto object-contain"
-              />
-            </a>
-            <a
-              href="https://apps.apple.com/app/geofast-battle-of-nations/id6740595527?ct=website-hero"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:scale-105 transition-transform"
-            >
-              <img
-                src={appstoreBadge}
-                alt="Download on the App Store"
-                className="h-14 sm:h-16 w-auto object-contain"
-              />
-            </a>
-          </div>
-          <p className="text-sm text-muted-foreground">
-            ⭐ Join 500K+ players worldwide
-          </p>
-        </div>
+    <section
+      id="battleofnations"
+      className="container grid items-center gap-12 py-20 md:py-28 lg:grid-cols-2"
+    >
+      <Reveal className="space-y-8 text-start">
+        <LiveBattlesBadge />
 
         {/* Title */}
-        <main className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold">
-          <h1 className="inline">
-            <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
-              Accessible
-            </span>{" "}
-            Gaming,
-          </h1>
+        <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+          Pick your nation.
           <br />
-          Unlimited{" "}
-          <h2 className="inline">
-            <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-              Fun
-            </span>{" "}
-          </h2>
-        </main>
+          Conquer the world.
+        </h1>
 
-        <p className="text-xl text-muted-foreground md:w-10/12 lg:mx-0">
-          <b>Geofast Games</b> is a game development studio based in Belgium,
-          creating engaging mobile games designed for players from all over the world.
-          Our goal is to develop games accessible to everyone, regardless of experience or language.
-          Our first mobile game, <em>Geofast: Battle of Nations</em>, had a strong and successful launch,
-          capturing the interest of players globally.
+        <p className="max-w-xl text-lg text-muted-foreground">
+          <em>Geofast: Battle of Nations</em> throws you into quick, strategic
+          battles against real players worldwide. Unlock powerful weapons,
+          climb the leaderboards, and expand your nation across the world map.
         </p>
 
-        {/* Social Media Icons */}
-        <div className="flex justify-start gap-6 mt-6">
-          <a
-            href="https://discord.gg/czV5cM8rux"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={discordIcon}
-              alt="Discord"
-              className="h-10 w-10 object-contain"
-            />
-          </a>
-          <a
-            href="https://www.tiktok.com/@geofast_"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={tiktokIcon}
-              alt="TikTok"
-              className="h-10 w-10 object-contain"
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/geofast_/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={instagramIcon}
-              alt="Instagram"
-              className="h-10 w-10 object-contain"
-            />
-          </a>
-          <a
-            href="https://www.youtube.com/@geofast_"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={youtubeIcon}
-              alt="YouTube"
-              className="h-10 w-10 object-contain"
-            />
-          </a>
+        {/* What the game promises */}
+        <div className="flex max-w-xl flex-wrap gap-2">
+          {sellingPoints.map((s) => (
+            <span
+              key={s}
+              className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary"
+            >
+              {s}
+            </span>
+          ))}
         </div>
-      </div>
 
-      {/* Hero cards section */}
-      <div className="z-10">
-        <HeroCards />
-      </div>
+        {/* Download CTA */}
+        <div className="space-y-3">
+          <div className="flex flex-col justify-start gap-4 sm:flex-row">
+            <div className="flex flex-col items-center gap-1.5">
+              <a
+                href="https://apps.apple.com/app/geofast-battle-of-nations/id6740595527?ct=website-hero"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-transform hover:scale-105"
+              >
+                <img
+                  src={appstoreBadge}
+                  alt="Download on the App Store"
+                  className="h-14 w-auto object-contain"
+                />
+              </a>
+              <StoreRatingLine store="apple" />
+            </div>
+            <div className="flex flex-col items-center gap-1.5">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.geofast.geofastbattleofnations&utm_source=website&utm_medium=organic&utm_campaign=hero"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-transform hover:scale-105"
+              >
+                <img
+                  src={playstoreBadge}
+                  alt="Get it on Google Play"
+                  className="h-14 w-auto object-contain"
+                />
+              </a>
+              <StoreRatingLine store="play" />
+            </div>
+          </div>
+        </div>
 
-      {/* Shadow effect */}
-      <div className="shadow"></div>
+        {/* Social media */}
+        <div className="pt-2">
+          <SocialLinks iconClassName="h-7 w-7" />
+        </div>
+      </Reveal>
+
+      {/* Phone-frame mockup */}
+      <Reveal delay={150} className="mx-auto hidden lg:block">
+        <div className="relative rotate-2 rounded-[3rem] border border-ink-border bg-ink p-3 shadow-2xl">
+          {/* Punch-hole camera */}
+          <div className="absolute left-1/2 top-6 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-ink" />
+          <img
+            src={screenshot1}
+            alt="Battle of Nations gameplay"
+            className="aspect-[9/16] w-80 rounded-[2.25rem]"
+          />
+        </div>
+      </Reveal>
     </section>
   );
 };

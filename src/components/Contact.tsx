@@ -1,87 +1,69 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import supportIcon from "../assets/support.webp";
-import businessIcon from "../assets/business.webp";
-import { Button } from "@/components/ui/button";
+import { Headset, Handshake, ChevronRight } from "lucide-react";
+import { Reveal } from "./Reveal";
+
+const contactCards = [
+  {
+    icon: Headset,
+    title: "Support",
+    text: "Have a question or need assistance? The team is here to help.",
+    mailto: "mailto:contact@geofastgames.com?subject=Support Request",
+  },
+  {
+    icon: Handshake,
+    title: "Business Opportunities",
+    text: "Geofast Games is actively looking for investors and business partners to help the studio grow.",
+    mailto: "mailto:contact@geofastgames.com?subject=Business Inquiry",
+  },
+];
 
 export const Contact = () => {
   return (
     <section id="contact">
-      <hr className="w-11/12 mx-auto" />
+      <div className="container py-24 sm:py-32">
+        <Reveal className="text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
+            Contact
+          </p>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Get in <span className="text-primary">touch</span>
+          </h2>
+        </Reveal>
 
-      <div className="container py-24 sm:py-32 text-center">
-        <h3 className="text-center text-4xl md:text-5xl font-bold">
-          <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-            Contact{" "}
-          </span>
-          Us
-        </h3>
-        <p className="text-sm text-muted-foreground mt-2">contact@geofastgames.com</p>
-        <div className="grid gap-8 mt-12 mx-auto md:grid-cols-2 md:gap-12 md:w-3/4">
-          {/* Questions Card */}
-          <Card className="relative bg-muted/50 drop-shadow-md shadow-black/10">
-            <img
-              src={supportIcon}
-              alt="Support"
-              className="absolute top-4 right-4 h-8 w-8"
-            />
-            <CardHeader>
-              <CardTitle className="text-xl font-semibold">Support</CardTitle>
-              <CardDescription className="text-muted-foreground">
-                Have a question or need assistance? We're here to help.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+        <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+          {contactCards.map(({ icon: Icon, title, text, mailto }, index) => (
+            <Reveal
+              key={title}
+              delay={index * 100}
+              className="flex flex-col rounded-xl border border-border bg-card p-6"
+            >
+              <Icon className="h-6 w-6 text-primary" aria-hidden="true" />
+              <h3 className="mt-3 font-semibold">{title}</h3>
+              <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted-foreground">
+                {text}
+              </p>
               <a
-                href="mailto:contact@geofastgames.com?subject=Support Request"
-                className="w-full"
+                href={mailto}
+                className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary"
               >
-                <Button
-                  variant="secondary"
-                  className="bg-muted text-primary w-full hover:bg-muted/80"
-                >
-                  Reach Out
-                </Button>
+                Reach out
+                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
-            </CardContent>
-          </Card>
-
-          {/* Business Opportunities Card */}
-          <Card className="relative bg-muted/50 drop-shadow-md shadow-black/10">
-            <img
-              src={businessIcon}
-              alt="Business Opportunities"
-              className="absolute top-4 right-4 h-8 w-8"
-            />
-            <CardHeader>
-              <CardTitle className="text-xl font-semibold">Business Opportunities</CardTitle>
-              <CardDescription className="text-muted-foreground">
-                We are actively looking for investors and business partners to grow our game studio.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <a
-                href="mailto:contact@geofastgames.com?subject=Business Inquiry"
-                className="w-full"
-              >
-                <Button
-                  variant="secondary"
-                  className="bg-muted text-primary w-full hover:bg-muted/80"
-                >
-                  Reach Out
-                </Button>
-              </a>
-            </CardContent>
-          </Card>
+            </Reveal>
+          ))}
         </div>
-      </div>
 
-      <hr className="w-11/12 mx-auto" />
+        <Reveal delay={150} className="mt-8 text-center text-sm text-muted-foreground">
+          <p>
+            Or write directly:{" "}
+            <a
+              href="mailto:contact@geofastgames.com"
+              className="font-medium text-primary hover:underline"
+            >
+              contact@geofastgames.com
+            </a>
+          </p>
+        </Reveal>
+      </div>
     </section>
   );
 };

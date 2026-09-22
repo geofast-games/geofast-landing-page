@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import { LogoIcon } from "./Icons";
+import {
+  SocialIcon,
+  socialLinks,
+  appleIconPath,
+  googlePlayIconPath,
+} from "./SocialIcons";
 
 export const Footer = () => {
   return (
@@ -20,71 +26,44 @@ export const Footer = () => {
 
         <div className="flex flex-col gap-2">
           <h3 className="font-bold text-lg">Community</h3>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="https://discord.gg/czV5cM8rux"
-              target="_blank"
-              className="opacity-60 hover:opacity-100"
-            >
-              Discord
-            </a>
-          </div>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="https://www.tiktok.com/@geofast_"
-              target="_blank"
-              className="opacity-60 hover:opacity-100"
-            >
-              TikTok
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="https://www.instagram.com/geofast_/"
-              target="_blank"
-              className="opacity-60 hover:opacity-100"
-            >
-              Instagram
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="https://www.youtube.com/@geofast_"
-              target="_blank"
-              className="opacity-60 hover:opacity-100"
-            >
-              YouTube
-            </a>
-          </div>
+          {socialLinks.map(({ name, href, path }) => (
+            <div key={name}>
+              <a
+                rel="noreferrer noopener"
+                href={href}
+                target="_blank"
+                className="inline-flex items-center gap-2 opacity-60 hover:opacity-100"
+              >
+                <SocialIcon path={path} className="h-4 w-4" />
+                {name}
+              </a>
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-col gap-2">
           <h3 className="font-bold text-lg">Platforms</h3>
-           <div>
-            <a
-              rel="noreferrer noopener"
-              href="https://play.google.com/store/apps/dev?id=7184241621050076321"
-              target="_blank"
-              className="opacity-60 hover:opacity-100"
-            >
-              Play Store
-            </a>
-          </div>
-
           <div>
             <a
               rel="noreferrer noopener"
               href="https://apps.apple.com/app/geofast-battle-of-nations/id6740595527?ct=website-footer"
               target="_blank"
-              className="opacity-60 hover:opacity-100"
+              className="inline-flex items-center gap-2 opacity-60 hover:opacity-100"
             >
+              <SocialIcon path={appleIconPath} className="h-4 w-4" />
               App Store
+            </a>
+          </div>
+
+          <div>
+            <a
+              rel="noreferrer noopener"
+              href="https://play.google.com/store/apps/dev?id=7184241621050076321"
+              target="_blank"
+              className="inline-flex items-center gap-2 opacity-60 hover:opacity-100"
+            >
+              <SocialIcon path={googlePlayIconPath} className="h-4 w-4" />
+              Google Play
             </a>
           </div>
         </div>

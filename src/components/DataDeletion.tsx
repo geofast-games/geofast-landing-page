@@ -103,7 +103,7 @@ Thank you.`
     <section id="data-deletion" className="container py-24 sm:py-32">
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
         Geofast: Battle of Nations
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+        <span className="text-primary">
           {" "}
           Data Deletion Request{" "}
         </span>

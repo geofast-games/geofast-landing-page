@@ -1,7 +1,4 @@
-import { Badge } from "./ui/badge";
-import image_appstore from "../assets/appstore.webp";
-import image_playstore from "../assets/playstore.webp";
-import appIcon from "../assets/playstore_logo.png";
+import { Reveal } from "./Reveal";
 
 import screenshot1 from "../assets/screenshot_1.webp";
 import screenshot2 from "../assets/screenshot_2.webp";
@@ -19,83 +16,36 @@ const screenshots = [
   { src: screenshot6, alt: "Collect Exclusive Skins" },
 ];
 
-const featureList: string[] = [
-  "Battle Royale",
-  "Online Multiplayer",
-  "Strategy",
-  "Mobile",
-];
+const genreTags = ["Online Multiplayer", "Battle Royale", "Strategy", "Mobile"];
 
+// Screenshots plus the genre line (moved down from the hero, which was
+// stacking too many small-text rows): the hero already names the game,
+// pitches it and carries the store buttons.
 export const GameShowcase = () => {
   return (
-    <section id="battleofnations" className="container py-24 sm:py-32 space-y-8">
-      {/* App Icon and Title */}
-      <div className="text-center">
-        <img
-          src={appIcon}
-          alt="Geofast App Icon"
-          className="w-32 h-32 mx-auto rounded-2xl mb-6"
-        />
-        <h2 className="text-3xl lg:text-4xl font-bold">
-          Geofast:{" "}
-          <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-            Battle of Nations
-          </span>
-        </h2>
-      </div>
-
-      {/* Descriptive text under the title */}
-      <p className="text-muted-foreground md:text-center text-lg mx-auto max-w-3xl">
-        Pick a nation and dominate the battlefield in online multiplayer combat! Battle players worldwide in strategic turn-based showdowns. Unlock powerful weapons, upgrade your arsenal, and climb the global rankings.
-      </p>
-
-      <div className="flex flex-wrap md:justify-center gap-4">
-        {featureList.map((feature: string) => (
-          <div key={feature}>
-            <Badge variant="secondary" className="text-sm">
-              {feature}
-            </Badge>
-          </div>
-        ))}
-      </div>
-
-      {/* App Store and Play Store Buttons */}
-      <div className="flex justify-center gap-8 mt-8">
-        <a
-          href="https://play.google.com/store/apps/details?id=com.geofast.geofastbattleofnations&utm_source=website&utm_medium=organic&utm_campaign=showcase"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src={image_playstore}
-            alt="Get it on Google Play"
-            className="h-12 object-contain"
-          />
-        </a>
-        <a
-          href="https://apps.apple.com/app/geofast-battle-of-nations/id6740595527?ct=website-showcase"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src={image_appstore}
-            alt="Download on the App Store"
-            className="h-12 object-contain"
-          />
-        </a>
-      </div>
-
-      {/* Screenshot gallery — horizontal scroll on mobile, 3-col grid on desktop */}
-      <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
-        {screenshots.map(({ src, alt }) => (
-          <img
-            key={alt}
-            src={src}
-            alt={alt}
-            className="snap-center flex-shrink-0 w-[220px] md:w-full rounded-2xl shadow-lg"
-          />
-        ))}
-      </div>
+    <section className="container py-12 sm:py-16">
+      <Reveal>
+        <div className="mb-6 flex flex-wrap justify-center gap-2">
+          {genreTags.map((g) => (
+            <span
+              key={g}
+              className="rounded-full border border-border bg-card px-3 py-1 text-sm font-medium text-muted-foreground"
+            >
+              {g}
+            </span>
+          ))}
+        </div>
+        <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+          {screenshots.map(({ src, alt }) => (
+            <img
+              key={alt}
+              src={src}
+              alt={alt}
+              className="aspect-[9/16] snap-center w-[220px] flex-shrink-0 rounded-2xl border border-border object-cover shadow-sm md:w-full"
+            />
+          ))}
+        </div>
+      </Reveal>
     </section>
   );
 };
