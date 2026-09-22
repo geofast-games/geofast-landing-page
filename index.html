@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <!-- The studio mark, not the game icon: this is geofastgames.com.
-         Rendered from the navbar logo onto an opaque white ground. The old
-         icon.ico was a single 75x75 image that was half transparent, which
-         anything ignoring its alpha channel painted in as black. -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+         Order matters, browsers take the first format they support. The SVG
+         is transparent so the mark sits on the tab strip itself rather than
+         in a white box, and scales instead of being resampled. The .ico is
+         the fallback for old browsers and for crawlers that only look for
+         /favicon.ico; it stays opaque because that path is also what Google
+         renders, and transparency there is what produced the black square. -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
