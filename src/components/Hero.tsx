@@ -3,7 +3,6 @@ import playstoreBadge from "../assets/playstore_badge.svg";
 import appstoreBadge from "../assets/appstore_badge.svg";
 import heroShot from "../assets/hero_shot.webp";
 import heroMap from "../assets/hero_map.webp";
-import { SocialLinks } from "./SocialIcons";
 import { Reveal } from "./Reveal";
 import { usePublicStats, formatDownloads } from "@/lib/usePublicStats";
 import { livePillClass } from "@/lib/ui";
@@ -126,11 +125,6 @@ export const Hero = () => {
               <StoreRatingLine store="play" />
             </div>
           </div>
-        </div>
-
-        {/* Social media */}
-        <div className="pt-2">
-          <SocialLinks iconClassName="h-7 w-7" />
         </div>
       </Reveal>
 
