@@ -6,7 +6,7 @@ import { livePillClass } from "@/lib/ui";
 
 type Store = "appstore" | "playstore";
 
-interface TestimonialProps {
+interface ReviewProps {
   store: Store;
   name: string;
   date: string;
@@ -21,7 +21,7 @@ interface TestimonialProps {
 // shown translated (original language noted). Stores deliberately mixed,
 // not sorted. The two marquee rows split this list in half: first half top
 // row, second half bottom row.
-const testimonials: TestimonialProps[] = [
+const reviews: ReviewProps[] = [
   { store: "appstore", name: "j0nasGHG", country: "Switzerland", date: "Feb 25, 2026", rating: 5, comment: "By far the best battle game I ever played. No ads, fast matchmaking. 10/10" },
   { store: "playstore", name: "Carlos Gonzalez Vidal", date: "Sep 12, 2026", rating: 5, comment: "Incredible game, a hidden gem of the internet.", translated: true },
   { store: "appstore", name: "SilentLychee", country: "Turkey", date: "May 21, 2026", rating: 5, comment: "It might feel slow at first until you level up, but after a week it really pulls you in. I recommend it to everyone.", translated: true },
@@ -109,7 +109,7 @@ const LiveRatings = () => {
   );
 };
 
-const ReviewCard = ({ store, name, date, rating, comment, country, translated }: TestimonialProps) => (
+const ReviewCard = ({ store, name, date, rating, comment, country, translated }: ReviewProps) => (
   <div className="mx-3 flex w-[320px] shrink-0 flex-col rounded-xl border border-border bg-card p-5 sm:w-[360px]">
     <div className="flex items-start justify-between gap-3">
       <div className="flex items-center gap-3">
@@ -149,7 +149,7 @@ const MarqueeRow = ({
   items,
   reverse = false,
 }: {
-  items: TestimonialProps[];
+  items: ReviewProps[];
   reverse?: boolean;
 }) => (
   <div
@@ -169,12 +169,12 @@ const MarqueeRow = ({
 );
 
 export const Reviews = () => {
-  const half = Math.ceil(testimonials.length / 2);
-  const rowOne = testimonials.slice(0, half);
-  const rowTwo = testimonials.slice(half);
+  const half = Math.ceil(reviews.length / 2);
+  const rowOne = reviews.slice(0, half);
+  const rowTwo = reviews.slice(half);
 
   return (
-    <section id="testimonials" className="py-24 sm:py-32">
+    <section id="reviews" className="py-24 sm:py-32">
       <Reveal className="container">
         <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
           Reviews

@@ -62,7 +62,7 @@ const groups = [
 // the store buttons.
 export const GameShowcase = () => {
   return (
-    <section className="py-12 sm:py-16">
+    <section id="gallery" className="py-12 sm:py-16">
       <Reveal className="container">
         <img
           src={appIcon}
