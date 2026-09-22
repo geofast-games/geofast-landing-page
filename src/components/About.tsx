@@ -37,8 +37,6 @@ export const About = () => {
   const downloadsTotal = usePublicStats()?.store_ratings?.downloads_total;
   return (
     <section id="studio" className="container py-24 sm:py-32">
-      {/* Legacy anchor: the pre-redesign site linked here as /#about */}
-      <span id="about" />
       <Reveal>
         <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
           The studio
@@ -57,7 +55,7 @@ export const About = () => {
       </Reveal>
 
       {/* The people */}
-      <div id="team" className="mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+      <div className="mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
         {team.map(({ imageUrl, name, position, linkedin }, index) => (
           <Reveal
             key={name}
@@ -90,7 +88,6 @@ export const About = () => {
 
       {/* Open roles, folded in from the old Careers section */}
       <Reveal delay={120} className="mt-6 max-w-3xl rounded-xl border border-border bg-card p-6">
-        <span id="careers" />
         <p className="font-semibold">Join the team</p>
         <p className="mt-1 text-sm text-muted-foreground">
           There's a lot still to build.
