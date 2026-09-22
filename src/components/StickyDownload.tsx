@@ -29,13 +29,14 @@ export const StickyDownload = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background border-t border-border shadow-lg p-3">
       <div className="container flex items-center justify-between gap-2">
+        {/* Same label, motion and menu as the navbar button: only the width
+            differs, because this one spans the bar. */}
         <DownloadMenu
-          label="Download Game - Free!"
           campaign="sticky_download"
-          className="flex-1 font-bold"
+          className="flex-1"
           align="center"
-          contentClassName="w-64 mb-2"
-          itemClassName="py-3 text-base"
+          contentClassName="min-w-[11rem] mb-2"
+          scaleOnHover
         />
         <Button
           variant="ghost"
