@@ -107,9 +107,11 @@ export const Footer = () => {
       </section>
 
       <section className="container pb-14 text-center">
-        <h3>
-          <div>&copy; 2026 Geofast Games. All rights reserved.</div>
-        </h3>
+        {/* Secondary text, same token the rest of the site uses for it: the
+            line should sit quieter than the footer links above it. */}
+        <p className="text-sm text-muted-foreground">
+          &copy; 2026 Geofast Games. All rights reserved.
+        </p>
       </section>
     </footer>
   );
