@@ -1,4 +1,24 @@
-export type PrivacyLang = "en" | "de" | "nl" | "fr";
+// URL segment and lookup key, always lowercase: /zh-hans/privacy. The html
+// lang attribute is a proper BCP-47 tag (zh-Hans, pt-BR), see htmlLang below.
+export type PrivacyLang =
+  | "en"
+  | "de"
+  | "nl"
+  | "fr"
+  | "id"
+  | "es"
+  | "it"
+  | "pl"
+  | "pt"
+  | "fi"
+  | "sv"
+  | "tr"
+  | "ru"
+  | "ar"
+  | "ko"
+  | "ja"
+  | "zh-hans"
+  | "zh-hant";
 
 // Policy text is plain strings with a minimal inline markup (see
 // components/RichText.tsx): [label](href) for links, **strong**, *emphasis*.
