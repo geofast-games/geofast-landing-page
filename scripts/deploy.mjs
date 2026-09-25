@@ -73,6 +73,12 @@ execFileSync(process.execPath, [join(ROOT, "scripts", "check-privacy-translation
 execFileSync(process.execPath, [join(ROOT, "scripts", "check-terms-translations.mjs")], {
   cwd: ROOT, stdio: "inherit",
 });
+// Every data deletion page translation must have the same sections, lists,
+// links and email template as the English source
+// (scripts/check-datadeletion-translations.mjs).
+execFileSync(process.execPath, [join(ROOT, "scripts", "check-datadeletion-translations.mjs")], {
+  cwd: ROOT, stdio: "inherit",
+});
 run("vite/bin/vite.js", ["build"]);
 // Then the legal pages as static files (scripts/prerender.mjs): the store links
 // point at /privacy and friends, which GitHub Pages serves from these.

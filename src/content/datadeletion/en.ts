@@ -17,6 +17,7 @@ export const en: DataDeletionContent = {
   docName: "Data Deletion Request",
   lastUpdated: "Last updated: September 25, 2026",
   sectionsLabel: "Sections",
+  languageLabel: "Language",
   contact: {
     line: "Questions? Ask on Discord. Requests about your data: email us.",
     discord: "Ask on Discord",
