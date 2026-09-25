@@ -48,9 +48,12 @@ function RedirectHandler() {
   return <Navigate to={`/${page}`} replace />;
 }
 
-function App() {
+// Everything except the router itself. The browser wraps this in a
+// BrowserRouter (below); the build-time prerender wraps the same tree in a
+// StaticRouter (src/entry-prerender.tsx), so both render identical pages.
+export function AppShell() {
   return (
-    <Router>
+    <>
       <Navbar />
       <InternalLinksHandler />
       <Routes>
@@ -71,6 +74,14 @@ function App() {
       <Footer />
       <ScrollToTop />
       <StickyDownload />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppShell />
     </Router>
   );
 }

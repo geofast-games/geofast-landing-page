@@ -64,8 +64,15 @@ const run = (script, args) =>
   });
 run("typescript/bin/tsc", []);
 run("vite/bin/vite.js", ["build"]);
+// Then the legal pages as static files (scripts/prerender.mjs): the store links
+// point at /privacy and friends, which GitHub Pages serves from these.
+execFileSync(process.execPath, [join(ROOT, "scripts", "prerender.mjs")], {
+  cwd: ROOT, stdio: "inherit",
+});
 
-if (!existsSync(join(DIST, "index.html"))) die("build produced no dist/index.html");
+for (const f of ["index.html", "privacy.html", "termsofservice.html", "datadeletion.html"]) {
+  if (!existsSync(join(DIST, f))) die(`build produced no dist/${f}`);
+}
 
 // Guard against the regression this project has already shipped once: a local
 // env override baking a plain-http endpoint into the bundle, which the browser
