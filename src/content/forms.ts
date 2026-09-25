@@ -40,7 +40,6 @@ export const forms: Record<FormKind, FormSpec> = {
     fields: [
       { name: "suggestion", label: "What do you suggest?", required: true, maxLength: 5000, widget: "textarea" },
       { name: "why", label: "Why would it help?", maxLength: 3000, widget: "textarea", help: "Optional. What problem it solves or what it would make more fun." },
-      { name: "platform", label: "Platform", maxLength: 20, widget: "select", options: PLATFORMS },
     ],
   },
   bug: {
@@ -54,7 +53,7 @@ export const forms: Record<FormKind, FormSpec> = {
       { name: "steps", label: "Steps to reproduce", maxLength: 3000, widget: "textarea", placeholder: "1. Open the shop\n2. Tap …" },
       { name: "device", label: "Device model", maxLength: 80, widget: "text", placeholder: "Pixel 8, iPhone 15 …" },
       { name: "os_version", label: "OS version", maxLength: 40, widget: "text", placeholder: "Android 15, iOS 18.1 …" },
-      { name: "game_version", label: "Game version", maxLength: 40, widget: "text", help: "Shown at the bottom of the settings screen in the game." },
+      { name: "game_version", label: "Game version", maxLength: 40, widget: "text", help: "Shown on the credits screen in the game." },
       { name: "platform", label: "Platform", maxLength: 20, widget: "select", options: PLATFORMS },
     ],
   },
@@ -71,7 +70,9 @@ export const forms: Record<FormKind, FormSpec> = {
         required: true,
         maxLength: 60,
         widget: "select",
-        options: gameLanguages.map((l) => ({ value: l.name, label: l.name })),
+        // The stored value carries the game's language code too, so a report
+        // maps straight to its .po file (e.g. "Español (España) [es-ES]").
+        options: gameLanguages.map((l) => ({ value: `${l.name} [${l.code}]`, label: l.name })),
       },
       { name: "where", label: "Where in the game", required: true, maxLength: 200, widget: "text", placeholder: "Shop, Battle Pass card …" },
       { name: "current_text", label: "The text as it is now", required: true, maxLength: 2000, widget: "textarea" },
