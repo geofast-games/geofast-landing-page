@@ -63,15 +63,14 @@ const run = (script, args) =>
     cwd: ROOT, stdio: "inherit",
   });
 run("typescript/bin/tsc", []);
-<<<<<<< HEAD
 // Every privacy translation must have the same sections, tables, lists and
 // links as the English source (scripts/check-privacy-translations.mjs).
 execFileSync(process.execPath, [join(ROOT, "scripts", "check-privacy-translations.mjs")], {
-=======
+  cwd: ROOT, stdio: "inherit",
+});
 // Every Terms of Service translation must have the same numbered sections,
 // lists and links as the English source (scripts/check-terms-translations.mjs).
 execFileSync(process.execPath, [join(ROOT, "scripts", "check-terms-translations.mjs")], {
->>>>>>> terms-i18n
   cwd: ROOT, stdio: "inherit",
 });
 run("vite/bin/vite.js", ["build"]);
