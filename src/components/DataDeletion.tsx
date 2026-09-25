@@ -1,151 +1,84 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PageContact } from "./PageContact";
-import { Button } from "@/components/ui/button";
 import { useLayoutEffect } from "react";
 import { Mail } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { PageContact } from "./PageContact";
+import { BlockView } from "./LegalBlocks";
+import { dataDeletionContent } from "@/content/datadeletion";
 
-interface SectionProps {
-  title: string;
-  content: React.ReactNode;
-}
+// The account-deletion page both app stores link to. Text lives in
+// src/content/datadeletion/<lang>.ts, same block model as the privacy policy
+// and the Terms; this component lays it out and adds the request card.
 
-const sectionData: SectionProps[] = [
-  {
-    title: "Your Right to Data Deletion",
-    content: (
-      <div>
-        At Geofast Games, we respect your privacy and your right to control your
-        personal data. If you wish to have your data completely removed from our
-        systems, you can request deletion at any time.
-        <br />
-        <br />
-        Under various privacy regulations (including GDPR, CCPA, and others),
-        you have the right to request the deletion of your personal data that we
-        have collected and stored.
-      </div>
-    ),
-  },
-  {
-    title: "What Data Will Be Deleted",
-    content: (
-      <div>
-        Upon receiving and processing your deletion request, we will remove:
-        <ul className="list-disc pl-6 mt-2 space-y-1">
-          <li>Your account information and profile data</li>
-          <li>Game progress and saved data</li>
-          <li>In-app analytics data associated with your account</li>
-          <li>Any other personal information we have collected</li>
-        </ul>
-        <br />
-        <p>
-          <strong>Please note:</strong> Data processed by third-party services
-          (such as AdMob or app stores) is subject to their own data retention
-          and deletion policies. You may need to contact these services directly
-          for complete data removal.
-        </p>
-      </div>
-    ),
-  },
-  {
-    title: "How to Request Data Deletion",
-    content: (
-      <div>
-        To request the deletion of your data, please send an email to our
-        support team. To help us process your request quickly, please include:
-        <ul className="list-disc pl-6 mt-2 space-y-1">
-          <li>The email address associated with your account (if applicable)</li>
-          <li>Your in-game username or player ID</li>
-          <li>The device you used to play the game</li>
-          <li>Confirmation that you want all your data permanently deleted</li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    title: "Processing Time",
-    content: (
-      <div>
-        We will process your data deletion request within 14 days of receiving
-        it.
-        <br />
-        <br />
-        Please note that once your data is deleted, this action cannot be
-        undone. You will lose all game progress and any other associated data
-        permanently.
-      </div>
-    ),
-  },
-];
+const CONTACT_EMAIL = "contact@geofastgames.com";
 
-export const DataDeletion = () => {
+const DataDeletion = () => {
+  const content = dataDeletionContent.en;
+  const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+    content.request.emailSubject
+  )}&body=${encodeURIComponent(content.request.emailBody)}`;
+
+  // Start at the top on arrival, unless the URL names a section: then the
+  // browser (direct load) or InternalLinksHandler (in-app) scrolls there.
   useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
-  const emailSubject = encodeURIComponent("Data Deletion Request - Geofast: Battle of Nations");
-  const emailBody = encodeURIComponent(
-    `Hello Geofast Games Support,
-
-I would like to request the complete deletion of my personal data from your systems.
-
-My account details:
-- Email associated with account: [Please fill in]
-- In-game username/Player ID: [Please fill in]
-- Device used: [Please fill in]
-
-I confirm that I want all my data permanently deleted and understand that this action cannot be undone.
-
-Thank you.`
-  );
-
-  const mailtoLink = `mailto:contact@geofastgames.com?subject=${emailSubject}&body=${emailBody}`;
+    if (!window.location.hash) window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section id="data-deletion" className="container py-24 sm:py-32">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Geofast: Battle of Nations
-        <span className="text-primary">
-          {" "}
-          Data Deletion Request{" "}
-        </span>
-      </h2>
+      <h1 className="mb-4 text-3xl font-bold md:text-4xl">
+        {content.gameName}
+        <span className="text-primary"> {content.docName}</span>
+      </h1>
 
-      <p className="text-xl text-muted-foreground mb-8">
-        Last updated: December 1, 2025
-      </p>
+      <p className="mb-8 text-xl text-muted-foreground">{content.lastUpdated}</p>
+
+      <nav aria-label={content.sectionsLabel} className="mb-8 flex flex-wrap gap-2">
+        {content.sections.map(({ id, title }) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className="rounded-full border border-border bg-card px-3 py-1 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+          >
+            {title}
+          </a>
+        ))}
+      </nav>
 
       <div className="space-y-6">
-        {sectionData.map(({ title, content }: SectionProps) => (
-          <Card key={title}>
+        {content.sections.map(({ id, title, blocks }) => (
+          <Card key={id} id={id} className="scroll-mt-20">
             <CardHeader>
               <CardTitle className="text-2xl">{title}</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-muted-foreground text-lg">{content}</div>
+              <div className="space-y-4 text-lg text-muted-foreground">
+                {blocks.map((block, i) => (
+                  <BlockView key={i} block={block} />
+                ))}
+              </div>
             </CardContent>
           </Card>
         ))}
 
-        <Card className="border-primary">
+        {/* The one action on the page, set apart with the accent border. */}
+        <Card id="request" className="scroll-mt-20 border-primary">
           <CardHeader>
-            <CardTitle className="text-2xl">Request Data Deletion Now</CardTitle>
+            <CardTitle className="text-2xl">{content.request.title}</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-muted-foreground text-lg mb-6">
-              Click the button below to open your email client with a pre-filled
-              deletion request. Simply fill in your account details and send.
-            </div>
-            <a href={mailtoLink}>
-              <Button size="lg" className="gap-2">
-                <Mail className="h-5 w-5" />
-                Send Deletion Request
-              </Button>
-            </a>
+            <p className="mb-6 text-lg text-muted-foreground">{content.request.text}</p>
+            <Button asChild size="lg" className="gap-2 rounded-full">
+              <a href={mailto}>
+                <Mail className="h-5 w-5" aria-hidden="true" />
+                {content.request.button}
+              </a>
+            </Button>
           </CardContent>
         </Card>
       </div>
 
-      <PageContact subject="Data deletion" />
+      <PageContact subject={content.docName} text={content.contact} />
     </section>
   );
 };
