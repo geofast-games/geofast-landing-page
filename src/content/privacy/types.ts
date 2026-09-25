@@ -20,6 +20,13 @@ export interface PolicySection {
 
 export interface PrivacyContent {
   lang: PrivacyLang;
+  /**
+   * BCP-47 tag for the html lang attribute and hreflang, when it differs
+   * from the URL key: "zh-Hans", "zh-Hant", "pt-BR". Defaults to lang.
+   */
+  htmlLang?: string;
+  /** Text direction; only Arabic sets it. Rendered on the page and on html. */
+  dir?: "rtl";
   /** Native language name, shown in the language menu. */
   label: string;
   pageTitle: string;

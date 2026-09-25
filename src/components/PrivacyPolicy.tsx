@@ -98,14 +98,20 @@ export const PrivacyPolicy = ({ lang = "en" }: { lang?: PrivacyLang }) => {
     if (!window.location.hash) window.scrollTo(0, 0);
   }, []);
 
-  // The prerendered page already carries the right lang attribute; this keeps
-  // it right after switching language in the browser.
+  // The prerendered page already carries the right lang and dir attributes;
+  // this keeps them right after switching language in the browser. dir is
+  // removed on the way out, so leaving the Arabic page does not leave the
+  // rest of the site right-to-left.
   useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
+    const root = document.documentElement;
+    root.lang = content.htmlLang ?? lang;
+    if (content.dir) root.setAttribute("dir", content.dir);
+    else root.removeAttribute("dir");
+    return () => root.removeAttribute("dir");
+  }, [lang, content.htmlLang, content.dir]);
 
   return (
-    <section id="privacy-policy" className="container py-24 sm:py-32">
+    <section id="privacy-policy" dir={content.dir} className="container py-24 sm:py-32">
       <div className="mb-4 flex flex-wrap items-start justify-between gap-4">
         <h1 className="text-3xl font-bold md:text-4xl">
           {content.gameName}

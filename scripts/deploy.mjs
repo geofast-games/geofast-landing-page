@@ -63,6 +63,11 @@ const run = (script, args) =>
     cwd: ROOT, stdio: "inherit",
   });
 run("typescript/bin/tsc", []);
+// Every privacy translation must have the same sections, tables, lists and
+// links as the English source (scripts/check-privacy-translations.mjs).
+execFileSync(process.execPath, [join(ROOT, "scripts", "check-privacy-translations.mjs")], {
+  cwd: ROOT, stdio: "inherit",
+});
 run("vite/bin/vite.js", ["build"]);
 // Then the legal pages as static files (scripts/prerender.mjs): the store links
 // point at /privacy and friends, which GitHub Pages serves from these.
