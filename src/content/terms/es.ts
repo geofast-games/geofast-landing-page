@@ -210,7 +210,7 @@ export const es: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Para denunciar a un jugador o un contenido que incumpla estas condiciones o la ley, usa el botón «Reportar» en el juego, el formulario de denuncia de nuestra [página de comentarios](/feedback) o escribe a [contact@geofastgames.com](mailto:contact@geofastgames.com). Dinos quién, qué y dónde. Confirmamos que hemos recibido tu denuncia y te informamos de lo que hemos decidido, sin demoras indebidas. Las denuncias las gestionan personas, con ayuda de las herramientas descritas más arriba, de buena fe y sin arbitrariedad.",
+          text: "Para denunciar a un jugador o un contenido que incumpla estas condiciones o la ley, usa el botón «Reportar» en el juego, el [formulario de denuncia de nuestro sitio web](/report) o escribe a [contact@geofastgames.com](mailto:contact@geofastgames.com). Dinos quién, qué y dónde. Confirmamos que hemos recibido tu denuncia y te informamos de lo que hemos decidido, sin demoras indebidas. Las denuncias las gestionan personas, con ayuda de las herramientas descritas más arriba, de buena fe y sin arbitrariedad.",
         },
         {
           type: "p",

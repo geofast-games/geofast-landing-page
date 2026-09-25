@@ -209,7 +209,7 @@ export const pl: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Aby zgłosić gracza lub treści łamiące Regulamin lub prawo, użyj przycisku „Zgłoś” w grze, formularza zgłoszeniowego na naszej [stronie opinii](/feedback) albo napisz na [contact@geofastgames.com](mailto:contact@geofastgames.com). Powiedz nam kto, co i gdzie. Potwierdzamy otrzymanie zgłoszenia i bez zbędnej zwłoki informujemy Cię, co postanowiliśmy. Zgłoszenia rozpatrują ludzie, z pomocą opisanych wyżej narzędzi, w dobrej wierze i bez arbitralności.",
+          text: "Aby zgłosić gracza lub treści łamiące Regulamin lub prawo, użyj przycisku „Zgłoś” w grze, [formularza zgłoszeniowego na naszej stronie internetowej](/report) albo napisz na [contact@geofastgames.com](mailto:contact@geofastgames.com). Powiedz nam kto, co i gdzie. Potwierdzamy otrzymanie zgłoszenia i bez zbędnej zwłoki informujemy Cię, co postanowiliśmy. Zgłoszenia rozpatrują ludzie, z pomocą opisanych wyżej narzędzi, w dobrej wierze i bez arbitralności.",
         },
         {
           type: "p",

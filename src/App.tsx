@@ -24,6 +24,7 @@ import DataDeletion from "./components/DataDeletion";
 import { ReportBugPage } from "./components/ReportBug";
 import { ReportTranslationErrorPage } from "./components/ReportTranslationError";
 import FeedbackPage from "./components/Feedback";
+import ReportPlayerPage from "./components/ReportPlayer";
 import { InternalLinksHandler } from "./components/InternalLinksHandler";
 import { StickyDownload } from "./components/StickyDownload";
 import ResetPasswordPage from "./components/ResetPassword";
@@ -77,8 +78,8 @@ function LocalizedDataDeletion() {
   return <DataDeletion lang={lang} />;
 }
 
-// The form pages are a Google Form in a card. This gives them the page frame
-// and the shared closing block that the legal pages have.
+// The form pages post to our own inbox (src/lib/inbox.ts). This gives them
+// the page frame and the shared closing block that the legal pages have.
 function FormPage({ subject, children }: { subject: string; children: ReactNode }) {
   return (
     <section className="container py-12 sm:py-16">
@@ -123,6 +124,10 @@ export function AppShell() {
         <Route
           path="/reportBug"
           element={<FormPage subject="Bug report"><ReportBugPage /></FormPage>}
+        />
+        <Route
+          path="/report"
+          element={<FormPage subject="Player report"><ReportPlayerPage /></FormPage>}
         />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/?/:page" element={<RedirectHandler />} />

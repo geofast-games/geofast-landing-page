@@ -443,6 +443,10 @@ export const tr: PrivacyContent = {
           type: "p",
           text: "geofastgames.com çerez yerleştirmez ve takip veya analiz komut dosyaları kullanmaz. Ziyaretinizde tarayıcınızdan üç şey çıkar: sayfa yazı tipi Google Fonts'tan yüklenir, dolayısıyla Google IP adresinizi görür; Discord üye sayısı Discord'un herkese açık API'sinden alınır; canlı istatistikler ise kendi sunucumuzdan gelir. Uygulama mağazalarına giden bağlantılar, bir indirmenin bu siteden geldiğini görebilmemiz için bir kampanya etiketi taşır; bu etiket sizi değil, siteyi tanımlar.",
         },
+        {
+          type: "p",
+          text: "Bu sitedeki bir form aracılığıyla bize bir öneri, hata bildirimi, çeviri bildirimi veya oyuncu şikâyeti gönderdiğinizde, girdiğiniz bilgileri, eklediğiniz ekran görüntülerini, zamanı, tarayıcınızın dilini ve IP adresinizin özetlenmiş biçimini AB'deki kendi sunucumuzda saklarız. Bunları mesajınızı okuyup takip etmek ve formların kötüye kullanımını sınırlamak için kullanırız. Kullanıcı adınız ve e-posta adresiniz isteğe bağlıdır; bunları yalnızca size yanıt verebilmemizi istiyorsanız belirtin. Form gönderimleri on iki ay sonra silinir.",
+        },
       ],
     },
     {

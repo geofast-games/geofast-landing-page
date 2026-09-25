@@ -208,7 +208,7 @@ export const sv: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "För att anmäla en spelare eller innehåll som bryter mot dessa villkor eller lagen använder du knappen ”Rapportera” i spelet, anmälningsformuläret på vår [feedbacksida](/feedback) eller skickar e-post till [contact@geofastgames.com](mailto:contact@geofastgames.com). Berätta vem, vad och var. Vi bekräftar att vi har tagit emot din anmälan och meddelar dig vad vi beslutat, utan onödigt dröjsmål. Anmälningar hanteras av människor, med hjälp av verktygen som beskrivs ovan, i god tro och utan godtycke.",
+          text: "För att anmäla en spelare eller innehåll som bryter mot dessa villkor eller lagen använder du knappen ”Rapportera” i spelet, [anmälningsformuläret på vår webbplats](/report) eller skickar e-post till [contact@geofastgames.com](mailto:contact@geofastgames.com). Berätta vem, vad och var. Vi bekräftar att vi har tagit emot din anmälan och meddelar dig vad vi beslutat, utan onödigt dröjsmål. Anmälningar hanteras av människor, med hjälp av verktygen som beskrivs ovan, i god tro och utan godtycke.",
         },
         {
           type: "p",

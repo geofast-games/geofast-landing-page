@@ -208,7 +208,7 @@ export const id: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Untuk melaporkan pemain atau konten yang melanggar Ketentuan ini atau hukum, gunakan tombol “Laporkan” di dalam gim, formulir laporan di [halaman masukan](/feedback) kami, atau kirim email ke [contact@geofastgames.com](mailto:contact@geofastgames.com). Beri tahu kami siapa, apa, dan di mana. Kami mengonfirmasi bahwa kami telah menerima laporan Anda dan memberi tahu Anda apa yang kami putuskan, tanpa penundaan yang tidak semestinya. Laporan ditangani oleh manusia, dengan bantuan alat yang dijelaskan di atas, dengan itikad baik dan tanpa kesewenang-wenangan.",
+          text: "Untuk melaporkan pemain atau konten yang melanggar Ketentuan ini atau hukum, gunakan tombol “Laporkan” di dalam gim, [formulir laporan di situs web kami](/report), atau kirim email ke [contact@geofastgames.com](mailto:contact@geofastgames.com). Beri tahu kami siapa, apa, dan di mana. Kami mengonfirmasi bahwa kami telah menerima laporan Anda dan memberi tahu Anda apa yang kami putuskan, tanpa penundaan yang tidak semestinya. Laporan ditangani oleh manusia, dengan bantuan alat yang dijelaskan di atas, dengan itikad baik dan tanpa kesewenang-wenangan.",
         },
         {
           type: "p",

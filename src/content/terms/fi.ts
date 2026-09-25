@@ -210,7 +210,7 @@ export const fi: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Ilmoittaaksesi pelaajasta tai sisällöstä, joka rikkoo näitä ehtoja tai lakia, käytä pelin ”Raportoi”-painiketta, [palautesivumme](/feedback) ilmoituslomaketta tai lähetä sähköpostia osoitteeseen [contact@geofastgames.com](mailto:contact@geofastgames.com). Kerro meille kuka, mitä ja missä. Vahvistamme, että olemme vastaanottaneet ilmoituksesi, ja kerromme päätöksemme ilman aiheetonta viivytystä. Ilmoitukset käsittelevät ihmiset edellä kuvattujen työkalujen avulla, hyvässä uskossa ja mielivaltaa välttäen.",
+          text: "Ilmoittaaksesi pelaajasta tai sisällöstä, joka rikkoo näitä ehtoja tai lakia, käytä pelin ”Raportoi”-painiketta, [verkkosivustomme ilmoituslomaketta](/report) tai lähetä sähköpostia osoitteeseen [contact@geofastgames.com](mailto:contact@geofastgames.com). Kerro meille kuka, mitä ja missä. Vahvistamme, että olemme vastaanottaneet ilmoituksesi, ja kerromme päätöksemme ilman aiheetonta viivytystä. Ilmoitukset käsittelevät ihmiset edellä kuvattujen työkalujen avulla, hyvässä uskossa ja mielivaltaa välttäen.",
         },
         {
           type: "p",

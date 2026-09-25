@@ -207,7 +207,7 @@ export const de: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Um einen Spieler oder Inhalte zu melden, die gegen diese Nutzungsbedingungen oder das Gesetz verstoßen, nutzen Sie die Schaltfläche „Melden“ im Spiel, das Meldeformular auf unserer [Feedback-Seite](/feedback) oder schreiben Sie an [contact@geofastgames.com](mailto:contact@geofastgames.com). Sagen Sie uns, wer, was und wo. Wir bestätigen den Eingang Ihrer Meldung und teilen Ihnen ohne unangemessene Verzögerung mit, was wir entschieden haben. Meldungen werden von Menschen bearbeitet, mit Hilfe der oben beschriebenen Werkzeuge, nach Treu und Glauben und ohne Willkür.",
+          text: "Um einen Spieler oder Inhalte zu melden, die gegen diese Nutzungsbedingungen oder das Gesetz verstoßen, nutzen Sie die Schaltfläche „Melden“ im Spiel, das [Meldeformular auf unserer Website](/report) oder schreiben Sie an [contact@geofastgames.com](mailto:contact@geofastgames.com). Sagen Sie uns, wer, was und wo. Wir bestätigen den Eingang Ihrer Meldung und teilen Ihnen ohne unangemessene Verzögerung mit, was wir entschieden haben. Meldungen werden von Menschen bearbeitet, mit Hilfe der oben beschriebenen Werkzeuge, nach Treu und Glauben und ohne Willkür.",
         },
         {
           type: "p",

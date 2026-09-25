@@ -217,7 +217,7 @@ export const zhHant: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "要檢舉違反本條款或法律的玩家或內容，請使用遊戲中的「舉報」按鈕、我們[意見回饋頁面](/feedback)上的檢舉表單，或寄電子郵件至[contact@geofastgames.com](mailto:contact@geofastgames.com)。請告訴我們是誰、做了什麼、在哪裡。我們會確認收到您的檢舉，並及時告知您我們的決定。檢舉由人工在上述工具的協助下，以誠信、不武斷的方式處理。",
+          text: "要檢舉違反本條款或法律的玩家或內容，請使用遊戲中的「舉報」按鈕、[我們網站上的檢舉表單](/report)，或寄電子郵件至[contact@geofastgames.com](mailto:contact@geofastgames.com)。請告訴我們是誰、做了什麼、在哪裡。我們會確認收到您的檢舉，並及時告知您我們的決定。檢舉由人工在上述工具的協助下，以誠信、不武斷的方式處理。",
         },
         {
           type: "p",

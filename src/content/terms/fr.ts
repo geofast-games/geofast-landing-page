@@ -209,7 +209,7 @@ export const fr: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Pour signaler un joueur ou un contenu qui enfreint les présentes conditions ou la loi, utilisez le bouton « Signaler » dans le jeu, le formulaire de signalement sur notre [page de feedback](/feedback), ou écrivez à [contact@geofastgames.com](mailto:contact@geofastgames.com). Dites-nous qui, quoi et où. Nous confirmons la réception de votre signalement et vous informons de notre décision sans retard injustifié. Les signalements sont traités par des personnes, avec l'aide des outils décrits ci-dessus, de bonne foi et sans arbitraire.",
+          text: "Pour signaler un joueur ou un contenu qui enfreint les présentes conditions ou la loi, utilisez le bouton « Signaler » dans le jeu, le [formulaire de signalement sur notre site web](/report), ou écrivez à [contact@geofastgames.com](mailto:contact@geofastgames.com). Dites-nous qui, quoi et où. Nous confirmons la réception de votre signalement et vous informons de notre décision sans retard injustifié. Les signalements sont traités par des personnes, avec l'aide des outils décrits ci-dessus, de bonne foi et sans arbitraire.",
         },
         {
           type: "p",

@@ -236,8 +236,8 @@ const PAGES = [
     expect: "Data Deletion",
   },
   // The form pages are opened from inside the game (Settings > feedback links)
-  // and shared in Discord, so they get real pages too. Their content is a
-  // Google Form embed; the page around it is what gets prerendered.
+  // and shared in Discord, so they get real pages too. The forms post to our
+  // own inbox; the empty form is what gets prerendered.
   {
     path: "/feedback",
     file: "feedback.html",
@@ -251,21 +251,28 @@ const PAGES = [
     file: "suggestions.html",
     title: "Suggestions | Geofast: Battle of Nations",
     description: "Suggest a feature or improvement for Geofast: Battle of Nations.",
-    expect: "Suggestion Form",
+    expect: "Make a suggestion",
   },
   {
     path: "/reportBug",
     file: "reportBug.html",
     title: "Report a Bug | Geofast: Battle of Nations",
     description: "Report a bug in Geofast: Battle of Nations.",
-    expect: "Bug Report Form",
+    expect: "Report a bug",
   },
   {
     path: "/reportTranslationError",
     file: "reportTranslationError.html",
     title: "Report a Translation Error | Geofast: Battle of Nations",
     description: "Report a wrong or missing translation in Geofast: Battle of Nations.",
-    expect: "Translation Error Report Form",
+    expect: "Report a translation error",
+  },
+  {
+    path: "/report",
+    file: "report.html",
+    title: "Report a Player | Geofast: Battle of Nations",
+    description: "Report a player for insults, harassment, an offensive username, cheating or match-fixing in Geofast: Battle of Nations.",
+    expect: "Report a player",
   },
   // Not /reset-password: its render depends on the ?token in the URL, which a
   // build cannot know, so a static copy would show the wrong state first.

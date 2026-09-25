@@ -211,7 +211,7 @@ export const pt: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Para denunciar um jogador ou conteúdo que viole estes Termos ou a lei, use o botão “Denunciar” no jogo, o formulário de denúncia na nossa [página de feedback](/feedback), ou envie um e-mail para [contact@geofastgames.com](mailto:contact@geofastgames.com). Diga quem, o quê e onde. Confirmamos que recebemos sua denúncia e informamos o que decidimos, sem demora indevida. As denúncias são tratadas por pessoas, com a ajuda das ferramentas descritas acima, de boa-fé e sem arbitrariedade.",
+          text: "Para denunciar um jogador ou conteúdo que viole estes Termos ou a lei, use o botão “Denunciar” no jogo, o [formulário de denúncia no nosso site](/report), ou envie um e-mail para [contact@geofastgames.com](mailto:contact@geofastgames.com). Diga quem, o quê e onde. Confirmamos que recebemos sua denúncia e informamos o que decidimos, sem demora indevida. As denúncias são tratadas por pessoas, com a ajuda das ferramentas descritas acima, de boa-fé e sem arbitrariedade.",
         },
         {
           type: "p",

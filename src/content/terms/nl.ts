@@ -208,7 +208,7 @@ export const nl: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Om een speler of content te melden die deze voorwaarden of de wet overtreedt, gebruik je de knop 'Rapporteren' in de game, het meldformulier op onze [feedbackpagina](/feedback), of mail je naar [contact@geofastgames.com](mailto:contact@geofastgames.com). Vertel ons wie, wat en waar. We bevestigen dat we je melding hebben ontvangen en laten je zonder onnodige vertraging weten wat we hebben beslist. Meldingen worden afgehandeld door mensen, met behulp van de hierboven beschreven tools, in goed vertrouwen en zonder willekeur.",
+          text: "Om een speler of content te melden die deze voorwaarden of de wet overtreedt, gebruik je de knop 'Rapporteren' in de game, het [meldformulier op onze website](/report), of mail je naar [contact@geofastgames.com](mailto:contact@geofastgames.com). Vertel ons wie, wat en waar. We bevestigen dat we je melding hebben ontvangen en laten je zonder onnodige vertraging weten wat we hebben beslist. Meldingen worden afgehandeld door mensen, met behulp van de hierboven beschreven tools, in goed vertrouwen en zonder willekeur.",
         },
         {
           type: "p",

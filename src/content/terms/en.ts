@@ -202,7 +202,7 @@ export const en: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "To report a player or content that breaks these Terms or the law, use the Report button in the game, the report form on our [feedback page](/feedback), or email [contact@geofastgames.com](mailto:contact@geofastgames.com). Tell us who, what and where. We confirm that we received your report and let you know what we decided, without undue delay. Reports are handled by people, with the help of the tools described above, in good faith and without arbitrariness.",
+          text: "To report a player or content that breaks these Terms or the law, use the Report button in the game, the [report form on our website](/report), or email [contact@geofastgames.com](mailto:contact@geofastgames.com). Tell us who, what and where. We confirm that we received your report and let you know what we decided, without undue delay. Reports are handled by people, with the help of the tools described above, in good faith and without arbitrariness.",
         },
         {
           type: "p",

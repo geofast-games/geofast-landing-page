@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -13,25 +14,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ReportBugPage } from "./ReportBug";
-import { ReportTranslationErrorPage } from "./ReportTranslationError";
-import { SuggestionsPage } from "./Suggestions";
+import { InboxForm } from "./forms/InboxForm";
+import type { FormKind } from "@/content/forms";
+
+const FEEDBACK_KINDS: { value: FormKind; label: string }[] = [
+  { value: "bug", label: "Report a bug" },
+  { value: "translation", label: "Report a translation error" },
+  { value: "suggestion", label: "Make a suggestion" },
+];
 
 const FeedbackPage = () => {
-  const [selectedFeedbackType, setSelectedFeedbackType] = useState<string>("");
-
-  const renderFeedbackForm = () => {
-    switch (selectedFeedbackType) {
-      case "bug":
-        return <ReportBugPage />;
-      case "translation":
-        return <ReportTranslationErrorPage />;
-      case "suggestion":
-        return <SuggestionsPage />;
-      default:
-        return null;
-    }
-  };
+  const [kind, setKind] = useState<FormKind | "">("");
 
   return (
     <div className="space-y-4">
@@ -42,27 +35,33 @@ const FeedbackPage = () => {
             Please select the type of feedback you would like to provide for <em>Geofast: Battle of Nations</em>.
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <Select
-            value={selectedFeedbackType}
-            onValueChange={setSelectedFeedbackType}
-          >
+        <CardContent className="space-y-3">
+          <Select value={kind} onValueChange={(v) => setKind(v as FormKind)}>
             <SelectTrigger className="w-full md:w-[300px]">
               <SelectValue placeholder="Select feedback type" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="bug">Report a bug</SelectItem>
-              <SelectItem value="translation">
-                Report a translation error
-              </SelectItem>
-              <SelectItem value="suggestion">Make a suggestion</SelectItem>
+              {FEEDBACK_KINDS.map((k) => (
+                <SelectItem key={k.value} value={k.value}>
+                  {k.label}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
+          <p className="text-sm text-muted-foreground">
+            Reporting a player or something that happened in the game?{" "}
+            <Link to="/report" className="font-medium text-primary hover:underline">
+              Report a player
+            </Link>
+            .
+          </p>
         </CardContent>
       </Card>
 
-      {selectedFeedbackType && (
-        <div className="mt-6">{renderFeedbackForm()}</div>
+      {kind && (
+        <div className="mt-6">
+          <InboxForm key={kind} kind={kind} />
+        </div>
       )}
     </div>
   );

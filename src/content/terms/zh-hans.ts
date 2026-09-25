@@ -214,7 +214,7 @@ export const zhHans: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "要举报违反本条款或法律的玩家或内容，请使用游戏中的“举报”按钮、我们[反馈页面](/feedback)上的举报表单，或发送电子邮件至[contact@geofastgames.com](mailto:contact@geofastgames.com)。请告诉我们是谁、做了什么、在哪里。我们会确认收到您的举报，并及时告知您我们的决定。举报由人工在上述工具的协助下，以诚信、不武断的方式处理。",
+          text: "要举报违反本条款或法律的玩家或内容，请使用游戏中的“举报”按钮、[我们网站上的举报表单](/report)，或发送电子邮件至[contact@geofastgames.com](mailto:contact@geofastgames.com)。请告诉我们是谁、做了什么、在哪里。我们会确认收到您的举报，并及时告知您我们的决定。举报由人工在上述工具的协助下，以诚信、不武断的方式处理。",
         },
         {
           type: "p",

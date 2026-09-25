@@ -436,6 +436,10 @@ export const nl: PrivacyContent = {
           type: "p",
           text: "geofastgames.com plaatst geen cookies en gebruikt geen tracking- of analysescripts. Drie dingen verlaten je browser bij een bezoek: het lettertype van de pagina wordt geladen van Google Fonts, waardoor Google je IP-adres ziet; het ledenaantal van onze Discord wordt opgehaald via de openbare API van Discord; en de livestatistieken komen van onze eigen server. Links naar de app stores dragen een campagnetag zodat we zien dat een download van deze site kwam; die identificeert de site, niet jou.",
         },
+        {
+          type: "p",
+          text: "Wanneer je ons via een formulier op deze site een suggestie, een bugmelding, een melding over een vertaling of een melding over een speler stuurt, slaan we op wat je hebt ingevuld, de screenshots die je hebt bijgevoegd, het tijdstip, de taal van je browser en een gehashte vorm van je IP-adres op onze eigen server in de EU. We gebruiken dit om je bericht te lezen en op te volgen en om misbruik van de formulieren te beperken. Je gebruikersnaam en e-mailadres zijn optioneel; geef ze alleen op als je wilt dat we kunnen antwoorden. Formulierinzendingen worden na twaalf maanden verwijderd.",
+        },
       ],
     },
     {

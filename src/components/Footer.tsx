@@ -80,6 +80,14 @@ export const Footer = () => {
           </div>
           <div>
             <Link
+              to="/report"
+              className="opacity-60 hover:opacity-100"
+            >
+              Report a player
+            </Link>
+          </div>
+          <div>
+            <Link
               to="/privacy"
               className="opacity-60 hover:opacity-100"
             >

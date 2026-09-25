@@ -57,12 +57,16 @@ export const Navbar = () => {
           <span className="flex md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
+                {/* The label sits next to the icon, not inside it: a <span>
+                    inside <svg> is hoisted out by the HTML parser, so the
+                    prerendered page never matched React's tree and every
+                    prerendered page re-rendered from scratch on load. */}
                 <Menu
                   className="flex md:hidden h-5 w-5"
                   onClick={() => setIsOpen(true)}
-                >
-                  <span className="sr-only">Menu Icon</span>
-                </Menu>
+                  aria-hidden="true"
+                />
+                <span className="sr-only">Menu</span>
               </SheetTrigger>
 
               <SheetContent side={"left"}>

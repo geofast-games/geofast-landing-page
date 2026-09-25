@@ -444,6 +444,10 @@ export const sv: PrivacyContent = {
           type: "p",
           text: "geofastgames.com sätter inga kakor och använder inga spårnings- eller analysskript. Tre saker lämnar din webbläsare när du besöker sidan: sidans typsnitt läses in från Google Fonts, så Google ser din IP-adress; antalet Discord-medlemmar hämtas från Discords publika API; och livestatistiken kommer från vår egen server. Länkarna till appbutikerna bär en kampanjtagg så att vi kan se att en nedladdning kom från den här webbplatsen; den identifierar webbplatsen, inte dig.",
         },
+        {
+          type: "p",
+          text: "När du skickar oss ett förslag, en buggrapport, en rapport om en översättning eller en anmälan av en spelare via ett formulär på den här webbplatsen lagrar vi det du skrev in, de skärmbilder du bifogade, tidpunkten, din webbläsares språk och en hashad form av din IP-adress på vår egen server i EU. Vi använder det för att läsa och följa upp ditt meddelande och för att begränsa missbruk av formulären. Ditt användarnamn och din e-postadress är frivilliga; ange dem bara om du vill att vi ska kunna svara. Det som skickas in via formulären raderas efter tolv månader.",
+        },
       ],
     },
     {

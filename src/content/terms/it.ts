@@ -208,7 +208,7 @@ export const it: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Per segnalare un giocatore o un contenuto che viola questi Termini o la legge, usa il pulsante «Segnala» nel gioco, il modulo di segnalazione sulla nostra [pagina dei feedback](/feedback) oppure scrivi a [contact@geofastgames.com](mailto:contact@geofastgames.com). Dicci chi, cosa e dove. Confermiamo di aver ricevuto la tua segnalazione e ti facciamo sapere cosa abbiamo deciso, senza indebito ritardo. Le segnalazioni vengono gestite da persone, con l'aiuto degli strumenti descritti sopra, in buona fede e senza arbitrarietà.",
+          text: "Per segnalare un giocatore o un contenuto che viola questi Termini o la legge, usa il pulsante «Segnala» nel gioco, il [modulo di segnalazione sul nostro sito web](/report) oppure scrivi a [contact@geofastgames.com](mailto:contact@geofastgames.com). Dicci chi, cosa e dove. Confermiamo di aver ricevuto la tua segnalazione e ti facciamo sapere cosa abbiamo deciso, senza indebito ritardo. Le segnalazioni vengono gestite da persone, con l'aiuto degli strumenti descritti sopra, in buona fede e senza arbitrarietà.",
         },
         {
           type: "p",

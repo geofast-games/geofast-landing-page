@@ -1,11 +1,3 @@
-import GoogleFormIntegration from "./GoogleFormIntegration";
+import { InboxForm } from "./forms/InboxForm";
 
-export const ReportBugPage = () => {
-  return (
-    <GoogleFormIntegration
-      formUrl="https://docs.google.com/forms/d/e/1FAIpQLScNO8Cct6dusU_A1kd0JVeERB2YjFXMQ3GjOmtEq1ojRftgxA/viewform"
-      title="Bug Report Form"
-      description="We will fix it soon!"
-    />
-  );
-};
+export const ReportBugPage = () => <InboxForm kind="bug" />;

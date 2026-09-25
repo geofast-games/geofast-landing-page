@@ -435,6 +435,10 @@ export const de: PrivacyContent = {
           type: "p",
           text: "geofastgames.com setzt keine Cookies und verwendet keine Tracking- oder Analyseskripte. Drei Dinge verlassen Ihren Browser bei einem Besuch: Die Schrift der Seite wird von Google Fonts geladen, sodass Google Ihre IP-Adresse sieht; die Mitgliederzahl unseres Discord-Servers wird über die öffentliche API von Discord abgerufen; und die Live-Statistiken kommen von unserem eigenen Server. Links zu den App Stores tragen eine Kampagnenkennung, damit wir sehen, dass ein Download von dieser Website kam; sie identifiziert die Website, nicht Sie.",
         },
+        {
+          type: "p",
+          text: "Wenn Sie uns über ein Formular auf dieser Website einen Vorschlag, einen Fehlerbericht, einen Hinweis zu einer Übersetzung oder eine Meldung über einen Spieler schicken, speichern wir Ihre Eingaben, die von Ihnen angehängten Screenshots, den Zeitpunkt, die Sprache Ihres Browsers und eine gehashte Form Ihrer IP-Adresse auf unserem eigenen Server in der EU. Wir verwenden diese Daten, um Ihre Nachricht zu lesen und zu bearbeiten und um Missbrauch der Formulare zu begrenzen. Ihr Benutzername und Ihre E-Mail-Adresse sind freiwillig; geben Sie sie nur an, wenn Sie möchten, dass wir Ihnen antworten können. Formulareinsendungen werden nach zwölf Monaten gelöscht.",
+        },
       ],
     },
     {

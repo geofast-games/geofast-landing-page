@@ -444,6 +444,10 @@ export const id: PrivacyContent = {
           type: "p",
           text: "geofastgames.com tidak memasang cookie dan tidak menggunakan skrip pelacakan atau analitik. Tiga hal keluar dari peramban Anda saat berkunjung: fon halaman dimuat dari Google Fonts, sehingga Google melihat alamat IP Anda; jumlah anggota Discord diambil dari API publik Discord; dan statistik langsung berasal dari server kami sendiri. Tautan ke toko aplikasi membawa tag kampanye agar kami dapat melihat bahwa suatu unduhan berasal dari situs ini, yang mengidentifikasi situs, bukan Anda.",
         },
+        {
+          type: "p",
+          text: "Saat Anda mengirimkan saran, laporan bug, laporan terjemahan, atau laporan pemain kepada kami melalui formulir di situs ini, kami menyimpan apa yang Anda masukkan, tangkapan layar yang Anda lampirkan, waktunya, bahasa peramban Anda, dan alamat IP Anda dalam bentuk hash di server kami sendiri di UE. Kami menggunakannya untuk membaca dan menindaklanjuti pesan Anda serta untuk membatasi penyalahgunaan formulir. Nama pengguna dan alamat email Anda bersifat opsional; berikan hanya jika Anda ingin kami dapat membalas. Kiriman formulir dihapus setelah dua belas bulan.",
+        },
       ],
     },
     {

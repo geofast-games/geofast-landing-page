@@ -437,6 +437,10 @@ export const en: PrivacyContent = {
           type: "p",
           text: "geofastgames.com sets no cookies and uses no tracking or analytics scripts. Three things do leave your browser when you visit: the page font is loaded from Google Fonts, so Google sees your IP address; the Discord member count is fetched from Discord's public API; and the live statistics come from our own server. Links to the app stores carry a campaign tag so we can see that a download came from this site, which identifies the site, not you.",
         },
+        {
+          type: "p",
+          text: "When you send us a suggestion, a bug report, a translation report or a player report through a form on this site, we store what you entered, any screenshots you attached, the time, your browser language and a hashed form of your IP address on our own server in the EU. We use it to read and follow up on your message and to limit abuse of the forms. Your username and email address are optional; give them only if you want us to be able to reply. Form submissions are deleted after twelve months.",
+        },
       ],
     },
     {

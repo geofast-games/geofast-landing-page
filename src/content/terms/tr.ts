@@ -212,7 +212,7 @@ export const tr: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Bu Şartları veya yasayı ihlal eden bir oyuncuyu ya da içeriği şikâyet etmek için oyundaki “Rapor Et” düğmesini, [geri bildirim sayfamızdaki](/feedback) şikâyet formunu kullanın veya [contact@geofastgames.com](mailto:contact@geofastgames.com) adresine e-posta gönderin. Bize kimi, neyi ve nerede olduğunu söyleyin. Şikâyetinizi aldığımızı onaylar ve ne karar verdiğimizi gereksiz gecikme olmaksızın size bildiririz. Şikâyetler, yukarıda açıklanan araçların yardımıyla, iyi niyetle ve keyfilikten uzak biçimde insanlar tarafından ele alınır.",
+          text: "Bu Şartları veya yasayı ihlal eden bir oyuncuyu ya da içeriği şikâyet etmek için oyundaki “Rapor Et” düğmesini, [web sitemizdeki şikâyet formunu](/report) kullanın veya [contact@geofastgames.com](mailto:contact@geofastgames.com) adresine e-posta gönderin. Bize kimi, neyi ve nerede olduğunu söyleyin. Şikâyetinizi aldığımızı onaylar ve ne karar verdiğimizi gereksiz gecikme olmaksızın size bildiririz. Şikâyetler, yukarıda açıklanan araçların yardımıyla, iyi niyetle ve keyfilikten uzak biçimde insanlar tarafından ele alınır.",
         },
         {
           type: "p",

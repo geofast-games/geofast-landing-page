@@ -444,6 +444,10 @@ export const fi: PrivacyContent = {
           type: "p",
           text: "geofastgames.com ei aseta evästeitä eikä käytä seuranta- tai analytiikkaskriptejä. Vierailusi aikana selaimestasi lähtee kolme asiaa: sivun fontti ladataan Google Fontsista, joten Google näkee IP-osoitteesi; Discord-jäsenmäärä haetaan Discordin julkisesta API:sta; ja live-tilastot tulevat omalta palvelimeltamme. Sovelluskauppoihin johtavissa linkeissä on kampanjatunniste, jotta näemme, että lataus tuli tältä sivustolta; se tunnistaa sivuston, ei sinua.",
         },
+        {
+          type: "p",
+          text: "Kun lähetät meille ehdotuksen, virheilmoituksen, käännöstä koskevan ilmoituksen tai ilmoituksen pelaajasta tällä sivustolla olevan lomakkeen kautta, tallennamme syöttämäsi tiedot, liittämäsi kuvakaappaukset, ajankohdan, selaimesi kielen ja IP-osoitteesi tiivisteenä omalle palvelimellemme EU:ssa. Käytämme niitä viestisi lukemiseen ja käsittelyyn sekä lomakkeiden väärinkäytön rajoittamiseen. Käyttäjänimesi ja sähköpostiosoitteesi ovat vapaaehtoisia; anna ne vain, jos haluat, että voimme vastata sinulle. Lomakkeilla lähetetyt tiedot poistetaan kahdentoista kuukauden kuluttua.",
+        },
       ],
     },
     {
