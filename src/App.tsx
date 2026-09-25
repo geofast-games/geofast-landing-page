@@ -27,6 +27,8 @@ import FeedbackPage from "./components/Feedback";
 import { InternalLinksHandler } from "./components/InternalLinksHandler";
 import { StickyDownload } from "./components/StickyDownload";
 import ResetPasswordPage from "./components/ResetPassword";
+import { PageContact } from "./components/PageContact";
+import type { ReactNode } from "react";
 
 function Home() {
   return (
@@ -48,6 +50,17 @@ function RedirectHandler() {
   return <Navigate to={`/${page}`} replace />;
 }
 
+// The form pages are a Google Form in a card. This gives them the page frame
+// and the shared closing block that the legal pages have.
+function FormPage({ subject, children }: { subject: string; children: ReactNode }) {
+  return (
+    <section className="container py-12 sm:py-16">
+      {children}
+      <PageContact subject={subject} />
+    </section>
+  );
+}
+
 // Everything except the router itself. The browser wraps this in a
 // BrowserRouter (below); the build-time prerender wraps the same tree in a
 // StaticRouter (src/entry-prerender.tsx), so both render identical pages.
@@ -61,13 +74,26 @@ export function AppShell() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/termsofservice" element={<TermsOfService />} />
         <Route path="/datadeletion" element={<DataDeletion />} />
-        <Route path="/feedback" element={<FeedbackPage />} />
-        <Route path="/suggestions" element={<SuggestionsPage />} />
+        <Route
+          path="/feedback"
+          element={<FormPage subject="Feedback"><FeedbackPage /></FormPage>}
+        />
+        <Route
+          path="/suggestions"
+          element={<FormPage subject="Suggestion"><SuggestionsPage /></FormPage>}
+        />
         <Route
           path="/reportTranslationError"
-          element={<ReportTranslationErrorPage />}
+          element={
+            <FormPage subject="Translation error">
+              <ReportTranslationErrorPage />
+            </FormPage>
+          }
         />
-        <Route path="/reportBug" element={<ReportBugPage />} />
+        <Route
+          path="/reportBug"
+          element={<FormPage subject="Bug report"><ReportBugPage /></FormPage>}
+        />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/?/:page" element={<RedirectHandler />} />
       </Routes>

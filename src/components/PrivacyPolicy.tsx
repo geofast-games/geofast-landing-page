@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageContact } from "./PageContact";
 import { useLayoutEffect } from "react";
 
 interface PolicySectionProps {
@@ -225,23 +226,7 @@ export const PrivacyPolicy = () => {
         ))}
       </div>
 
-      <div className="mt-12 text-muted-foreground text-center">
-        <p>
-          If you have any questions about this Privacy Policy, please contact us
-          at:{" "}
-          <a
-            href="mailto:contact@geofastgames.com"
-            className="text-primary hover:underline"
-          >
-            contact@geofastgames.com
-          </a>
-        </p>
-        <p className="mt-4">
-          <a href="/" className="text-primary hover:underline">
-            Back to Geofast Games
-          </a>
-        </p>
-      </div>
+      <PageContact subject="Privacy Policy" />
     </section>
   );
 };

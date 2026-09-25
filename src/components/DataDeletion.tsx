@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageContact } from "./PageContact";
 import { Button } from "@/components/ui/button";
 import { useLayoutEffect } from "react";
 import { Mail } from "lucide-react";
@@ -144,18 +145,7 @@ Thank you.`
         </Card>
       </div>
 
-      <div className="mt-12 text-muted-foreground text-center">
-        <p>
-          If you have any questions about data deletion, please contact us at:{" "}
-          <a
-            href="mailto:contact@geofastgames.com"
-            className="text-primary hover:underline"
-          >
-            contact@geofastgames.com
-          </a>
-          .
-        </p>
-      </div>
+      <PageContact subject="Data deletion" />
     </section>
   );
 };

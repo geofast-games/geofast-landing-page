@@ -34,7 +34,7 @@ const FeedbackPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 space-y-4">
+    <div className="space-y-4">
       <Card>
         <CardHeader>
           <CardTitle>Feedback Center</CardTitle>
