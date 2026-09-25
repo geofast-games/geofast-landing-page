@@ -30,8 +30,10 @@ const SITE = "https://geofastgames.com";
 // One entry per prerendered route. `expect` is text the rendered page must
 // contain, so an empty or wrong render fails the build instead of shipping.
 const PAGES = [
-  // The privacy policy exists in four languages. `group` ties the variants
-  // together for hreflang links; `lang` sets the page's html lang attribute.
+  // The privacy policy exists in eighteen languages. `group` ties the
+  // variants together for hreflang links; `lang` is the BCP-47 tag that goes
+  // into the html lang attribute and hreflang (zh-Hans, pt-BR), which is why
+  // it can differ from the URL segment; `dir` marks the right-to-left page.
   {
     path: "/privacy",
     file: "privacy.html",
@@ -71,6 +73,147 @@ const PAGES = [
     description:
       "Quelles données Geofast: Battle of Nations collecte, comment elles sont utilisées, avec qui elles sont partagées et comment en demander la suppression.",
     expect: "Politique de confidentialité",
+  },
+  {
+    path: "/id/privacy",
+    file: "id/privacy.html",
+    lang: "id",
+    group: "privacy",
+    title: "Kebijakan Privasi | Geofast: Battle of Nations",
+    description:
+      "Data apa yang dikumpulkan Geofast: Battle of Nations, bagaimana data itu digunakan, dengan siapa dibagikan, dan cara meminta penghapusan.",
+    expect: "Kebijakan Privasi",
+  },
+  {
+    path: "/es/privacy",
+    file: "es/privacy.html",
+    lang: "es",
+    group: "privacy",
+    title: "Política de privacidad | Geofast: Battle of Nations",
+    description:
+      "Qué datos recoge Geofast: Battle of Nations, cómo se usan, con quién se comparten y cómo solicitar su supresión.",
+    expect: "Política de privacidad",
+  },
+  {
+    path: "/it/privacy",
+    file: "it/privacy.html",
+    lang: "it",
+    group: "privacy",
+    title: "Informativa sulla privacy | Geofast: Battle of Nations",
+    description:
+      "Quali dati raccoglie Geofast: Battle of Nations, come vengono usati, con chi vengono condivisi e come chiederne la cancellazione.",
+    expect: "Informativa sulla privacy",
+  },
+  {
+    path: "/pl/privacy",
+    file: "pl/privacy.html",
+    lang: "pl",
+    group: "privacy",
+    title: "Polityka prywatności | Geofast: Battle of Nations",
+    description:
+      "Jakie dane zbiera Geofast: Battle of Nations, jak są wykorzystywane, komu są udostępniane i jak zażądać ich usunięcia.",
+    expect: "Polityka prywatności",
+  },
+  {
+    path: "/pt/privacy",
+    file: "pt/privacy.html",
+    lang: "pt-BR",
+    group: "privacy",
+    title: "Política de Privacidade | Geofast: Battle of Nations",
+    description:
+      "Quais dados o Geofast: Battle of Nations coleta, como são usados, com quem são compartilhados e como solicitar a exclusão.",
+    expect: "Política de Privacidade",
+  },
+  {
+    path: "/fi/privacy",
+    file: "fi/privacy.html",
+    lang: "fi",
+    group: "privacy",
+    title: "Tietosuojakäytäntö | Geofast: Battle of Nations",
+    description:
+      "Mitä tietoja Geofast: Battle of Nations kerää, miten niitä käytetään, kenelle niitä luovutetaan ja miten pyydät niiden poistamista.",
+    expect: "Tietosuojakäytäntö",
+  },
+  {
+    path: "/sv/privacy",
+    file: "sv/privacy.html",
+    lang: "sv",
+    group: "privacy",
+    title: "Integritetspolicy | Geofast: Battle of Nations",
+    description:
+      "Vilka uppgifter Geofast: Battle of Nations samlar in, hur de används, vem de delas med och hur du begär radering.",
+    expect: "Integritetspolicy",
+  },
+  {
+    path: "/tr/privacy",
+    file: "tr/privacy.html",
+    lang: "tr",
+    group: "privacy",
+    title: "Gizlilik Politikası | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nations hangi verileri toplar, bunları nasıl kullanır, kimlerle paylaşır ve silinmelerini nasıl talep edebilirsiniz.",
+    expect: "Gizlilik Politikası",
+  },
+  {
+    path: "/ru/privacy",
+    file: "ru/privacy.html",
+    lang: "ru",
+    group: "privacy",
+    title: "Политика конфиденциальности | Geofast: Battle of Nations",
+    description:
+      "Какие данные собирает Geofast: Battle of Nations, как они используются, кому передаются и как запросить их удаление.",
+    expect: "Политика конфиденциальности",
+  },
+  {
+    path: "/ar/privacy",
+    file: "ar/privacy.html",
+    lang: "ar",
+    dir: "rtl",
+    group: "privacy",
+    title: "سياسة الخصوصية | Geofast: Battle of Nations",
+    description:
+      "ما البيانات التي تجمعها Geofast: Battle of Nations، وكيف تُستخدم، ومع من تُشارك، وكيف تطلب حذفها.",
+    expect: "سياسة الخصوصية",
+  },
+  {
+    path: "/ko/privacy",
+    file: "ko/privacy.html",
+    lang: "ko",
+    group: "privacy",
+    title: "개인정보 처리방침 | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nations가 수집하는 데이터, 그 이용 방법, 공유 대상, 삭제 요청 방법을 안내합니다.",
+    expect: "개인정보 처리방침",
+  },
+  {
+    path: "/ja/privacy",
+    file: "ja/privacy.html",
+    lang: "ja",
+    group: "privacy",
+    title: "プライバシーポリシー | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nationsが収集するデータ、その利用方法、共有先、削除の請求方法について説明します。",
+    expect: "プライバシーポリシー",
+  },
+  {
+    path: "/zh-hans/privacy",
+    file: "zh-hans/privacy.html",
+    lang: "zh-Hans",
+    group: "privacy",
+    title: "隐私政策 | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nations 收集哪些数据、如何使用、与谁共享，以及如何申请删除。",
+    expect: "隐私政策",
+  },
+  {
+    path: "/zh-hant/privacy",
+    file: "zh-hant/privacy.html",
+    lang: "zh-Hant",
+    group: "privacy",
+    title: "隱私政策 | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nations 收集哪些資料、如何使用、與誰分享，以及如何申請刪除。",
+    expect: "隱私政策",
   },
   {
     path: "/termsofservice",
@@ -162,14 +305,17 @@ const esc = (s) =>
 // Replace the middle group of a three-group pattern, refusing to continue if
 // the template no longer has the tag: a silent miss would ship the home page's
 // title on a legal page.
-const set = (html, re, value) => {
+const set = (html, re, value, escape = true) => {
   if (!re.test(html)) die(`index.html lost the tag matched by ${re}`);
-  return html.replace(re, `$1${esc(value)}$3`);
+  return html.replace(re, `$1${escape ? esc(value) : value}$3`);
 };
 
 const withMeta = (html, page) => {
   const url = `${SITE}${page.path}`;
-  html = set(html, /(<html lang=")([^"]*)(")/, page.lang ?? "en");
+  // <html lang="en"> becomes <html lang="ar" dir="rtl"> for a right-to-left
+  // page; the browser lays the whole document out from the right then.
+  html = set(html, /(<html lang=")([^"]*)(">)/, page.lang ?? "en");
+  if (page.dir) html = set(html, /(<html lang="[^"]*")()(>)/, ` dir="${page.dir}"`, false);
   html = set(html, /(<title>)([^<]*)(<\/title>)/, page.title);
   html = set(html, /(<meta\s+name="title"\s+content=")([^"]*)(")/, page.title);
   html = set(html, /(<meta\s+name="description"\s+content=")([^"]*)(")/, page.description);
