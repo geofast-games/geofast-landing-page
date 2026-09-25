@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/select";
 import { PageContact } from "./PageContact";
 import { RichText } from "./RichText";
+import { livePillClass } from "@/lib/ui";
 import {
   privacyContent,
   privacyLangs,
@@ -114,13 +115,20 @@ export const PrivacyPolicy = ({ lang = "en" }: { lang?: PrivacyLang }) => {
         {/* Radix renders the selected item's text only after mount, so the
             label is passed explicitly: the prerendered page shows it too. */}
         <Select value={lang} onValueChange={(next) => navigate(privacyPath(next as PrivacyLang))}>
+          {/* Styled as the site's live pills (the store rating chips in the
+              reviews section): soft green tint that deepens on hover and on
+              press. Plus a small globe motion and the chevron (the trigger's
+              last svg) flipping while the menu is open. */}
           <SelectTrigger
-            className="w-[11rem] focus:ring-0 focus:ring-offset-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className={`${livePillClass} h-10 w-[11rem] justify-between border-0 focus:ring-0 focus:ring-offset-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&>svg:last-child]:opacity-100 [&>svg:last-child]:transition-transform [&[data-state=open]>svg:last-child]:rotate-180`}
             aria-label={content.languageLabel}
             onPointerDown={() => (openedByPointer.current = true)}
             onKeyDown={() => (openedByPointer.current = false)}
           >
-            <Globe className="mr-2 h-4 w-4 shrink-0 opacity-70" aria-hidden="true" />
+            <Globe
+              className="mr-1 h-4 w-4 shrink-0 transition-transform duration-300 group-hover:rotate-[20deg]"
+              aria-hidden="true"
+            />
             <SelectValue>{content.label}</SelectValue>
           </SelectTrigger>
           <SelectContent
