@@ -228,6 +228,8 @@ const PAGES = [
   {
     path: "/datadeletion",
     file: "datadeletion.html",
+    lang: "en",
+    group: "datadeletion",
     title: "Data Deletion Request | Geofast: Battle of Nations",
     description:
       "How to request deletion of your Geofast: Battle of Nations account and data.",
@@ -443,6 +445,182 @@ const PAGES = [
     description:
       "Geofast: Battle of Nations 的遊戲規則：帳戶、行為規範、管理與申訴、購買與戰鬥通行證、條款變更以及您的權利。",
     expect: "服務條款",
+  },
+
+  // The data deletion page in the same seventeen languages, at
+  // /<lang>/datadeletion. `group: "datadeletion"` ties them together for
+  // hreflang, separately from the privacy and terms pages; `lang` is the
+  // BCP-47 tag; `expect` is the translated document name.
+  {
+    path: "/id/datadeletion",
+    file: "id/datadeletion.html",
+    lang: "id",
+    group: "datadeletion",
+    title: "Permintaan Penghapusan Data | Geofast: Battle of Nations",
+    description:
+      "Cara menghapus akun dan data pribadi Anda di Geofast: Battle of Nations, di dalam gim atau melalui email, apa yang dihapus, apa yang disimpan, dan berapa lama prosesnya.",
+    expect: "Permintaan Penghapusan Data",
+  },
+  {
+    path: "/de/datadeletion",
+    file: "de/datadeletion.html",
+    lang: "de",
+    group: "datadeletion",
+    title: "Antrag auf Datenlöschung | Geofast: Battle of Nations",
+    description:
+      "Wie Sie Ihr Konto und Ihre personenbezogenen Daten bei Geofast: Battle of Nations löschen, im Spiel oder per E-Mail, was gelöscht wird, was bleibt und wie lange es dauert.",
+    expect: "Antrag auf Datenlöschung",
+  },
+  {
+    path: "/es/datadeletion",
+    file: "es/datadeletion.html",
+    lang: "es",
+    group: "datadeletion",
+    title: "Solicitud de eliminación de datos | Geofast: Battle of Nations",
+    description:
+      "Cómo eliminar tu cuenta y tus datos personales de Geofast: Battle of Nations, en el juego o por correo electrónico, qué se elimina, qué se conserva y cuánto tarda.",
+    expect: "Solicitud de eliminación de datos",
+  },
+  {
+    path: "/fr/datadeletion",
+    file: "fr/datadeletion.html",
+    lang: "fr",
+    group: "datadeletion",
+    title: "Demande de suppression des données | Geofast: Battle of Nations",
+    description:
+      "Comment supprimer votre compte Geofast: Battle of Nations et vos données personnelles, dans le jeu ou par e-mail, ce qui est supprimé, ce qui est conservé et combien de temps cela prend.",
+    expect: "Demande de suppression des données",
+  },
+  {
+    path: "/it/datadeletion",
+    file: "it/datadeletion.html",
+    lang: "it",
+    group: "datadeletion",
+    title: "Richiesta di cancellazione dei dati | Geofast: Battle of Nations",
+    description:
+      "Come eliminare il tuo account e i tuoi dati personali di Geofast: Battle of Nations, nel gioco o via e-mail, cosa viene eliminato, cosa viene conservato e quanto tempo occorre.",
+    expect: "Richiesta di cancellazione dei dati",
+  },
+  {
+    path: "/nl/datadeletion",
+    file: "nl/datadeletion.html",
+    lang: "nl",
+    group: "datadeletion",
+    title: "Verzoek tot gegevensverwijdering | Geofast: Battle of Nations",
+    description:
+      "Hoe je je account en persoonsgegevens bij Geofast: Battle of Nations verwijdert, in de game of per e-mail, wat er wordt verwijderd, wat we bewaren en hoe lang het duurt.",
+    expect: "Verzoek tot gegevensverwijdering",
+  },
+  {
+    path: "/pl/datadeletion",
+    file: "pl/datadeletion.html",
+    lang: "pl",
+    group: "datadeletion",
+    title: "Wniosek o usunięcie danych | Geofast: Battle of Nations",
+    description:
+      "Jak usunąć konto i dane osobowe w Geofast: Battle of Nations, w grze lub przez e-mail, co jest usuwane, co zachowujemy i jak długo to trwa.",
+    expect: "Wniosek o usunięcie danych",
+  },
+  {
+    path: "/pt/datadeletion",
+    file: "pt/datadeletion.html",
+    lang: "pt-BR",
+    group: "datadeletion",
+    title: "Solicitação de exclusão de dados | Geofast: Battle of Nations",
+    description:
+      "Como excluir sua conta e seus dados pessoais no Geofast: Battle of Nations, no jogo ou por e-mail, o que é excluído, o que é mantido e quanto tempo leva.",
+    expect: "Solicitação de exclusão de dados",
+  },
+  {
+    path: "/fi/datadeletion",
+    file: "fi/datadeletion.html",
+    lang: "fi",
+    group: "datadeletion",
+    title: "Tietojen poistopyyntö | Geofast: Battle of Nations",
+    description:
+      "Miten poistat Geofast: Battle of Nations -tilisi ja henkilötietosi pelissä tai sähköpostilla, mitä poistetaan, mitä säilytetään ja kuinka kauan se kestää.",
+    expect: "Tietojen poistopyyntö",
+  },
+  {
+    path: "/sv/datadeletion",
+    file: "sv/datadeletion.html",
+    lang: "sv",
+    group: "datadeletion",
+    title: "Begäran om radering av uppgifter | Geofast: Battle of Nations",
+    description:
+      "Hur du raderar ditt konto och dina personuppgifter i Geofast: Battle of Nations, i spelet eller via e-post, vad som raderas, vad som sparas och hur lång tid det tar.",
+    expect: "Begäran om radering av uppgifter",
+  },
+  {
+    path: "/tr/datadeletion",
+    file: "tr/datadeletion.html",
+    lang: "tr",
+    group: "datadeletion",
+    title: "Veri Silme Talebi | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nations hesabınızı ve kişisel verilerinizi oyun içinden veya e-postayla nasıl silersiniz, neler silinir, neler saklanır ve ne kadar sürer.",
+    expect: "Veri Silme Talebi",
+  },
+  {
+    path: "/ru/datadeletion",
+    file: "ru/datadeletion.html",
+    lang: "ru",
+    group: "datadeletion",
+    title: "Запрос на удаление данных | Geofast: Battle of Nations",
+    description:
+      "Как удалить аккаунт и персональные данные в Geofast: Battle of Nations — в игре или по электронной почте, что удаляется, что сохраняется и сколько это занимает.",
+    expect: "Запрос на удаление данных",
+  },
+  {
+    path: "/ar/datadeletion",
+    file: "ar/datadeletion.html",
+    lang: "ar",
+    dir: "rtl",
+    group: "datadeletion",
+    title: "طلب حذف البيانات | Geofast: Battle of Nations",
+    description:
+      "كيف تحذف حسابك وبياناتك الشخصية في Geofast: Battle of Nations، داخل اللعبة أو عبر البريد الإلكتروني، وما يُحذف، وما يُحتفظ به، وكم يستغرق ذلك.",
+    expect: "طلب حذف البيانات",
+  },
+  {
+    path: "/ko/datadeletion",
+    file: "ko/datadeletion.html",
+    lang: "ko",
+    group: "datadeletion",
+    title: "데이터 삭제 요청 | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nations 계정과 개인정보를 게임 내에서 또는 이메일로 삭제하는 방법, 삭제되는 항목, 유지되는 항목, 소요 기간을 안내합니다.",
+    expect: "데이터 삭제 요청",
+  },
+  {
+    path: "/ja/datadeletion",
+    file: "ja/datadeletion.html",
+    lang: "ja",
+    group: "datadeletion",
+    title: "データ削除の請求 | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nationsのアカウントと個人データをゲーム内またはメールで削除する方法、削除されるもの、保持されるもの、所要期間について説明します。",
+    expect: "データ削除の請求",
+  },
+  {
+    path: "/zh-hans/datadeletion",
+    file: "zh-hans/datadeletion.html",
+    lang: "zh-Hans",
+    group: "datadeletion",
+    title: "数据删除请求 | Geofast: Battle of Nations",
+    description:
+      "如何在游戏内或通过电子邮件删除您的 Geofast: Battle of Nations 账户和个人数据，哪些内容会被删除，哪些会被保留，以及需要多长时间。",
+    expect: "数据删除请求",
+  },
+  {
+    path: "/zh-hant/datadeletion",
+    file: "zh-hant/datadeletion.html",
+    lang: "zh-Hant",
+    group: "datadeletion",
+    title: "資料刪除請求 | Geofast: Battle of Nations",
+    description:
+      "如何在遊戲內或透過電子郵件刪除您的 Geofast: Battle of Nations 帳戶和個人資料，哪些內容會被刪除，哪些會被保留，以及需要多長時間。",
+    expect: "資料刪除請求",
   },
 ];
 

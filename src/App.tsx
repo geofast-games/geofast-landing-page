@@ -30,6 +30,7 @@ import ResetPasswordPage from "./components/ResetPassword";
 import { PageContact } from "./components/PageContact";
 import { isPrivacyLang } from "@/content/privacy";
 import { isTermsLang } from "@/content/terms";
+import { isDataDeletionLang } from "@/content/datadeletion";
 import type { ReactNode } from "react";
 
 function Home() {
@@ -68,6 +69,14 @@ function LocalizedTermsOfService() {
   return <TermsOfService lang={lang} />;
 }
 
+// /de/datadeletion and friends, the same way. English stays at
+// /datadeletion, the URL the app stores link to.
+function LocalizedDataDeletion() {
+  const { lang } = useParams();
+  if (!isDataDeletionLang(lang) || lang === "en") return <Navigate to="/datadeletion" replace />;
+  return <DataDeletion lang={lang} />;
+}
+
 // The form pages are a Google Form in a card. This gives them the page frame
 // and the shared closing block that the legal pages have.
 function FormPage({ subject, children }: { subject: string; children: ReactNode }) {
@@ -94,6 +103,7 @@ export function AppShell() {
         <Route path="/termsofservice" element={<TermsOfService />} />
         <Route path="/:lang/termsofservice" element={<LocalizedTermsOfService />} />
         <Route path="/datadeletion" element={<DataDeletion />} />
+        <Route path="/:lang/datadeletion" element={<LocalizedDataDeletion />} />
         <Route
           path="/feedback"
           element={<FormPage subject="Feedback"><FeedbackPage /></FormPage>}
