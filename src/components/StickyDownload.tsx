@@ -1,37 +1,37 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DownloadMenu } from "./DownloadMenu";
 
-// Mobile-only bar that follows the reader down the page. It stays away while
-// the hero is on screen, because the hero already carries both store badges,
-// and slides up once the reader has passed them and has no download link in
-// reach any more.
+// Mobile-only bar that follows the reader down the home page. It stays away
+// while the hero is on screen, because the hero already carries both store
+// badges, and slides up once the reader has passed them and has no download
+// link in reach any more. Home page only: on the legal and form pages a
+// download prompt is noise, and those pages are prerendered, so the bar must
+// render the same (nothing) on the server and in the browser.
 export const StickyDownload = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   const [dismissed, setDismissed] = useState(false);
   const [showBar, setShowBar] = useState(false);
 
   useEffect(() => {
+    if (!isHome) return;
     // Tied to the hero itself rather than a pixel count: section heights move
     // every time the page is edited, and a hardcoded threshold silently
     // stops meaning what it was set to mean.
     const hero = document.getElementById("battleofnations");
-    if (hero) {
-      const observer = new IntersectionObserver(
-        ([entry]) => setShowBar(!entry.isIntersecting),
-        { threshold: 0 }
-      );
-      observer.observe(hero);
-      return () => observer.disconnect();
-    }
-    // Pages without a hero (privacy, terms) get a plain distance fallback.
-    const onScroll = () => setShowBar(window.scrollY > 600);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    if (!hero) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowBar(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, [isHome]);
 
-  if (dismissed) return null;
+  if (!isHome || dismissed) return null;
 
   return (
     <div

@@ -28,6 +28,7 @@ import { InternalLinksHandler } from "./components/InternalLinksHandler";
 import { StickyDownload } from "./components/StickyDownload";
 import ResetPasswordPage from "./components/ResetPassword";
 import { PageContact } from "./components/PageContact";
+import { isPrivacyLang } from "@/content/privacy";
 import type { ReactNode } from "react";
 
 function Home() {
@@ -48,6 +49,14 @@ function Home() {
 function RedirectHandler() {
   const { page } = useParams();
   return <Navigate to={`/${page}`} replace />;
+}
+
+// /de/privacy, /nl/privacy, /fr/privacy. English stays at /privacy, the URL
+// the app stores link to; an unknown language code goes there too.
+function LocalizedPrivacyPolicy() {
+  const { lang } = useParams();
+  if (!isPrivacyLang(lang) || lang === "en") return <Navigate to="/privacy" replace />;
+  return <PrivacyPolicy lang={lang} />;
 }
 
 // The form pages are a Google Form in a card. This gives them the page frame
@@ -72,6 +81,7 @@ export function AppShell() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/:lang/privacy" element={<LocalizedPrivacyPolicy />} />
         <Route path="/termsofservice" element={<TermsOfService />} />
         <Route path="/datadeletion" element={<DataDeletion />} />
         <Route

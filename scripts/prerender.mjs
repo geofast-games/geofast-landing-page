@@ -18,7 +18,7 @@
 process.env.NODE_ENV ??= "production";
 
 import { build } from "vite";
-import { existsSync, readFileSync, writeFileSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -30,13 +30,47 @@ const SITE = "https://geofastgames.com";
 // One entry per prerendered route. `expect` is text the rendered page must
 // contain, so an empty or wrong render fails the build instead of shipping.
 const PAGES = [
+  // The privacy policy exists in four languages. `group` ties the variants
+  // together for hreflang links; `lang` sets the page's html lang attribute.
   {
     path: "/privacy",
     file: "privacy.html",
+    lang: "en",
+    group: "privacy",
     title: "Privacy Policy | Geofast: Battle of Nations",
     description:
       "What data Geofast: Battle of Nations collects, how it is used, who it is shared with, and how to request deletion.",
     expect: "Privacy Policy",
+  },
+  {
+    path: "/de/privacy",
+    file: "de/privacy.html",
+    lang: "de",
+    group: "privacy",
+    title: "Datenschutzerklärung | Geofast: Battle of Nations",
+    description:
+      "Welche Daten Geofast: Battle of Nations erhebt, wie sie verwendet werden, mit wem sie geteilt werden und wie Sie ihre Löschung beantragen.",
+    expect: "Datenschutzerklärung",
+  },
+  {
+    path: "/nl/privacy",
+    file: "nl/privacy.html",
+    lang: "nl",
+    group: "privacy",
+    title: "Privacyverklaring | Geofast: Battle of Nations",
+    description:
+      "Welke gegevens Geofast: Battle of Nations verzamelt, hoe ze worden gebruikt, met wie ze worden gedeeld en hoe je verwijdering aanvraagt.",
+    expect: "Privacyverklaring",
+  },
+  {
+    path: "/fr/privacy",
+    file: "fr/privacy.html",
+    lang: "fr",
+    group: "privacy",
+    title: "Politique de confidentialité | Geofast: Battle of Nations",
+    description:
+      "Quelles données Geofast: Battle of Nations collecte, comment elles sont utilisées, avec qui elles sont partagées et comment en demander la suppression.",
+    expect: "Politique de confidentialité",
   },
   {
     path: "/termsofservice",
@@ -135,6 +169,7 @@ const set = (html, re, value) => {
 
 const withMeta = (html, page) => {
   const url = `${SITE}${page.path}`;
+  html = set(html, /(<html lang=")([^"]*)(")/, page.lang ?? "en");
   html = set(html, /(<title>)([^<]*)(<\/title>)/, page.title);
   html = set(html, /(<meta\s+name="title"\s+content=")([^"]*)(")/, page.title);
   html = set(html, /(<meta\s+name="description"\s+content=")([^"]*)(")/, page.description);
@@ -145,6 +180,18 @@ const withMeta = (html, page) => {
   html = set(html, /(<meta name="twitter:url" content=")([^"]*)(")/, url);
   html = set(html, /(<meta\s+name="twitter:title"\s+content=")([^"]*)(")/, page.title);
   html = set(html, /(<meta\s+name="twitter:description"\s+content=")([^"]*)(")/, page.description);
+  // Language variants point at each other, so a search engine shows the right
+  // one; x-default is the English page the stores link to.
+  if (page.group) {
+    const variants = PAGES.filter((p) => p.group === page.group);
+    const fallback = variants.find((p) => p.lang === "en") ?? variants[0];
+    const links = [
+      ...variants.map((p) => `<link rel="alternate" hreflang="${p.lang}" href="${SITE}${p.path}" />`),
+      `<link rel="alternate" hreflang="x-default" href="${SITE}${fallback.path}" />`,
+    ];
+    if (!html.includes("</head>")) die("index.html has no </head> to add hreflang links to");
+    html = html.replace("</head>", `    ${links.join("\n    ")}\n  </head>`);
+  }
   return html;
 };
 
@@ -163,7 +210,9 @@ for (const page of PAGES) {
     if (!existsSync(join(DIST, asset))) die(`${page.file} references missing ${asset}`);
   }
 
-  writeFileSync(join(DIST, page.file), html);
+  const out = join(DIST, page.file);
+  mkdirSync(dirname(out), { recursive: true });
+  writeFileSync(out, html);
   console.log(`   ${page.file}  ${(html.length / 1024).toFixed(1)} kB`);
 }
 
