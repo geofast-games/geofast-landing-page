@@ -94,7 +94,7 @@ export const fi: TermsContent = {
         },
         {
           type: "p",
-          text: "Emme poista passiivisia tilejä. Voit poistaa tilisi milloin tahansa [tietojen poistosivultamme](/datadeletion). Poisto on pysyvä ja kattaa edistymisesi, virtuaalivaluuttasi ja esineesi.",
+          text: "Emme poista passiivisia tilejä. Voit poistaa tilisi milloin tahansa pelissä profiilisi kautta tai [tietojen poistosivultamme](/datadeletion). Poisto on pysyvä ja kattaa edistymisesi, virtuaalivaluuttasi ja esineesi.",
         },
       ],
     },
@@ -302,7 +302,7 @@ export const fi: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Voit lopettaa pelaamisen milloin tahansa poistamalla pelin laitteeltasi, ja voit poistaa tilisi [tietojen poistosivultamme](/datadeletion). Tilin poistaminen poistaa pysyvästi edistymisesi, virtuaalivaluuttasi ja esineesi; niistä ei hyvitetä mitään.",
+          text: "Voit lopettaa pelaamisen milloin tahansa poistamalla pelin laitteeltasi, ja voit poistaa tilisi pelissä profiilisi kautta tai [tietojen poistosivultamme](/datadeletion). Tilin poistaminen poistaa pysyvästi edistymisesi, virtuaalivaluuttasi ja esineesi; niistä ei hyvitetä mitään.",
         },
         {
           type: "p",

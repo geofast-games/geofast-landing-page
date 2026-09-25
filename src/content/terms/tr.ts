@@ -96,7 +96,7 @@ export const tr: TermsContent = {
         },
         {
           type: "p",
-          text: "Etkin olmayan hesapları silmiyoruz. Hesabınızı istediğiniz zaman [veri silme sayfamızdan](/datadeletion) silebilirsiniz. Silme işlemi kalıcıdır ve ilerlemenizi, sanal para birimlerinizi ve eşyalarınızı kapsar.",
+          text: "Etkin olmayan hesapları silmiyoruz. Hesabınızı istediğiniz zaman oyun içinden, profilinizden veya [veri silme sayfamızdan](/datadeletion) silebilirsiniz. Silme işlemi kalıcıdır ve ilerlemenizi, sanal para birimlerinizi ve eşyalarınızı kapsar.",
         },
       ],
     },
@@ -304,7 +304,7 @@ export const tr: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Oyunu kaldırarak istediğiniz zaman oynamayı bırakabilir ve hesabınızı [veri silme sayfamızdan](/datadeletion) silebilirsiniz. Hesabınızı silmek ilerlemenizi, sanal para birimlerinizi ve eşyalarınızı kalıcı olarak kaldırır; bunlar için hiçbir iade yapılmaz.",
+          text: "Oyunu kaldırarak istediğiniz zaman oynamayı bırakabilir ve hesabınızı oyun içinden, profilinizden veya [veri silme sayfamızdan](/datadeletion) silebilirsiniz. Hesabınızı silmek ilerlemenizi, sanal para birimlerinizi ve eşyalarınızı kalıcı olarak kaldırır; bunlar için hiçbir iade yapılmaz.",
         },
         {
           type: "p",

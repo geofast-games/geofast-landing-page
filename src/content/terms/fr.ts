@@ -93,7 +93,7 @@ export const fr: TermsContent = {
         },
         {
           type: "p",
-          text: "Nous ne supprimons pas les comptes inactifs. Vous pouvez supprimer votre compte à tout moment via notre [page de suppression des données](/datadeletion). La suppression est définitive et inclut votre progression, vos monnaies virtuelles et vos objets.",
+          text: "Nous ne supprimons pas les comptes inactifs. Vous pouvez supprimer votre compte à tout moment dans le jeu, depuis votre profil, ou via notre [page de suppression des données](/datadeletion). La suppression est définitive et inclut votre progression, vos monnaies virtuelles et vos objets.",
         },
       ],
     },
@@ -301,7 +301,7 @@ export const fr: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Vous pouvez arrêter de jouer à tout moment en désinstallant le jeu, et vous pouvez supprimer votre compte via notre [page de suppression des données](/datadeletion). La suppression de votre compte efface définitivement votre progression, vos monnaies virtuelles et vos objets ; rien n'est remboursé pour ceux-ci.",
+          text: "Vous pouvez arrêter de jouer à tout moment en désinstallant le jeu, et vous pouvez supprimer votre compte dans le jeu, depuis votre profil, ou via notre [page de suppression des données](/datadeletion). La suppression de votre compte efface définitivement votre progression, vos monnaies virtuelles et vos objets ; rien n'est remboursé pour ceux-ci.",
         },
         {
           type: "p",

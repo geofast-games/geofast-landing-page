@@ -92,7 +92,7 @@ export const id: TermsContent = {
         },
         {
           type: "p",
-          text: "Kami tidak menghapus akun yang tidak aktif. Anda dapat menghapus akun Anda kapan saja melalui [halaman penghapusan data](/datadeletion) kami. Penghapusan bersifat permanen dan mencakup kemajuan, mata uang virtual, dan item Anda.",
+          text: "Kami tidak menghapus akun yang tidak aktif. Anda dapat menghapus akun Anda kapan saja di dalam gim, dari profil Anda, atau melalui [halaman penghapusan data](/datadeletion) kami. Penghapusan bersifat permanen dan mencakup kemajuan, mata uang virtual, dan item Anda.",
         },
       ],
     },
@@ -300,7 +300,7 @@ export const id: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Anda dapat berhenti bermain kapan saja dengan mencopot pemasangan gim, dan Anda dapat menghapus akun Anda melalui [halaman penghapusan data](/datadeletion) kami. Menghapus akun Anda secara permanen menghilangkan kemajuan, mata uang virtual, dan item Anda; tidak ada pengembalian dana untuk hal-hal tersebut.",
+          text: "Anda dapat berhenti bermain kapan saja dengan mencopot pemasangan gim, dan Anda dapat menghapus akun Anda di dalam gim, dari profil Anda, atau melalui [halaman penghapusan data](/datadeletion) kami. Menghapus akun Anda secara permanen menghilangkan kemajuan, mata uang virtual, dan item Anda; tidak ada pengembalian dana untuk hal-hal tersebut.",
         },
         {
           type: "p",

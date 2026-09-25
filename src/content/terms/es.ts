@@ -94,7 +94,7 @@ export const es: TermsContent = {
         },
         {
           type: "p",
-          text: "No eliminamos cuentas inactivas. Puedes eliminar tu cuenta en cualquier momento a través de nuestra [página de eliminación de datos](/datadeletion). La eliminación es permanente e incluye tu progreso, tus monedas virtuales y tus objetos.",
+          text: "No eliminamos cuentas inactivas. Puedes eliminar tu cuenta en cualquier momento desde el juego, en tu perfil, o a través de nuestra [página de eliminación de datos](/datadeletion). La eliminación es permanente e incluye tu progreso, tus monedas virtuales y tus objetos.",
         },
       ],
     },
@@ -302,7 +302,7 @@ export const es: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Puedes dejar de jugar en cualquier momento desinstalando el juego, y puedes eliminar tu cuenta a través de nuestra [página de eliminación de datos](/datadeletion). Eliminar tu cuenta borra de forma permanente tu progreso, tus monedas virtuales y tus objetos; no se reembolsa nada por ellos.",
+          text: "Puedes dejar de jugar en cualquier momento desinstalando el juego, y puedes eliminar tu cuenta desde el juego, en tu perfil, o a través de nuestra [página de eliminación de datos](/datadeletion). Eliminar tu cuenta borra de forma permanente tu progreso, tus monedas virtuales y tus objetos; no se reembolsa nada por ellos.",
         },
         {
           type: "p",

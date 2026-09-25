@@ -95,7 +95,7 @@ export const pt: TermsContent = {
         },
         {
           type: "p",
-          text: "Não excluímos contas inativas. Você pode excluir sua conta a qualquer momento pela nossa [página de exclusão de dados](/datadeletion). A exclusão é permanente e inclui seu progresso, moedas virtuais e itens.",
+          text: "Não excluímos contas inativas. Você pode excluir sua conta a qualquer momento no jogo, pelo seu perfil, ou pela nossa [página de exclusão de dados](/datadeletion). A exclusão é permanente e inclui seu progresso, moedas virtuais e itens.",
         },
       ],
     },
@@ -303,7 +303,7 @@ export const pt: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Você pode parar de jogar a qualquer momento desinstalando o jogo, e pode excluir sua conta pela nossa [página de exclusão de dados](/datadeletion). Excluir sua conta remove permanentemente seu progresso, moedas virtuais e itens; nada é reembolsado por eles.",
+          text: "Você pode parar de jogar a qualquer momento desinstalando o jogo, e pode excluir sua conta no jogo, pelo seu perfil, ou pela nossa [página de exclusão de dados](/datadeletion). Excluir sua conta remove permanentemente seu progresso, moedas virtuais e itens; nada é reembolsado por eles.",
         },
         {
           type: "p",

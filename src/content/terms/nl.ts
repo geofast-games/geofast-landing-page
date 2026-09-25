@@ -92,7 +92,7 @@ export const nl: TermsContent = {
         },
         {
           type: "p",
-          text: "We verwijderen inactieve accounts niet. Je kunt je account op elk moment verwijderen via onze [pagina voor gegevensverwijdering](/datadeletion). Verwijdering is definitief en omvat je voortgang, virtuele valuta en items.",
+          text: "We verwijderen inactieve accounts niet. Je kunt je account op elk moment verwijderen in de game, via je profiel, of via onze [pagina voor gegevensverwijdering](/datadeletion). Verwijdering is definitief en omvat je voortgang, virtuele valuta en items.",
         },
       ],
     },
@@ -300,7 +300,7 @@ export const nl: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Je kunt op elk moment stoppen met spelen door de game te verwijderen, en je kunt je account verwijderen via onze [pagina voor gegevensverwijdering](/datadeletion). Het verwijderen van je account wist je voortgang, virtuele valuta en items definitief; daarvoor wordt niets terugbetaald.",
+          text: "Je kunt op elk moment stoppen met spelen door de game te verwijderen, en je kunt je account verwijderen in de game, via je profiel, of via onze [pagina voor gegevensverwijdering](/datadeletion). Het verwijderen van je account wist je voortgang, virtuele valuta en items definitief; daarvoor wordt niets terugbetaald.",
         },
         {
           type: "p",

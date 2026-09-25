@@ -86,7 +86,7 @@ export const en: TermsContent = {
         },
         {
           type: "p",
-          text: "We do not delete inactive accounts. You can delete your account at any time through our [data deletion page](/datadeletion). Deletion is permanent and includes your progress, virtual currencies and items.",
+          text: "We do not delete inactive accounts. You can delete your account at any time in the game, from your profile, or through our [data deletion page](/datadeletion). Deletion is permanent and includes your progress, virtual currencies and items.",
         },
       ],
     },
@@ -294,7 +294,7 @@ export const en: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "You can stop playing at any time by uninstalling the game, and you can delete your account through our [data deletion page](/datadeletion). Deleting your account permanently removes your progress, virtual currencies and items; nothing is refunded for them.",
+          text: "You can stop playing at any time by uninstalling the game, and you can delete your account in the game, from your profile, or through our [data deletion page](/datadeletion). Deleting your account permanently removes your progress, virtual currencies and items; nothing is refunded for them.",
         },
         {
           type: "p",

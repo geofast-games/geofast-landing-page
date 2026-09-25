@@ -91,7 +91,7 @@ export const de: TermsContent = {
         },
         {
           type: "p",
-          text: "Wir löschen inaktive Konten nicht. Sie können Ihr Konto jederzeit über unsere [Seite zur Datenlöschung](/datadeletion) löschen. Die Löschung ist endgültig und umfasst Ihren Fortschritt, Ihre virtuellen Währungen und Gegenstände.",
+          text: "Wir löschen inaktive Konten nicht. Sie können Ihr Konto jederzeit im Spiel über Ihr Profil oder über unsere [Seite zur Datenlöschung](/datadeletion) löschen. Die Löschung ist endgültig und umfasst Ihren Fortschritt, Ihre virtuellen Währungen und Gegenstände.",
         },
       ],
     },
@@ -299,7 +299,7 @@ export const de: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Sie können jederzeit aufhören zu spielen, indem Sie das Spiel deinstallieren, und Sie können Ihr Konto über unsere [Seite zur Datenlöschung](/datadeletion) löschen. Das Löschen Ihres Kontos entfernt Ihren Fortschritt, Ihre virtuellen Währungen und Gegenstände endgültig; dafür wird nichts erstattet.",
+          text: "Sie können jederzeit aufhören zu spielen, indem Sie das Spiel deinstallieren, und Sie können Ihr Konto im Spiel über Ihr Profil oder über unsere [Seite zur Datenlöschung](/datadeletion) löschen. Das Löschen Ihres Kontos entfernt Ihren Fortschritt, Ihre virtuellen Währungen und Gegenstände endgültig; dafür wird nichts erstattet.",
         },
         {
           type: "p",

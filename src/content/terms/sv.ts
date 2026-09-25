@@ -92,7 +92,7 @@ export const sv: TermsContent = {
         },
         {
           type: "p",
-          text: "Vi raderar inte inaktiva konton. Du kan radera ditt konto när som helst via vår [sida för radering av uppgifter](/datadeletion). Raderingen är permanent och omfattar dina framsteg, virtuella valutor och föremål.",
+          text: "Vi raderar inte inaktiva konton. Du kan radera ditt konto när som helst i spelet, via din profil, eller via vår [sida för radering av uppgifter](/datadeletion). Raderingen är permanent och omfattar dina framsteg, virtuella valutor och föremål.",
         },
       ],
     },
@@ -300,7 +300,7 @@ export const sv: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Du kan sluta spela när som helst genom att avinstallera spelet, och du kan radera ditt konto via vår [sida för radering av uppgifter](/datadeletion). Att radera ditt konto tar permanent bort dina framsteg, virtuella valutor och föremål; ingenting återbetalas för dem.",
+          text: "Du kan sluta spela när som helst genom att avinstallera spelet, och du kan radera ditt konto i spelet, via din profil, eller via vår [sida för radering av uppgifter](/datadeletion). Att radera ditt konto tar permanent bort dina framsteg, virtuella valutor och föremål; ingenting återbetalas för dem.",
         },
         {
           type: "p",

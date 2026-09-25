@@ -93,7 +93,7 @@ export const pl: TermsContent = {
         },
         {
           type: "p",
-          text: "Nie usuwamy nieaktywnych kont. Możesz usunąć swoje konto w dowolnym momencie na naszej [stronie usuwania danych](/datadeletion). Usunięcie jest nieodwracalne i obejmuje Twoje postępy, waluty wirtualne i przedmioty.",
+          text: "Nie usuwamy nieaktywnych kont. Możesz usunąć swoje konto w dowolnym momencie w grze, w swoim profilu, albo na naszej [stronie usuwania danych](/datadeletion). Usunięcie jest nieodwracalne i obejmuje Twoje postępy, waluty wirtualne i przedmioty.",
         },
       ],
     },
@@ -301,7 +301,7 @@ export const pl: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Możesz przestać grać w dowolnym momencie, odinstalowując grę, i możesz usunąć swoje konto na naszej [stronie usuwania danych](/datadeletion). Usunięcie konta nieodwracalnie usuwa Twoje postępy, waluty wirtualne i przedmioty; nic nie jest za nie zwracane.",
+          text: "Możesz przestać grać w dowolnym momencie, odinstalowując grę, i możesz usunąć swoje konto w grze, w swoim profilu, albo na naszej [stronie usuwania danych](/datadeletion). Usunięcie konta nieodwracalnie usuwa Twoje postępy, waluty wirtualne i przedmioty; nic nie jest za nie zwracane.",
         },
         {
           type: "p",

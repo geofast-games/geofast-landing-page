@@ -92,7 +92,7 @@ export const it: TermsContent = {
         },
         {
           type: "p",
-          text: "Non eliminiamo gli account inattivi. Puoi eliminare il tuo account in qualsiasi momento tramite la nostra [pagina per la cancellazione dei dati](/datadeletion). L'eliminazione è definitiva e comprende i tuoi progressi, le valute virtuali e gli oggetti.",
+          text: "Non eliminiamo gli account inattivi. Puoi eliminare il tuo account in qualsiasi momento nel gioco, dal tuo profilo, oppure tramite la nostra [pagina per la cancellazione dei dati](/datadeletion). L'eliminazione è definitiva e comprende i tuoi progressi, le valute virtuali e gli oggetti.",
         },
       ],
     },
@@ -300,7 +300,7 @@ export const it: TermsContent = {
       blocks: [
         {
           type: "p",
-          text: "Puoi smettere di giocare in qualsiasi momento disinstallando il gioco, e puoi eliminare il tuo account tramite la nostra [pagina per la cancellazione dei dati](/datadeletion). Eliminare il tuo account rimuove definitivamente i tuoi progressi, le valute virtuali e gli oggetti; per essi non viene rimborsato nulla.",
+          text: "Puoi smettere di giocare in qualsiasi momento disinstallando il gioco, e puoi eliminare il tuo account nel gioco, dal tuo profilo, oppure tramite la nostra [pagina per la cancellazione dei dati](/datadeletion). Eliminare il tuo account rimuove definitivamente i tuoi progressi, le valute virtuali e gli oggetti; per essi non viene rimborsato nulla.",
         },
         {
           type: "p",
