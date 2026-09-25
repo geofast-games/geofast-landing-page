@@ -29,6 +29,7 @@ import { StickyDownload } from "./components/StickyDownload";
 import ResetPasswordPage from "./components/ResetPassword";
 import { PageContact } from "./components/PageContact";
 import { isPrivacyLang } from "@/content/privacy";
+import { isTermsLang } from "@/content/terms";
 import type { ReactNode } from "react";
 
 function Home() {
@@ -59,6 +60,14 @@ function LocalizedPrivacyPolicy() {
   return <PrivacyPolicy lang={lang} />;
 }
 
+// /de/termsofservice and friends, the same way. English stays at
+// /termsofservice, the URL the app stores link to.
+function LocalizedTermsOfService() {
+  const { lang } = useParams();
+  if (!isTermsLang(lang) || lang === "en") return <Navigate to="/termsofservice" replace />;
+  return <TermsOfService lang={lang} />;
+}
+
 // The form pages are a Google Form in a card. This gives them the page frame
 // and the shared closing block that the legal pages have.
 function FormPage({ subject, children }: { subject: string; children: ReactNode }) {
@@ -83,6 +92,7 @@ export function AppShell() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/:lang/privacy" element={<LocalizedPrivacyPolicy />} />
         <Route path="/termsofservice" element={<TermsOfService />} />
+        <Route path="/:lang/termsofservice" element={<LocalizedTermsOfService />} />
         <Route path="/datadeletion" element={<DataDeletion />} />
         <Route
           path="/feedback"

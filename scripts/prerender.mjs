@@ -218,6 +218,8 @@ const PAGES = [
   {
     path: "/termsofservice",
     file: "termsofservice.html",
+    lang: "en",
+    group: "terms",
     title: "Terms of Service | Geofast: Battle of Nations",
     description:
       "The terms that apply when you play Geofast: Battle of Nations.",
@@ -265,6 +267,183 @@ const PAGES = [
   },
   // Not /reset-password: its render depends on the ?token in the URL, which a
   // build cannot know, so a static copy would show the wrong state first.
+
+  // The Terms of Service in the same seventeen languages as the privacy
+  // policy, at /<lang>/termsofservice. `group: "terms"` ties them together
+  // for hreflang, separately from the privacy pages; `lang` is the BCP-47
+  // tag; `expect` is the translated document name (no apostrophes: the
+  // rendered HTML escapes them).
+  {
+    path: "/id/termsofservice",
+    file: "id/termsofservice.html",
+    lang: "id",
+    group: "terms",
+    title: "Ketentuan Layanan | Geofast: Battle of Nations",
+    description:
+      "Aturan bermain Geofast: Battle of Nations: akun, perilaku, moderasi dan banding, pembelian dan Battle Pass, perubahan, serta hak Anda.",
+    expect: "Ketentuan Layanan",
+  },
+  {
+    path: "/de/termsofservice",
+    file: "de/termsofservice.html",
+    lang: "de",
+    group: "terms",
+    title: "Nutzungsbedingungen | Geofast: Battle of Nations",
+    description:
+      "Die Regeln für das Spielen von Geofast: Battle of Nations: Konto, Verhalten, Moderation und Einspruch, Käufe und Battle Pass, Änderungen und Ihre Rechte.",
+    expect: "Nutzungsbedingungen",
+  },
+  {
+    path: "/es/termsofservice",
+    file: "es/termsofservice.html",
+    lang: "es",
+    group: "terms",
+    title: "Condiciones del servicio | Geofast: Battle of Nations",
+    description:
+      "Las reglas para jugar a Geofast: Battle of Nations: cuentas, conducta, moderación y reclamaciones, compras y Pase de Batalla, cambios y tus derechos.",
+    expect: "Condiciones del servicio",
+  },
+  {
+    path: "/fr/termsofservice",
+    file: "fr/termsofservice.html",
+    lang: "fr",
+    group: "terms",
+    title: "Conditions d'utilisation | Geofast: Battle of Nations",
+    description:
+      "Les règles du jeu Geofast: Battle of Nations : comptes, conduite, modération et recours, achats et Battle Pass, modifications et vos droits.",
+    expect: "Conditions d&#x27;utilisation",
+  },
+  {
+    path: "/it/termsofservice",
+    file: "it/termsofservice.html",
+    lang: "it",
+    group: "terms",
+    title: "Termini di servizio | Geofast: Battle of Nations",
+    description:
+      "Le regole per giocare a Geofast: Battle of Nations: account, condotta, moderazione e reclami, acquisti e Battle Pass, modifiche e i tuoi diritti.",
+    expect: "Termini di servizio",
+  },
+  {
+    path: "/nl/termsofservice",
+    file: "nl/termsofservice.html",
+    lang: "nl",
+    group: "terms",
+    title: "Gebruiksvoorwaarden | Geofast: Battle of Nations",
+    description:
+      "De regels voor het spelen van Geofast: Battle of Nations: accounts, gedrag, moderatie en bezwaar, aankopen en de Battle Pass, wijzigingen en je rechten.",
+    expect: "Gebruiksvoorwaarden",
+  },
+  {
+    path: "/pl/termsofservice",
+    file: "pl/termsofservice.html",
+    lang: "pl",
+    group: "terms",
+    title: "Regulamin | Geofast: Battle of Nations",
+    description:
+      "Zasady gry w Geofast: Battle of Nations: konta, zasady zachowania, moderacja i odwołania, zakupy i Przepustka Bitewna, zmiany oraz Twoje prawa.",
+    expect: "Regulamin",
+  },
+  {
+    path: "/pt/termsofservice",
+    file: "pt/termsofservice.html",
+    lang: "pt-BR",
+    group: "terms",
+    title: "Termos de Serviço | Geofast: Battle of Nations",
+    description:
+      "As regras para jogar Geofast: Battle of Nations: contas, conduta, moderação e recursos, compras e Passe de Batalha, alterações e seus direitos.",
+    expect: "Termos de Serviço",
+  },
+  {
+    path: "/fi/termsofservice",
+    file: "fi/termsofservice.html",
+    lang: "fi",
+    group: "terms",
+    title: "Käyttöehdot | Geofast: Battle of Nations",
+    description:
+      "Säännöt Geofast: Battle of Nations -pelin pelaamiseen: tilit, käytös, moderointi ja valitukset, ostokset ja Taistelupassi, muutokset ja oikeutesi.",
+    expect: "Käyttöehdot",
+  },
+  {
+    path: "/sv/termsofservice",
+    file: "sv/termsofservice.html",
+    lang: "sv",
+    group: "terms",
+    title: "Användarvillkor | Geofast: Battle of Nations",
+    description:
+      "Reglerna för att spela Geofast: Battle of Nations: konton, uppförande, moderering och överklaganden, köp och Battle Pass, ändringar och dina rättigheter.",
+    expect: "Användarvillkor",
+  },
+  {
+    path: "/tr/termsofservice",
+    file: "tr/termsofservice.html",
+    lang: "tr",
+    group: "terms",
+    title: "Hizmet Şartları | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nations oynama kuralları: hesaplar, davranış, moderasyon ve itiraz, satın almalar ve Savaş Bileti, değişiklikler ve haklarınız.",
+    expect: "Hizmet Şartları",
+  },
+  {
+    path: "/ru/termsofservice",
+    file: "ru/termsofservice.html",
+    lang: "ru",
+    group: "terms",
+    title: "Условия использования | Geofast: Battle of Nations",
+    description:
+      "Правила игры в Geofast: Battle of Nations: аккаунты, поведение, модерация и обжалование, покупки и Боевой пропуск, изменения и ваши права.",
+    expect: "Условия использования",
+  },
+  {
+    path: "/ar/termsofservice",
+    file: "ar/termsofservice.html",
+    lang: "ar",
+    dir: "rtl",
+    group: "terms",
+    title: "شروط الخدمة | Geofast: Battle of Nations",
+    description:
+      "قواعد اللعب في Geofast: Battle of Nations: الحسابات، والسلوك، والإشراف والطعون، والمشتريات وتذكرة المعركة، والتغييرات، وحقوقك.",
+    expect: "شروط الخدمة",
+  },
+  {
+    path: "/ko/termsofservice",
+    file: "ko/termsofservice.html",
+    lang: "ko",
+    group: "terms",
+    title: "서비스 이용약관 | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nations 이용 규칙: 계정, 행동 규범, 운영 관리와 이의 제기, 구매와 배틀 패스, 변경 사항, 그리고 귀하의 권리를 안내합니다.",
+    expect: "서비스 이용약관",
+  },
+  {
+    path: "/ja/termsofservice",
+    file: "ja/termsofservice.html",
+    lang: "ja",
+    group: "terms",
+    title: "利用規約 | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nationsをプレイするためのルール：アカウント、行動規範、モデレーションと異議申し立て、購入とバトルパス、変更、お客様の権利について説明します。",
+    expect: "利用規約",
+  },
+  {
+    path: "/zh-hans/termsofservice",
+    file: "zh-hans/termsofservice.html",
+    lang: "zh-Hans",
+    group: "terms",
+    title: "服务条款 | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nations 的游戏规则：账户、行为规范、管理与申诉、购买与战斗通行证、条款变更以及您的权利。",
+    expect: "服务条款",
+  },
+  {
+    path: "/zh-hant/termsofservice",
+    file: "zh-hant/termsofservice.html",
+    lang: "zh-Hant",
+    group: "terms",
+    title: "服務條款 | Geofast: Battle of Nations",
+    description:
+      "Geofast: Battle of Nations 的遊戲規則：帳戶、行為規範、管理與申訴、購買與戰鬥通行證、條款變更以及您的權利。",
+    expect: "服務條款",
+  },
 ];
 
 const step = (msg) => console.log(`\x1b[36m==>\x1b[0m ${msg}`);
