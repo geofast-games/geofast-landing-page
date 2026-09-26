@@ -1,5 +1,5 @@
 import { useId, useRef, useState, type FormEvent } from "react";
-import { CheckCircle2, ImagePlus, Loader2 } from "lucide-react";
+import { CheckCircle2, ImagePlus, Loader2, X } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,6 +18,7 @@ export const InboxForm = ({ kind }: { kind: FormKind }) => {
   const spec = forms[kind];
   const uid = useId();
   const formRef = useRef<HTMLFormElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [selects, setSelects] = useState<Record<string, string>>({});
   const [files, setFiles] = useState<File[]>([]);
   const [fileError, setFileError] = useState<string | null>(null);
@@ -30,26 +31,39 @@ export const InboxForm = ({ kind }: { kind: FormKind }) => {
 
   const fieldId = (name: string) => `${uid}-${name}`;
 
+  // The file input is only a picker: `files` state is what gets sent, so
+  // images can be added in several picks and removed one by one. The input is
+  // cleared after each pick so the same file can be chosen again later.
   const onFiles = (list: FileList | null) => {
     const chosen = Array.from(list ?? []);
-    if (chosen.length > spec.maxAttachments) {
-      setFileError(`At most ${spec.maxAttachments} image${spec.maxAttachments === 1 ? "" : "s"}.`);
-      setFiles([]);
-      return;
-    }
+    if (fileInputRef.current) fileInputRef.current.value = "";
     const bad = chosen.find((f) => !ATTACHMENT_TYPES.includes(f.type) || f.size > ATTACHMENT_MAX_BYTES);
     if (bad) {
       setFileError(`${bad.name}: PNG, JPEG, GIF or WebP up to 5 MB.`);
-      setFiles([]);
+      return;
+    }
+    const merged = [...files];
+    for (const f of chosen) {
+      if (!merged.some((m) => m.name === f.name && m.size === f.size && m.lastModified === f.lastModified)) merged.push(f);
+    }
+    if (merged.length > spec.maxAttachments) {
+      setFileError(`At most ${spec.maxAttachments} image${spec.maxAttachments === 1 ? "" : "s"}.`);
       return;
     }
     setFileError(null);
-    setFiles(chosen);
+    setFiles(merged);
+  };
+
+  // A refused pick (wrong type, too big, over the limit) never changes the
+  // list, so the message is a notice only; Send stays available.
+  const removeFile = (index: number) => {
+    setFiles((current) => current.filter((_, i) => i !== index));
+    setFileError(null);
   };
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (fileError || state.phase === "sending") return;
+    if (state.phase === "sending") return;
     const form = new FormData(event.currentTarget);
     // Radix Select is not a native control; its values are added here.
     for (const [name, value] of Object.entries(selects)) form.set(name, value);
@@ -163,16 +177,40 @@ export const InboxForm = ({ kind }: { kind: FormKind }) => {
               <label htmlFor={fieldId("attachments")} className="text-sm font-medium leading-none">
                 Screenshots
               </label>
-              <label
-                htmlFor={fieldId("attachments")}
-                className="flex cursor-pointer items-center gap-3 rounded-md border border-dashed border-input px-4 py-3 text-sm text-muted-foreground hover:border-primary hover:text-foreground"
-              >
-                <ImagePlus className="h-5 w-5 shrink-0" aria-hidden="true" />
-                {files.length
-                  ? files.map((f) => f.name).join(", ")
-                  : `Up to ${spec.maxAttachments} image${spec.maxAttachments === 1 ? "" : "s"}, 5 MB each (optional)`}
-              </label>
+              {files.length > 0 && (
+                <ul className="space-y-1.5">
+                  {files.map((f, i) => (
+                    <li
+                      key={`${f.name}-${f.size}-${f.lastModified}`}
+                      className="flex items-center gap-3 rounded-md border border-input bg-background px-3 py-2 text-sm"
+                    >
+                      <span className="min-w-0 flex-1 truncate">{f.name}</span>
+                      <span className="shrink-0 text-muted-foreground">{Math.max(1, Math.round(f.size / 1024))} KB</span>
+                      <button
+                        type="button"
+                        onClick={() => removeFile(i)}
+                        aria-label={`Remove ${f.name}`}
+                        className="shrink-0 rounded-full p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+                      >
+                        <X className="h-4 w-4" aria-hidden="true" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {files.length < spec.maxAttachments && (
+                <label
+                  htmlFor={fieldId("attachments")}
+                  className="flex cursor-pointer items-center gap-3 rounded-md border border-dashed border-input px-4 py-3 text-sm text-muted-foreground hover:border-primary hover:text-foreground"
+                >
+                  <ImagePlus className="h-5 w-5 shrink-0" aria-hidden="true" />
+                  {files.length
+                    ? `Add another image (${spec.maxAttachments - files.length} more allowed)`
+                    : `Up to ${spec.maxAttachments} image${spec.maxAttachments === 1 ? "" : "s"}, 5 MB each (optional)`}
+                </label>
+              )}
               <input
+                ref={fileInputRef}
                 id={fieldId("attachments")}
                 name="attachments"
                 type="file"
@@ -223,7 +261,7 @@ export const InboxForm = ({ kind }: { kind: FormKind }) => {
           )}
 
           <div className="flex flex-wrap items-center gap-4">
-            <Button type="submit" size="lg" disabled={state.phase === "sending" || !!fileError}>
+            <Button type="submit" size="lg" disabled={state.phase === "sending"}>
               {state.phase === "sending" && <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />}
               Send
             </Button>
