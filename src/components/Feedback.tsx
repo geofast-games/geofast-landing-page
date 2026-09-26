@@ -7,13 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { QuietSelect } from "@/components/ui/quiet-select";
 import { InboxForm } from "./forms/InboxForm";
 import type { FormKind } from "@/content/forms";
 
@@ -36,18 +30,13 @@ const FeedbackPage = () => {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
-          <Select value={kind} onValueChange={(v) => setKind(v as FormKind)}>
-            <SelectTrigger className="w-full md:w-[300px]">
-              <SelectValue placeholder="Select feedback type" />
-            </SelectTrigger>
-            <SelectContent>
-              {FEEDBACK_KINDS.map((k) => (
-                <SelectItem key={k.value} value={k.value}>
-                  {k.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <QuietSelect
+            value={kind}
+            onValueChange={(v) => setKind(v as FormKind)}
+            options={FEEDBACK_KINDS}
+            placeholder="Select feedback type"
+            className="w-full md:w-[300px]"
+          />
           <p className="text-sm text-muted-foreground">
             Reporting a player or something that happened in the game?{" "}
             <Link to="/report" className="font-medium text-primary hover:underline">

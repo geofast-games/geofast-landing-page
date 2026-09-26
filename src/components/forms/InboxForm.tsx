@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { QuietSelect } from "@/components/ui/quiet-select";
 import { ATTACHMENT_MAX_BYTES, ATTACHMENT_TYPES, commonFields, forms, type FormField, type FormKind } from "@/content/forms";
 import { submitToInbox } from "@/lib/inbox";
 
@@ -148,18 +148,15 @@ export const InboxForm = ({ kind }: { kind: FormKind }) => {
       control = <Textarea id={id} name={f.name} required={f.required} maxLength={f.maxLength} placeholder={f.placeholder} />;
     } else if (f.widget === "select") {
       control = (
-        <Select value={selects[f.name] ?? ""} onValueChange={(v) => setSelects((s) => ({ ...s, [f.name]: v }))} required={f.required}>
-          <SelectTrigger id={id} className="w-full md:w-[320px]">
-            <SelectValue placeholder="Select…" />
-          </SelectTrigger>
-          <SelectContent className="max-h-72">
-            {f.options?.map((o) => (
-              <SelectItem key={o.value} value={o.value}>
-                {o.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <QuietSelect
+          id={id}
+          value={selects[f.name] ?? ""}
+          onValueChange={(v) => setSelects((s) => ({ ...s, [f.name]: v }))}
+          options={f.options ?? []}
+          required={f.required}
+          className="w-full md:w-[320px]"
+          contentClassName="max-h-72"
+        />
       );
     } else {
       control = <Input id={id} name={f.name} type="text" required={f.required} maxLength={f.maxLength} placeholder={f.placeholder} />;
