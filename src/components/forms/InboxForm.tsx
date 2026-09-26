@@ -1,4 +1,4 @@
-import { useId, useRef, useState, type FormEvent } from "react";
+import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { CheckCircle2, ImagePlus, Loader2, X } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -19,6 +19,7 @@ export const InboxForm = ({ kind }: { kind: FormKind }) => {
   const uid = useId();
   const formRef = useRef<HTMLFormElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const topRef = useRef<HTMLDivElement>(null);
   const [selects, setSelects] = useState<Record<string, string>>({});
   const [files, setFiles] = useState<File[]>([]);
   const [fileError, setFileError] = useState<string | null>(null);
@@ -88,17 +89,27 @@ export const InboxForm = ({ kind }: { kind: FormKind }) => {
     }
   };
 
+  // The confirmation card is much shorter than the form it replaces, so the
+  // page shrinks under the reader and the scroll offset lands below it.
+  // Bring the card to the top (scroll-mt clears the sticky navbar); the
+  // same on "Send another", so the fresh form starts at its first field.
+  const scrollToTop = () => topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  useEffect(() => {
+    if (state.phase === "sent") scrollToTop();
+  }, [state.phase]);
+
   const reset = () => {
     formRef.current?.reset();
     setSelects({});
     setFiles([]);
     setFileError(null);
     setState({ phase: "editing" });
+    scrollToTop();
   };
 
   if (state.phase === "sent") {
     return (
-      <Card className="w-full">
+      <Card ref={topRef} className="w-full scroll-mt-24">
         <CardContent className="flex flex-col items-center gap-4 py-12 text-center">
           <CheckCircle2 className="h-12 w-12 text-primary" aria-hidden="true" />
           <h2 className="text-2xl font-bold">Received. Thank you!</h2>
@@ -163,7 +174,7 @@ export const InboxForm = ({ kind }: { kind: FormKind }) => {
   };
 
   return (
-    <Card className="w-full">
+    <Card ref={topRef} className="w-full scroll-mt-24">
       <CardHeader>
         <CardTitle>{spec.title}</CardTitle>
         <CardDescription>{spec.description}</CardDescription>
