@@ -235,6 +235,15 @@
             return;
           }
 
+          // With L2 on, iOS gets no automatic handoff: the token is written only
+          // by the button's tap, and Safari would follow the redirect before
+          // anyone tapped, so L2 would almost never fire (found in the
+          // Simulator, 2026-10-25). One extra tap is the price of L2.
+          if (ios && CFG.iosTokenEnabled) {
+            hint.textContent = 'Tap the button to get the game.';
+            return;
+          }
+
           // Attempt the automatic handoff too. If the in-app browser blocks it,
           // the button above still works and the visitor sees a normal page.
           var target = android ? play : apple;
