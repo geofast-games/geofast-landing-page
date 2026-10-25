@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geofast: Battle of Nations</title>
+
+    <!--
+      Tracked creator link. Design: geofast_bmad docs/projects/creator-attribution/design.md §3.4.
+
+      This is a COMMITTED static file, not a React route, and that is the whole
+      point. GitHub Pages serves SPA-only paths as HTTP 404 with no Open Graph
+      tags, so a link shared into WhatsApp, Telegram or Discord would render no
+      preview card and look broken — which is exactly the surface the in-game
+      replay share targets. A real file returns 200 with real tags.
+
+      The code therefore rides in the QUERY STRING (/c/?CODE[.ITEM]) rather than
+      the path, so one committed file serves every creator. Note also that the
+      repo's 404.html SPA shim rewrites "?a=b" into "&a=b~and~..." — another
+      reason this route must never depend on it.
+    -->
+    <meta name="description" content="Up to 9 players. Pick your country. Short, fast battles. Download Geofast: Battle of Nations free." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://geofastgames.com/c/" />
+    <meta property="og:title" content="Geofast: Battle of Nations" />
+    <meta property="og:description" content="Up to 9 players. Pick your country. Short, fast battles. Download free." />
+    <meta property="og:image" content="https://geofastgames.com/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Geofast: Battle of Nations" />
+    <meta name="twitter:description" content="Up to 9 players. Pick your country. Short, fast battles. Download free." />
+    <meta name="twitter:image" content="https://geofastgames.com/og-image.png" />
+
+    <style>
+      :root { color-scheme: light dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; min-height: 100vh;
+        display: flex; align-items: center; justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: #0f0f14; color: #f4f4f5; text-align: center; padding: 24px;
+      }
+      .card { max-width: 380px; width: 100%; }
+      h1 { font-size: 1.5rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+      p { margin: 0 0 24px; color: #a1a1aa; font-size: 0.95rem; line-height: 1.5; }
+      .badges { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+      a.store {
+        display: inline-flex; align-items: center; justify-content: center;
+        min-width: 240px; padding: 14px 24px; border-radius: 12px;
+        background: linear-gradient(135deg, #F596D3, #D247BF);
+        color: #fff; text-decoration: none; font-weight: 600; font-size: 1rem;
+        transition: transform 0.15s ease;
+      }
+      a.store:hover { transform: scale(1.03); }
+      a.store.secondary { background: #27272a; color: #e4e4e7; }
+      .hint { margin-top: 20px; font-size: 0.8rem; color: #71717a; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Geofast: Battle of Nations</h1>
+      <p>Up to 9 players. Pick your country. Short, fast battles.</p>
+      <div class="badges" id="badges"></div>
+      <div class="hint" id="hint">Taking you to the store&hellip;</div>
+    </div>
+
+    <script>
+      (function () {
+        'use strict';
+
+        // Mirrors the backend's attributionConfig.go. No constant can cross
+        // that boundary, so the two sides change together or not at all.
+        var CFG = {
+          // Same-origin anywhere but the live site, so a local `npm run dev`
+          // (or a tunnel in front of it) reaches local Nakama through the Vite
+          // proxy in vite.config.ts and needs no CORS entry on the server.
+          beacon: /^(www\.)?geofastgames\.com$/.test(window.location.hostname)
+            ? 'https://nakamacdn.geofastgames.com/attribution/click'
+            : '/attribution/click',
+          playPackage: 'com.geofast.geofastbattleofnations',
+          appleAppId: '6740595527',
+          // Apple requires BOTH pt and ct. Until a provider token is generated
+          // in App Store Connect (Analytics > Acquisition > Campaigns), a ct on
+          // its own never registers — so the iOS link deliberately degrades to
+          // an untagged store URL rather than carrying a token Apple discards.
+          applePT: '',
+          utmSource: 'geofast',
+          utmMedium: 'link',
+          codeLength: 6,
+          itemSeparator: '.',
+          appleItemSeparator: '-',
+          appleCtMaxLength: 30,
+          // iOS Layer 2 consented clipboard token. Ships DARK — enabling it
+          // makes every iOS first launch show "Allow Paste", including for
+          // organic players. Needs UT's decision and a TestFlight pass.
+          iosTokenEnabled: false,
+          iosTokenPrefix: 'geofast:c:',
+          beaconTimeoutMs: 300
+        };
+
+        var CHARSET = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+
+        function normalizeCode(raw) {
+          var c = (raw || '').trim().toUpperCase();
+          if (c.length !== CFG.codeLength) return '';
+          for (var i = 0; i < c.length; i++) {
+            if (CHARSET.indexOf(c[i]) === -1) return '';
+          }
+          return c;
+        }
+
+        // Dropped, never truncated: a shortened video id is a wrong answer
+        // that reads like a right one.
+        function sanitizeItem(raw) {
+          var s = (raw || '').trim();
+          if (!s || s.length > 23) return '';
+          return /^[A-Za-z0-9_-]+$/.test(s) ? s : '';
+        }
+
+        // The query string is the code, with no key: /c/?RB7K2M[.ITEM]
+        function parseTarget() {
+          var q = window.location.search.replace(/^\?/, '');
+          if (!q) return { code: '', item: '' };
+          q = decodeURIComponent(q.split('&')[0]);
+          var sep = q.indexOf(CFG.itemSeparator);
+          if (sep === CFG.codeLength) {
+            return { code: normalizeCode(q.slice(0, sep)), item: sanitizeItem(q.slice(sep + 1)) };
+          }
+          return { code: normalizeCode(q), item: '' };
+        }
+
+        function mintClickId() {
+          try {
+            if (window.crypto && window.crypto.randomUUID) {
+              return window.crypto.randomUUID().replace(/-/g, '').slice(0, 24);
+            }
+          } catch (e) { /* fall through to the Math.random path */ }
+          return (Date.now().toString(36) + Math.random().toString(36).slice(2, 10));
+        }
+
+        function isAndroid() { return /android/i.test(navigator.userAgent); }
+        function isIOS() {
+          return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        }
+
+        function playUrl(t, clickId) {
+          var ref = 'utm_source=' + CFG.utmSource + '&utm_medium=' + CFG.utmMedium;
+          if (t.code) ref += '&utm_campaign=' + t.code;
+          if (t.item) ref += '&utm_content=' + t.item;
+          if (clickId) ref += '&gfc=' + clickId;
+          return 'https://play.google.com/store/apps/details?id=' + CFG.playPackage +
+            '&referrer=' + encodeURIComponent(ref);
+        }
+
+        function appleUrl(t) {
+          var base = 'https://apps.apple.com/app/id' + CFG.appleAppId;
+          if (!CFG.applePT || !t.code) return base;
+          var ct = t.code;
+          if (t.item && (t.code.length + 1 + t.item.length) <= CFG.appleCtMaxLength) {
+            ct = t.code + CFG.appleItemSeparator + t.item;
+          }
+          return base + '?pt=' + encodeURIComponent(CFG.applePT) +
+            '&ct=' + encodeURIComponent(ct) + '&mt=8';
+        }
+
+        // Fire-and-forget. A lost beacon costs a click row and nothing else:
+        // on Android the install is still attributed, because the referrer
+        // carries the code. It must never delay the redirect.
+        function sendBeacon(t, clickId) {
+          if (!t.code || !clickId) return;
+          try {
+            var body = JSON.stringify({
+              click: clickId, code: t.code, item: t.item, ua: navigator.userAgent
+            });
+            if (navigator.sendBeacon) {
+              navigator.sendBeacon(CFG.beacon, new Blob([body], { type: 'application/json' }));
+              return;
+            }
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', CFG.beacon, true);
+            xhr.timeout = CFG.beaconTimeoutMs;
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(body);
+          } catch (e) { /* never block the store handoff on telemetry */ }
+        }
+
+        // iOS Layer 2, dark by default. The clipboard write needs a real user
+        // gesture, which is the same tap that opens the App Store.
+        function writeIOSToken(t, clickId) {
+          if (!CFG.iosTokenEnabled || !t.code) return;
+          try {
+            var token = CFG.iosTokenPrefix + t.code + (t.item ? CFG.itemSeparator + t.item : '') +
+              (clickId ? '/' + clickId : '');
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(token);
+            }
+          } catch (e) { /* the campaign token (L1) still covers this install */ }
+        }
+
+        function render(t, clickId) {
+          var badges = document.getElementById('badges');
+          var hint = document.getElementById('hint');
+          var play = playUrl(t, clickId);
+          var apple = appleUrl(t);
+          var android = isAndroid(), ios = isIOS();
+
+          function badge(href, label, secondary, isApple) {
+            var a = document.createElement('a');
+            a.className = 'store' + (secondary ? ' secondary' : '');
+            a.href = href;
+            a.rel = 'noopener';
+            a.textContent = label;
+            if (isApple) {
+              a.addEventListener('click', function () { writeIOSToken(t, clickId); });
+            }
+            badges.appendChild(a);
+          }
+
+          // A real, tappable store button is REQUIRED, not a fallback. TikTok,
+          // Instagram and Facebook open links in their own embedded browsers,
+          // and those treat a scripted redirect as not user-initiated and
+          // sometimes block it. The button is also the only way the iOS L2
+          // clipboard write can ever happen, since no browser permits it
+          // without a gesture.
+          if (android) {
+            badge(play, 'Get it on Google Play', false, false);
+            badge(apple, 'Download on the App Store', true, true);
+          } else if (ios) {
+            badge(apple, 'Download on the App Store', false, true);
+            badge(play, 'Get it on Google Play', true, false);
+          } else {
+            badge(play, 'Get it on Google Play', false, false);
+            badge(apple, 'Download on the App Store', true, true);
+            hint.textContent = 'Open this link on your phone to install.';
+            return;
+          }
+
+          // Attempt the automatic handoff too. If the in-app browser blocks it,
+          // the button above still works and the visitor sees a normal page.
+          var target = android ? play : apple;
+          window.setTimeout(function () {
+            try { window.location.replace(target); } catch (e) { /* button remains */ }
+          }, 50);
+        }
+
+        var target = parseTarget();
+        var clickId = target.code ? mintClickId() : '';
+        sendBeacon(target, clickId);
+        render(target, clickId);
+      })();
+    </script>
+  </body>
+</html>

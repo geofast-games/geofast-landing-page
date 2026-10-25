@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 repopack-output.txt
+
+# Local env files hold server keys; never commit them
+.env
+.env.*
