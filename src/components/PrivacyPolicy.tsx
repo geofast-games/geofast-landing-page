@@ -187,6 +187,8 @@ export const PrivacyPolicy = ({ lang = "en" }: { lang?: PrivacyLang }) => {
         ))}
       </div>
 
+      <PublisherIdentity label="Data controller" className="mt-6" />
+
       <PageContact subject={content.policyName} text={content.contact} />
     </section>
   );

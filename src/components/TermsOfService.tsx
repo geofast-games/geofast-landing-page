@@ -123,6 +123,8 @@ const TermsOfService = ({ lang = "en" }: { lang?: TermsLang }) => {
         ))}
       </div>
 
+      <PublisherIdentity label="Publisher" className="mt-6" />
+
       <PageContact subject={content.docName} text={content.contact} />
     </section>
   );
