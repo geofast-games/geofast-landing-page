@@ -12,7 +12,7 @@ export const nl: PrivacyContent = {
     "Welke gegevens Geofast: Battle of Nations verzamelt, hoe ze worden gebruikt, met wie ze worden gedeeld en hoe je verwijdering aanvraagt.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Privacyverklaring",
-  lastUpdated: "Laatst bijgewerkt: 25 september 2026",
+  lastUpdated: "Laatst bijgewerkt: 5 november 2026",
   sectionsLabel: "Onderdelen",
   languageLabel: "Taal",
   legalBasisLabel: "Rechtsgrond:",

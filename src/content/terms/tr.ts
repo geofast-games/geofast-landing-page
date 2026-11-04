@@ -25,7 +25,7 @@ export const tr: TermsContent = {
     "Geofast: Battle of Nations oynama kuralları: hesaplar, davranış, moderasyon ve itiraz, satın almalar ve Savaş Bileti, değişiklikler ve haklarınız.",
   gameName: "Geofast: Battle of Nations",
   docName: "Hizmet Şartları",
-  lastUpdated: "Son güncelleme: 25 Eylül 2026",
+  lastUpdated: "Son güncelleme: 5 Kasım 2026",
   sectionsLabel: "Bölümler",
   languageLabel: "Dil",
   contact: {

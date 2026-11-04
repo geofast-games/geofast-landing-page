@@ -24,7 +24,7 @@ export const ja: TermsContent = {
     "Geofast: Battle of Nationsをプレイするためのルール：アカウント、行動規範、モデレーションと異議申し立て、購入とバトルパス、変更、お客様の権利について説明します。",
   gameName: "Geofast: Battle of Nations",
   docName: "利用規約",
-  lastUpdated: "最終更新日：2026年9月25日",
+  lastUpdated: "最終更新日：2026年11月5日",
   sectionsLabel: "セクション",
   languageLabel: "言語",
   contact: {

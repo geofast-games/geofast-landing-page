@@ -21,7 +21,7 @@ export const id: TermsContent = {
     "Aturan bermain Geofast: Battle of Nations: akun, perilaku, moderasi dan banding, pembelian dan Battle Pass, perubahan, serta hak Anda.",
   gameName: "Geofast: Battle of Nations",
   docName: "Ketentuan Layanan",
-  lastUpdated: "Terakhir diperbarui: 25 September 2026",
+  lastUpdated: "Terakhir diperbarui: 5 November 2026",
   sectionsLabel: "Bagian",
   languageLabel: "Bahasa",
   contact: {

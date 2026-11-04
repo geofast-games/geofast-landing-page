@@ -10,6 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { PageContact } from "./PageContact";
+import { PublisherIdentity } from "./PublisherIdentity";
 import { BlockView } from "./LegalBlocks";
 import { livePillClass } from "@/lib/ui";
 import { termsContent, termsLangs, termsPath, type TermsLang } from "@/content/terms";
@@ -86,6 +87,8 @@ const TermsOfService = ({ lang = "en" }: { lang?: TermsLang }) => {
           </SelectContent>
         </Select>
       </div>
+
+      <PublisherIdentity label="Publisher" />
 
       <p className="mb-8 text-xl text-muted-foreground">{content.lastUpdated}</p>
 

@@ -20,7 +20,7 @@ export const fi: PrivacyContent = {
     "Mitä tietoja Geofast: Battle of Nations kerää, miten niitä käytetään, kenelle niitä luovutetaan ja miten pyydät niiden poistamista.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Tietosuojakäytäntö",
-  lastUpdated: "Päivitetty viimeksi: 25. syyskuuta 2026",
+  lastUpdated: "Päivitetty viimeksi: 5. marraskuuta 2026",
   sectionsLabel: "Osiot",
   languageLabel: "Kieli",
   legalBasisLabel: "Oikeusperuste:",

@@ -23,7 +23,7 @@ export const ko: PrivacyContent = {
     "Geofast: Battle of Nations가 수집하는 데이터, 그 이용 방법, 공유 대상, 삭제 요청 방법을 안내합니다.",
   gameName: "Geofast: Battle of Nations",
   policyName: "개인정보 처리방침",
-  lastUpdated: "최종 업데이트: 2026년 9월 25일",
+  lastUpdated: "최종 업데이트: 2026년 11월 5일",
   sectionsLabel: "항목",
   languageLabel: "언어",
   legalBasisLabel: "법적 근거:",

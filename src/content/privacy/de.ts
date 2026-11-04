@@ -11,7 +11,7 @@ export const de: PrivacyContent = {
     "Welche Daten Geofast: Battle of Nations erhebt, wie sie verwendet werden, mit wem sie geteilt werden und wie Sie ihre Löschung beantragen.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Datenschutzerklärung",
-  lastUpdated: "Zuletzt aktualisiert: 25. September 2026",
+  lastUpdated: "Zuletzt aktualisiert: 5. November 2026",
   sectionsLabel: "Abschnitte",
   languageLabel: "Sprache",
   legalBasisLabel: "Rechtsgrundlage:",

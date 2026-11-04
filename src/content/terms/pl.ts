@@ -22,7 +22,7 @@ export const pl: TermsContent = {
     "Zasady gry w Geofast: Battle of Nations: konta, zasady zachowania, moderacja i odwołania, zakupy i Przepustka Bitewna, zmiany oraz Twoje prawa.",
   gameName: "Geofast: Battle of Nations",
   docName: "Regulamin",
-  lastUpdated: "Ostatnia aktualizacja: 25 września 2026 r.",
+  lastUpdated: "Ostatnia aktualizacja: 5 listopada 2026 r.",
   sectionsLabel: "Sekcje",
   languageLabel: "Język",
   contact: {

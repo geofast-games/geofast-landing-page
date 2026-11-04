@@ -22,7 +22,7 @@ export const ru: PrivacyContent = {
     "Какие данные собирает Geofast: Battle of Nations, как они используются, кому передаются и как запросить их удаление.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Политика конфиденциальности",
-  lastUpdated: "Последнее обновление: 25 сентября 2026 г.",
+  lastUpdated: "Последнее обновление: 5 ноября 2026 г.",
   sectionsLabel: "Разделы",
   languageLabel: "Язык",
   legalBasisLabel: "Правовое основание:",

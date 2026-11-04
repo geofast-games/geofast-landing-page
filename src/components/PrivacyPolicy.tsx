@@ -10,6 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { PageContact } from "./PageContact";
+import { PublisherIdentity } from "./PublisherIdentity";
 import { RichText } from "./RichText";
 import { livePillClass } from "@/lib/ui";
 import {
@@ -150,6 +151,8 @@ export const PrivacyPolicy = ({ lang = "en" }: { lang?: PrivacyLang }) => {
           </SelectContent>
         </Select>
       </div>
+
+      <PublisherIdentity label="Data controller" />
 
       <p className="mb-8 text-xl text-muted-foreground">{content.lastUpdated}</p>
 

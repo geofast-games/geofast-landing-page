@@ -20,7 +20,7 @@ export const sv: PrivacyContent = {
     "Vilka uppgifter Geofast: Battle of Nations samlar in, hur de används, vem de delas med och hur du begär radering.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Integritetspolicy",
-  lastUpdated: "Senast uppdaterad: 25 september 2026",
+  lastUpdated: "Senast uppdaterad: 5 november 2026",
   sectionsLabel: "Avsnitt",
   languageLabel: "Språk",
   legalBasisLabel: "Rättslig grund:",

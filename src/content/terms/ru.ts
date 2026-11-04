@@ -27,7 +27,7 @@ export const ru: TermsContent = {
     "Правила игры в Geofast: Battle of Nations: аккаунты, поведение, модерация и обжалование, покупки и Боевой пропуск, изменения и ваши права.",
   gameName: "Geofast: Battle of Nations",
   docName: "Условия использования",
-  lastUpdated: "Последнее обновление: 25 сентября 2026 г.",
+  lastUpdated: "Последнее обновление: 5 ноября 2026 г.",
   sectionsLabel: "Разделы",
   languageLabel: "Язык",
   contact: {

@@ -24,7 +24,7 @@ export const ko: TermsContent = {
     "Geofast: Battle of Nations 이용 규칙: 계정, 행동 규범, 운영 관리와 이의 제기, 구매와 배틀 패스, 변경 사항, 그리고 귀하의 권리를 안내합니다.",
   gameName: "Geofast: Battle of Nations",
   docName: "서비스 이용약관",
-  lastUpdated: "최종 업데이트: 2026년 9월 25일",
+  lastUpdated: "최종 업데이트: 2026년 11월 5일",
   sectionsLabel: "항목",
   languageLabel: "언어",
   contact: {

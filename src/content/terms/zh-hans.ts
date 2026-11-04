@@ -27,7 +27,7 @@ export const zhHans: TermsContent = {
     "Geofast: Battle of Nations 的游戏规则：账户、行为规范、管理与申诉、购买与战斗通行证、条款变更以及您的权利。",
   gameName: "Geofast: Battle of Nations",
   docName: "服务条款",
-  lastUpdated: "最后更新：2026年9月25日",
+  lastUpdated: "最后更新：2026年11月5日",
   sectionsLabel: "章节",
   languageLabel: "语言",
   contact: {

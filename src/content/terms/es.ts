@@ -23,7 +23,7 @@ export const es: TermsContent = {
     "Las reglas para jugar a Geofast: Battle of Nations: cuentas, conducta, moderación y reclamaciones, compras y Pase de Batalla, cambios y tus derechos.",
   gameName: "Geofast: Battle of Nations",
   docName: "Condiciones del servicio",
-  lastUpdated: "Última actualización: 25 de septiembre de 2026",
+  lastUpdated: "Última actualización: 5 de noviembre de 2026",
   sectionsLabel: "Secciones",
   languageLabel: "Idioma",
   contact: {

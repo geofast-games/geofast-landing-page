@@ -20,7 +20,7 @@ export const id: PrivacyContent = {
     "Data apa yang dikumpulkan Geofast: Battle of Nations, bagaimana data itu digunakan, dengan siapa dibagikan, dan cara meminta penghapusan.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Kebijakan Privasi",
-  lastUpdated: "Terakhir diperbarui: 25 September 2026",
+  lastUpdated: "Terakhir diperbarui: 5 November 2026",
   sectionsLabel: "Bagian",
   languageLabel: "Bahasa",
   legalBasisLabel: "Dasar hukum:",

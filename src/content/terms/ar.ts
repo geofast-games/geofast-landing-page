@@ -28,7 +28,7 @@ export const ar: TermsContent = {
     "قواعد اللعب في Geofast: Battle of Nations: الحسابات، والسلوك، والإشراف والطعون، والمشتريات وتذكرة المعركة، والتغييرات، وحقوقك.",
   gameName: "Geofast: Battle of Nations",
   docName: "شروط الخدمة",
-  lastUpdated: "آخر تحديث: 25 سبتمبر 2026",
+  lastUpdated: "آخر تحديث: 5 نوفمبر 2026",
   sectionsLabel: "الأقسام",
   languageLabel: "اللغة",
   contact: {

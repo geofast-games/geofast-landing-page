@@ -22,7 +22,7 @@ export const ja: PrivacyContent = {
     "Geofast: Battle of Nationsが収集するデータ、その利用方法、共有先、削除の請求方法について説明します。",
   gameName: "Geofast: Battle of Nations",
   policyName: "プライバシーポリシー",
-  lastUpdated: "最終更新日：2026年9月25日",
+  lastUpdated: "最終更新日：2026年11月5日",
   sectionsLabel: "セクション",
   languageLabel: "言語",
   legalBasisLabel: "法的根拠：",

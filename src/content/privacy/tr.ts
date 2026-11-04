@@ -19,7 +19,7 @@ export const tr: PrivacyContent = {
     "Geofast: Battle of Nations hangi verileri toplar, bunları nasıl kullanır, kimlerle paylaşır ve silinmelerini nasıl talep edebilirsiniz.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Gizlilik Politikası",
-  lastUpdated: "Son güncelleme: 25 Eylül 2026",
+  lastUpdated: "Son güncelleme: 5 Kasım 2026",
   sectionsLabel: "Bölümler",
   languageLabel: "Dil",
   legalBasisLabel: "Hukuki dayanak:",

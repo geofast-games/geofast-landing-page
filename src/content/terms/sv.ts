@@ -21,7 +21,7 @@ export const sv: TermsContent = {
     "Reglerna för att spela Geofast: Battle of Nations: konton, uppförande, moderering och överklaganden, köp och Battle Pass, ändringar och dina rättigheter.",
   gameName: "Geofast: Battle of Nations",
   docName: "Användarvillkor",
-  lastUpdated: "Senast uppdaterad: 25 september 2026",
+  lastUpdated: "Senast uppdaterad: 5 november 2026",
   sectionsLabel: "Avsnitt",
   languageLabel: "Språk",
   contact: {

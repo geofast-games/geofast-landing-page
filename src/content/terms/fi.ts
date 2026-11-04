@@ -23,7 +23,7 @@ export const fi: TermsContent = {
     "Säännöt Geofast: Battle of Nations -pelin pelaamiseen: tilit, käytös, moderointi ja valitukset, ostokset ja Taistelupassi, muutokset ja oikeutesi.",
   gameName: "Geofast: Battle of Nations",
   docName: "Käyttöehdot",
-  lastUpdated: "Päivitetty viimeksi: 25. syyskuuta 2026",
+  lastUpdated: "Päivitetty viimeksi: 5. marraskuuta 2026",
   sectionsLabel: "Osiot",
   languageLabel: "Kieli",
   contact: {

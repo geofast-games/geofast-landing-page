@@ -26,7 +26,7 @@ export const zhHant: PrivacyContent = {
     "Geofast: Battle of Nations 收集哪些資料、如何使用、與誰分享，以及如何申請刪除。",
   gameName: "Geofast: Battle of Nations",
   policyName: "隱私政策",
-  lastUpdated: "最後更新：2026年9月25日",
+  lastUpdated: "最後更新：2026年11月5日",
   sectionsLabel: "章節",
   languageLabel: "語言",
   legalBasisLabel: "法律依據：",
