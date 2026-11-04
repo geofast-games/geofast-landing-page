@@ -152,8 +152,6 @@ export const PrivacyPolicy = ({ lang = "en" }: { lang?: PrivacyLang }) => {
         </Select>
       </div>
 
-      <PublisherIdentity label="Data controller" />
-
       <p className="mb-8 text-xl text-muted-foreground">{content.lastUpdated}</p>
 
       {/* Layered notice: the list lets a reader jump to the one aspect they
@@ -187,7 +185,7 @@ export const PrivacyPolicy = ({ lang = "en" }: { lang?: PrivacyLang }) => {
         ))}
       </div>
 
-      <PublisherIdentity label="Data controller" className="mt-6" />
+      <PublisherIdentity label="Data controller" />
 
       <PageContact subject={content.policyName} text={content.contact} />
     </section>

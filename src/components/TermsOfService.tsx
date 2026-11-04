@@ -88,8 +88,6 @@ const TermsOfService = ({ lang = "en" }: { lang?: TermsLang }) => {
         </Select>
       </div>
 
-      <PublisherIdentity label="Publisher" />
-
       <p className="mb-8 text-xl text-muted-foreground">{content.lastUpdated}</p>
 
       {/* Layered document: the list lets a reader jump to the one section
@@ -123,7 +121,7 @@ const TermsOfService = ({ lang = "en" }: { lang?: TermsLang }) => {
         ))}
       </div>
 
-      <PublisherIdentity label="Publisher" className="mt-6" />
+      <PublisherIdentity label="Publisher" />
 
       <PageContact subject={content.docName} text={content.contact} />
     </section>
