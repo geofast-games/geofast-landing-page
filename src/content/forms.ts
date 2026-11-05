@@ -88,7 +88,17 @@ export const forms: Record<FormKind, FormSpec> = {
     maxAttachments: 3,
     thanks: "Thanks for the report. A person reads it; the player you reported does not learn who reported them.",
     fields: [
-      { name: "reported_username", label: "Username of the player you are reporting", required: true, maxLength: 64, widget: "text" },
+      // A Player Code never changes; a username may belong to someone else by the
+      // time the report is read.
+      {
+        name: "reported_player",
+        label: "Player Code of the player you are reporting",
+        required: true,
+        maxLength: 64,
+        widget: "text",
+        placeholder: "#ABCD-EF01-2",
+        help: "Open their profile in the game and tap Player Code to copy it. If you can't open their profile, give their exact username.",
+      },
       { name: "what", label: "What happened?", required: true, maxLength: 5000, widget: "textarea", help: "Quote what was said or describe what was done, as precisely as you can." },
       {
         name: "where",
@@ -110,7 +120,11 @@ export const forms: Record<FormKind, FormSpec> = {
 
 /** Optional identity fields shared by every form. */
 export const commonFields = {
-  username: { label: "Your in-game username", help: "Optional. Lets us look at the right account.", maxLength: 64 },
+  playerCode: {
+    label: "Your Player Code",
+    help: "Optional. Open your profile in the game and tap Player Code to copy it. It points to your account even after a rename.",
+    maxLength: 32,
+  },
   email: { label: "Your email", help: "Optional. Only if you want a reply.", maxLength: 254 },
 };
 

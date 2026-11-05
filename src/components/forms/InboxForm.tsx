@@ -233,11 +233,18 @@ export const InboxForm = ({ kind }: { kind: FormKind }) => {
 
           <div className="grid gap-6 border-t border-border pt-6 md:grid-cols-2">
             <div className="space-y-2">
-              <label htmlFor={fieldId("username")} className="text-sm font-medium leading-none">
-                {commonFields.username.label}
+              <label htmlFor={fieldId("player_code")} className="text-sm font-medium leading-none">
+                {commonFields.playerCode.label}
               </label>
-              <Input id={fieldId("username")} name="username" type="text" maxLength={commonFields.username.maxLength} autoComplete="off" />
-              <p className="text-sm text-muted-foreground">{commonFields.username.help}</p>
+              <Input
+                id={fieldId("player_code")}
+                name="player_code"
+                type="text"
+                maxLength={commonFields.playerCode.maxLength}
+                placeholder="#ABCD-EF01-2"
+                autoComplete="off"
+              />
+              <p className="text-sm text-muted-foreground">{commonFields.playerCode.help}</p>
             </div>
             <div className="space-y-2">
               <label htmlFor={fieldId("email")} className="text-sm font-medium leading-none">

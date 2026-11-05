@@ -20,7 +20,7 @@ const ReportPlayerPage = () => (
       </CardHeader>
       <CardContent className="space-y-3 text-sm text-muted-foreground">
         <ul className="list-disc space-y-1 pl-5">
-          <li>Give the exact username; a screenshot of the message or the profile helps most.</li>
+          <li>Give their Player Code (on their profile in the game); a screenshot of the message or the profile helps most.</li>
           <li>Reports are read by a person. The player you report does not learn who reported them.</li>
           <li>We confirm that we received your report and tell you what we decided. Sanctions can be appealed, see the Terms.</li>
         </ul>
