@@ -3,13 +3,13 @@ import { Reveal } from "./Reveal";
 import { usePublicStats, formatDownloads } from "@/lib/usePublicStats";
 import valentijnPhoto from "../assets/valentijn.jpg";
 import utkarshPhoto from "../assets/utkarsh.jpg";
+import adamPhoto from "../assets/adam.jpg";
 
 const openRoles = [
   "Game Developer",
   "Gameplay Writer",
   "Game Artist",
   "Marketing Specialist",
-  "Community Manager",
 ];
 
 const roleMailto = (role: string) =>
@@ -29,6 +29,12 @@ const team = [
     name: "Utkarsh Trivedi",
     position: "Developer",
     linkedin: "https://www.linkedin.com/in/utkarshtrivedi/",
+  },
+  {
+    imageUrl: adamPhoto,
+    name: "Adam Herba",
+    position: "Community Manager",
+    linkedin: "https://www.linkedin.com/in/adam-herba",
   },
 ];
 
