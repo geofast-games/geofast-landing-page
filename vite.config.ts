@@ -15,6 +15,10 @@ export default defineConfig({
           if (req.url === '/c' || req.url?.startsWith('/c/?') || req.url === '/c/') {
             req.url = '/c/index.html' + (req.url.split('?')[1] !== undefined ? '?' + req.url.split('?')[1] : '');
           }
+          // Same for the gift claim page (public/gift/index.html).
+          if (req.url === '/gift' || req.url?.startsWith('/gift/?') || req.url === '/gift/') {
+            req.url = '/gift/index.html' + (req.url.split('?')[1] !== undefined ? '?' + req.url.split('?')[1] : '');
+          }
           next();
         });
       },
@@ -47,6 +51,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/attribution": process.env.ATTRIBUTION_PROXY_TARGET || "http://127.0.0.1:7350",
+      "/gift/claim": process.env.ATTRIBUTION_PROXY_TARGET || "http://127.0.0.1:7350",
     },
     allowedHosts: process.env.ATTRIBUTION_TUNNEL_HOST ? [process.env.ATTRIBUTION_TUNNEL_HOST] : [],
   },
