@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Welcome back · Geofast: Battle of Nations</title>
+
+    <!--
+      Welcome-back page with the email gift. Design: geofast_bmad
+      docs/projects/win-back-email/gift-claim.md.
+
+      A player opens /gift/?t=<token> from an email. The page welcomes them
+      back, claims the gift (POST /gift/claim pays a signed token at most once
+      per account) and shows what is new in the game.
+
+      A COMMITTED static file, like /c/, and for the same reason: GitHub Pages
+      serves SPA-only paths as 404, and the 404.html shim rewrites the query
+      string. The token rides in the query string.
+
+      The claim starts on load. A mail scanner that runs scripts could claim
+      before the player; the gift still lands in the player's own account, and
+      the player then reads "already in your account", which is true.
+
+      Screens in img/ are fixture renders of the game (frontend
+      tools/ui_snapshot), 2026-11-25, 7.6.0.
+    -->
+
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: #0f0f14; color: #f4f4f5; text-align: center;
+        padding: 40px 16px 56px;
+      }
+      main { max-width: 440px; margin: 0 auto; }
+      .icon { width: 88px; height: 88px; border-radius: 20px; margin: 0 auto 20px; display: block; }
+      h1 { font-size: 1.75rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+      .lead { margin: 0 0 24px; color: #a1a1aa; font-size: 1rem; line-height: 1.5; }
+
+      .gift {
+        display: flex; align-items: center; gap: 14px; text-align: start;
+        background: linear-gradient(135deg, rgba(245,150,211,0.16), rgba(210,71,191,0.16));
+        border: 1px solid rgba(245,150,211,0.35); border-radius: 16px;
+        padding: 16px 18px; margin: 0 0 20px;
+      }
+      .gift .gem { font-size: 2rem; line-height: 1; flex: none; }
+      .gift p { margin: 0; font-size: 1rem; line-height: 1.45; }
+
+      .buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+      a.btn, button.btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        min-width: 240px; padding: 14px 24px; border-radius: 12px; border: 0;
+        background: linear-gradient(135deg, #F596D3, #D247BF);
+        color: #fff; text-decoration: none; font: inherit; font-weight: 600; font-size: 1rem;
+        cursor: pointer; transition: transform 0.15s ease;
+      }
+      a.btn:hover, button.btn:hover { transform: scale(1.03); }
+      .hint { margin: 0 0 4px; font-size: 0.9rem; color: #a1a1aa; line-height: 1.5; }
+      .badges { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 16px; }
+      .badges a { display: inline-block; transition: transform 0.15s ease; }
+      .badges a:hover { transform: scale(1.04); }
+      .badges img { height: 56px; width: auto; display: block; }
+
+      h2 { font-size: 1.25rem; margin: 48px 0 16px; }
+      .card {
+        background: #18181d; border: 1px solid #27272a; border-radius: 16px;
+        overflow: hidden; margin: 0 0 16px; text-align: start;
+      }
+      .card img { display: block; width: 100%; height: auto; background: #e8e6e3; }
+      .card .text { padding: 14px 18px 16px; }
+      .card h3 { margin: 0 0 4px; font-size: 1.05rem; }
+      .card p { margin: 0; color: #a1a1aa; font-size: 0.95rem; line-height: 1.45; }
+      .again { margin-top: 28px; }
+      [hidden] { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img class="icon" src="img/app-icon.webp" alt="" onerror="this.hidden=true" />
+      <h1 id="welcome"></h1>
+      <p class="lead" id="lead"></p>
+
+      <div class="gift" id="gift">
+        <div class="gem" aria-hidden="true">💎</div>
+        <p id="giftText"></p>
+      </div>
+
+      <div class="hint" id="hint"></div>
+      <div class="buttons" id="buttons"></div>
+
+      <h2 id="newTitle"></h2>
+      <div id="cards"></div>
+
+      <div class="buttons again" id="buttonsAgain"></div>
+    </main>
+
+    <script>
+      (function () {
+        'use strict';
+
+        // Mirrors the backend's services/giftclaimapi/giftClaimConfig.go.
+        var CFG = {
+          // Same-origin anywhere but the live site, so `npm run dev` reaches a
+          // local Nakama through the Vite proxy (vite.config.ts).
+          endpoint: /^(www\.)?geofastgames\.com$/.test(window.location.hostname)
+            ? 'https://nakamacdn.geofastgames.com/gift/claim'
+            : '/gift/claim',
+          playUrl: 'https://play.google.com/store/apps/details?id=com.geofast.geofastbattleofnations',
+          appleUrl: 'https://apps.apple.com/app/id6740595527',
+          timeoutMs: 15000
+        };
+
+        // What is new, in the order shown. Each has an image in img/.
+        var CARDS = ['market', 'season', 'command', 'look'];
+        var IMAGES = { market: 'img/market.webp', season: 'img/season.webp', command: 'img/command-center.webp', look: 'img/upgrade.webp' };
+
+        // The email's five languages (geofast_bmad docs/projects/win-back-email/email.md),
+        // in the game's own words from the 7.3 to 7.6 store notes. {name} and {n}
+        // are filled in as text, never as HTML.
+        var TEXT = {
+          en: {
+            welcome: 'Welcome back!', welcomeName: 'Welcome back, {name}!',
+            lead: 'A lot has happened in Geofast since you left.',
+            claiming: 'Adding your gift…',
+            claimed: '{n} diamonds are now in your account.',
+            already: 'Your {n} diamonds are already in your account.',
+            expired: 'This gift has expired, but everything below is waiting for you.',
+            invalid: 'This gift link does not work. Open it straight from the email.',
+            error: 'We could not add your gift just now. Please try again in a few minutes.',
+            retry: 'Try again', open: 'Open the game',
+            hint: 'Your diamonds are waiting in the game.',
+            desktop: 'Open Geofast on your phone to use them.',
+            newTitle: 'New in Geofast',
+            market: ['The Skin Market', 'Buy and sell numbered skins with other players.'],
+            season: ['Monthly Seasons', 'Daily and weekly challenges, Season Points and exclusive rewards.'],
+            command: ['Command Center', 'Nation leaders can now rally their whole nation.'],
+            look: ['A whole new look', 'Redesigned Shop and Upgrade tabs, and Level 6 for eight weapons.']
+          },
+          ar: {
+            welcome: 'مرحبًا بعودتك!', welcomeName: 'مرحبًا بعودتك يا {name}!',
+            lead: 'حدث الكثير في Geofast منذ غيابك.',
+            claiming: 'جارٍ إضافة هديتك…',
+            claimed: 'أصبحت {n} ألماسة في حسابك الآن.',
+            already: 'ألماساتك الـ{n} موجودة بالفعل في حسابك.',
+            expired: 'انتهت صلاحية هذه الهدية، لكن كل ما يلي بانتظارك.',
+            invalid: 'رابط الهدية هذا لا يعمل. افتحه مباشرة من الرسالة.',
+            error: 'تعذّرت إضافة هديتك الآن. حاول مرة أخرى بعد بضع دقائق.',
+            retry: 'حاول مرة أخرى', open: 'افتح اللعبة',
+            hint: 'ألماساتك بانتظارك في اللعبة.',
+            desktop: 'افتح Geofast على هاتفك لاستخدامها.',
+            newTitle: 'الجديد في Geofast',
+            market: ['السوق', 'اشترِ وبِع المظاهر المرقمة مع لاعبين آخرين.'],
+            season: ['مواسم شهرية', 'تحديات يومية وأسبوعية ونقاط الموسم ومكافآت حصرية.'],
+            command: ['مركز القيادة', 'يمكن الآن لقادة الدول حشد أمتهم بأكملها.'],
+            look: ['مظهر جديد بالكامل', 'تبويبات المتجر والترقية بتصميم جديد، والمستوى 6 لثمانية أسلحة.']
+          },
+          ru: {
+            welcome: 'С возвращением!', welcomeName: 'С возвращением, {name}!',
+            lead: 'Пока вас не было, в Geofast многое изменилось.',
+            claiming: 'Добавляем подарок…',
+            claimed: 'На ваш аккаунт добавлено {n} алмазов.',
+            already: 'Ваши {n} алмазов уже на вашем аккаунте.',
+            expired: 'Срок действия подарка истёк, но всё, что ниже, ждёт вас.',
+            invalid: 'Эта ссылка на подарок не работает. Откройте её прямо из письма.',
+            error: 'Сейчас не удалось добавить подарок. Попробуйте снова через несколько минут.',
+            retry: 'Попробовать снова', open: 'Открыть игру',
+            hint: 'Ваши алмазы ждут вас в игре.',
+            desktop: 'Откройте Geofast на телефоне, чтобы ими воспользоваться.',
+            newTitle: 'Что нового в Geofast',
+            market: ['Рынок', 'Покупайте и продавайте пронумерованные Скины с другими игроками.'],
+            season: ['Ежемесячные сезоны', 'Ежедневные и еженедельные задания, очки сезона и эксклюзивные награды.'],
+            command: ['Командный центр', 'Лидеры наций теперь могут мобилизовать всю свою страну.'],
+            look: ['Совершенно новый облик', 'Обновлённые вкладки «Магазин» и «Улучшение» и 6-й уровень для восьми видов оружия.']
+          },
+          fa: {
+            welcome: 'خوش برگشتید!', welcomeName: '{name}، خوش برگشتید!',
+            lead: 'از وقتی رفتید، در Geofast اتفاقات زیادی افتاده است.',
+            claiming: 'در حال افزودن هدیه شما…',
+            claimed: 'اکنون {n} الماس در حساب شماست.',
+            already: '{n} الماس شما از قبل در حسابتان است.',
+            expired: 'مهلت این هدیه تمام شده، اما همه چیزهای زیر منتظر شماست.',
+            invalid: 'این لینک هدیه کار نمی‌کند. آن را مستقیم از ایمیل باز کنید.',
+            error: 'الان نتوانستیم هدیه شما را اضافه کنیم. چند دقیقه دیگر دوباره امتحان کنید.',
+            retry: 'دوباره امتحان کنید', open: 'بازی را باز کنید',
+            hint: 'الماس‌های شما در بازی منتظرتان است.',
+            desktop: 'برای استفاده از آن‌ها، Geofast را روی گوشی خود باز کنید.',
+            newTitle: 'تازه‌های Geofast',
+            market: ['بازار اسکین', 'خرید و فروش اسکین‌های شماره‌دار با سایر بازیکنان.'],
+            season: ['فصل‌های ماهانه', 'چالش‌های روزانه و هفتگی، امتیاز فصل و جوایز انحصاری.'],
+            command: ['مرکز فرماندهی', 'رهبران کشورها اکنون می‌توانند کل ملت خود را بسیج کنند.'],
+            look: ['ظاهر کاملاً جدید', 'طراحی مجدد تب‌های فروشگاه و ارتقاء و سطح ۶ برای هشت سلاح.']
+          },
+          tr: {
+            welcome: 'Tekrar hoş geldin!', welcomeName: 'Tekrar hoş geldin, {name}!',
+            lead: "Sen yokken Geofast'ta çok şey değişti.",
+            claiming: 'Hediyen ekleniyor…',
+            claimed: '{n} elmas artık hesabında.',
+            already: '{n} elmasın zaten hesabında.',
+            expired: 'Bu hediyenin süresi doldu, ama aşağıdakilerin hepsi seni bekliyor.',
+            invalid: 'Bu hediye bağlantısı çalışmıyor. Doğrudan e-postadan aç.',
+            error: 'Hediyeni şu an ekleyemedik. Birkaç dakika sonra tekrar dene.',
+            retry: 'Tekrar dene', open: 'Oyunu aç',
+            hint: 'Elmasların oyunda seni bekliyor.',
+            desktop: "Kullanmak için Geofast'ı telefonunda aç.",
+            newTitle: "Geofast'ta yenilikler",
+            market: ['Kostüm Pazarı', 'Diğer oyuncularla numaralı Kostümler al ve sat.'],
+            season: ['Aylık Sezonlar', 'Günlük ve haftalık görevler, Sezon Puanları ve özel ödüller.'],
+            command: ['Komuta Merkezi', 'Ülke liderleri artık tüm uluslarını toplayabilir.'],
+            look: ['Yepyeni bir görünüm', 'Yeniden tasarlanan Mağaza ve Yükselt sekmeleri, sekiz silah için Seviye 6.']
+          }
+        };
+        var RTL = { ar: true, fa: true };
+
+        function pickLang() {
+          var list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+          for (var i = 0; i < list.length; i++) {
+            var l = String(list[i] || '').toLowerCase().split('-')[0];
+            if (TEXT[l]) return l;
+          }
+          return 'en';
+        }
+
+        var lang = pickLang();
+        var T = TEXT[lang];
+        document.documentElement.lang = lang;
+        if (RTL[lang]) document.documentElement.dir = 'rtl';
+
+        function $(id) { return document.getElementById(id); }
+        function fill(template, vals) {
+          return template.replace('{name}', vals.name || '').replace('{n}', String(vals.n || ''));
+        }
+        function isAndroid() { return /android/i.test(navigator.userAgent); }
+        function isIOS() {
+          return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        }
+        function isPhone() { return isAndroid() || isIOS(); }
+
+        // --- The static part: greeting and what is new ---
+        $('welcome').textContent = T.welcome;
+        $('lead').textContent = T.lead;
+        $('newTitle').textContent = T.newTitle;
+        CARDS.forEach(function (key) {
+          var card = document.createElement('div');
+          card.className = 'card';
+          var img = document.createElement('img');
+          img.src = IMAGES[key];
+          img.alt = T[key][0];
+          img.loading = 'lazy';
+          img.onerror = function () { img.hidden = true; };
+          var text = document.createElement('div');
+          text.className = 'text';
+          var h = document.createElement('h3');
+          h.textContent = T[key][0];
+          var p = document.createElement('p');
+          p.textContent = T[key][1];
+          text.appendChild(h);
+          text.appendChild(p);
+          card.appendChild(img);
+          card.appendChild(text);
+          $('cards').appendChild(card);
+        });
+
+        // --- Open the game. The store page shows "Open" when the game is
+        // installed and "Install" when not. The official store badges, the
+        // size the main site uses, sit under it, the visitor's own store
+        // first; on a phone an Open the game button leads.
+        function badge(href, src, alt) {
+          var a = document.createElement('a');
+          a.href = href;
+          a.rel = 'noopener';
+          var img = document.createElement('img');
+          img.src = src;
+          img.alt = alt;
+          a.appendChild(img);
+          return a;
+        }
+
+        function storeBadges() {
+          var box = document.createElement('div');
+          box.className = 'badges';
+          var play = badge(CFG.playUrl, 'img/playstore-badge.svg', 'Get it on Google Play');
+          var apple = badge(CFG.appleUrl, 'img/appstore-badge.svg', 'Download on the App Store');
+          if (isIOS()) {
+            box.appendChild(apple);
+            box.appendChild(play);
+          } else {
+            box.appendChild(play);
+            box.appendChild(apple);
+          }
+          return box;
+        }
+
+        function openButtons(container, withHint) {
+          container.textContent = '';
+          if (isPhone()) {
+            var a = document.createElement('a');
+            a.className = 'btn';
+            a.href = isIOS() ? CFG.appleUrl : CFG.playUrl;
+            a.rel = 'noopener';
+            a.textContent = T.open;
+            container.appendChild(a);
+          }
+          if (withHint) $('hint').textContent = isPhone() ? T.hint : T.desktop;
+          container.appendChild(storeBadges());
+        }
+
+        function showRetry() {
+          var c = $('buttons');
+          c.textContent = '';
+          var b = document.createElement('button');
+          b.className = 'btn';
+          b.type = 'button';
+          b.textContent = T.retry;
+          b.addEventListener('click', claim);
+          c.appendChild(b);
+          $('hint').textContent = '';
+        }
+
+        // --- The gift ---
+        function token() {
+          try {
+            return new URLSearchParams(window.location.search).get('t') || '';
+          } catch (e) {
+            return '';
+          }
+        }
+
+        function answer(result) {
+          var s = result && result.status;
+          if (result && result.name) $('welcome').textContent = fill(T.welcomeName, { name: result.name });
+          if (s === 'claimed' || s === 'already_claimed') {
+            $('giftText').textContent = fill(s === 'claimed' ? T.claimed : T.already, { n: result.diamonds });
+            openButtons($('buttons'), true);
+            openButtons($('buttonsAgain'), false);
+          } else if (s === 'expired' || s === 'invalid') {
+            $('giftText').textContent = s === 'expired' ? T.expired : T.invalid;
+            openButtons($('buttons'), false);
+            openButtons($('buttonsAgain'), false);
+          } else {
+            $('giftText').textContent = T.error;
+            showRetry();
+          }
+        }
+
+        function claim() {
+          var t = token();
+          if (!t) {
+            answer({ status: 'invalid' });
+            return;
+          }
+          $('giftText').textContent = T.claiming;
+          $('buttons').textContent = '';
+          $('hint').textContent = '';
+
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', CFG.endpoint, true);
+          xhr.timeout = CFG.timeoutMs;
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.onload = function () {
+            var result = null;
+            if (xhr.status === 200) {
+              try { result = JSON.parse(xhr.responseText); } catch (e) { result = null; }
+            }
+            answer(result);
+          };
+          xhr.onerror = xhr.ontimeout = function () { answer(null); };
+          xhr.send(JSON.stringify({ t: t }));
+        }
+
+        claim();
+      })();
+    </script>
+  </body>
+</html>
