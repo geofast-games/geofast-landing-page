@@ -59,8 +59,11 @@
         cursor: pointer; transition: transform 0.15s ease;
       }
       a.btn:hover, button.btn:hover { transform: scale(1.03); }
-      .hint { margin-top: 12px; font-size: 0.85rem; color: #71717a; line-height: 1.5; }
-      .hint a { color: #a1a1aa; }
+      .hint { margin: 0 0 4px; font-size: 0.9rem; color: #a1a1aa; line-height: 1.5; }
+      .badges { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 16px; }
+      .badges a { display: inline-block; transition: transform 0.15s ease; }
+      .badges a:hover { transform: scale(1.04); }
+      .badges img { height: 56px; width: auto; display: block; }
 
       h2 { font-size: 1.25rem; margin: 48px 0 16px; }
       .card {
@@ -86,8 +89,8 @@
         <p id="giftText"></p>
       </div>
 
-      <div class="buttons" id="buttons"></div>
       <div class="hint" id="hint"></div>
+      <div class="buttons" id="buttons"></div>
 
       <h2 id="newTitle"></h2>
       <div id="cards"></div>
@@ -263,9 +266,35 @@
         });
 
         // --- Open the game. The store page shows "Open" when the game is
-        // installed and "Install" when not, so one button serves both. On a
-        // computer there is nothing to open: say where the diamonds are, with
-        // the stores as small links.
+        // installed and "Install" when not. The official store badges, the
+        // size the main site uses, sit under it, the visitor's own store
+        // first; on a phone an Open the game button leads.
+        function badge(href, src, alt) {
+          var a = document.createElement('a');
+          a.href = href;
+          a.rel = 'noopener';
+          var img = document.createElement('img');
+          img.src = src;
+          img.alt = alt;
+          a.appendChild(img);
+          return a;
+        }
+
+        function storeBadges() {
+          var box = document.createElement('div');
+          box.className = 'badges';
+          var play = badge(CFG.playUrl, 'img/playstore-badge.svg', 'Get it on Google Play');
+          var apple = badge(CFG.appleUrl, 'img/appstore-badge.svg', 'Download on the App Store');
+          if (isIOS()) {
+            box.appendChild(apple);
+            box.appendChild(play);
+          } else {
+            box.appendChild(play);
+            box.appendChild(apple);
+          }
+          return box;
+        }
+
         function openButtons(container, withHint) {
           container.textContent = '';
           if (isPhone()) {
@@ -275,19 +304,9 @@
             a.rel = 'noopener';
             a.textContent = T.open;
             container.appendChild(a);
-            if (withHint) $('hint').textContent = T.hint;
-          } else if (withHint) {
-            var hint = $('hint');
-            hint.textContent = T.desktop + ' ';
-            var play = document.createElement('a');
-            play.href = CFG.playUrl; play.rel = 'noopener'; play.textContent = 'Google Play';
-            var apple = document.createElement('a');
-            apple.href = CFG.appleUrl; apple.rel = 'noopener'; apple.textContent = 'App Store';
-            hint.appendChild(document.createElement('br'));
-            hint.appendChild(play);
-            hint.appendChild(document.createTextNode(' · '));
-            hint.appendChild(apple);
           }
+          if (withHint) $('hint').textContent = isPhone() ? T.hint : T.desktop;
+          container.appendChild(storeBadges());
         }
 
         function showRetry() {
