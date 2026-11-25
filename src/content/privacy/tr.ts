@@ -19,7 +19,7 @@ export const tr: PrivacyContent = {
     "Geofast: Battle of Nations hangi verileri toplar, bunları nasıl kullanır, kimlerle paylaşır ve silinmelerini nasıl talep edebilirsiniz.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Gizlilik Politikası",
-  lastUpdated: "Son güncelleme: 5 Kasım 2026",
+  lastUpdated: "Son güncelleme: 25 Kasım 2026",
   sectionsLabel: "Bölümler",
   languageLabel: "Dil",
   legalBasisLabel: "Hukuki dayanak:",
@@ -118,7 +118,7 @@ export const tr: PrivacyContent = {
         },
         {
           type: "p",
-          text: "İlerlemenizi cihazlar arasında korumak istiyorsanız bir e-posta adresi ile şifre ekleyebilir ya da Google veya Apple ile giriş yapabilirsiniz. Şifreler özetlenmiş (hash) olarak saklanır; yani onları okuyamayız. Google veya Apple'dan yalnızca hesabı bağlamak için gerekenleri alırız ve e-posta adresinizi yalnızca hesabı güvence altına almak ve şifreyi sıfırlamak için kullanırız.",
+          text: "İlerlemenizi cihazlar arasında korumak istiyorsanız bir e-posta adresi ile şifre ekleyebilir ya da Google veya Apple ile giriş yapabilirsiniz. Şifreler özetlenmiş (hash) olarak saklanır; yani onları okuyamayız. Google veya Apple'dan yalnızca hesabı bağlamak için gerekenleri alırız ve e-posta adresinizi hesabı güvence altına almak, şifreyi sıfırlamak ve size ara sıra oyunla ilgili haberler göndermek için kullanırız (bkz. E-posta ile haberler).",
         },
         {
           type: "p",
@@ -217,6 +217,20 @@ export const tr: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "E-posta ile haberler",
+      blocks: [
+        {
+          type: "p",
+          text: "Hesabınızda bir e-posta adresi varsa size ara sıra oyunla ilgili e-postalar gönderebiliriz: yenilikler, etkinlikler ve sezonlar, hediyeler ve teklifler, bir süredir oynamadıysanız da bir hatırlatma. Bu e-postaların her birinde tek tıklamayla çalışan bir abonelikten çıkma bağlantısı bulunur; bağlantıyı kullandıktan sonra size artık haber göndermeyiz. Şifre sıfırlama gibi hesap e-postaları bundan etkilenmez.",
+        },
+        {
+          type: "basis",
+          text: "her e-postada abonelikten çıkma seçeneğiyle, sizi oynadığınız oyun hakkında bilgilendirmeye ilişkin meşru menfaatimiz.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "İsteğe bağlı ödüllü reklamlar",
       blocks: [
@@ -302,6 +316,7 @@ export const tr: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Android'de anlık bildirimlerin iletilmesi", "Amerika Birleşik Devletleri"],
             ["Apple Push Notification service", "iOS'ta anlık bildirimlerin iletilmesi", "Amerika Birleşik Devletleri"],
             ["Zoho Mail", "Şifre sıfırlama e-postaları dahil e-postamız", "Avrupa Birliği"],
+            ["Zoho Campaigns", "Oyun haberleri e-postalarının gönderimi", "Avrupa Birliği"],
             [
               "Google Play ve App Store",
               "Giriş, ödemeler, abonelikler ve çökme raporları",

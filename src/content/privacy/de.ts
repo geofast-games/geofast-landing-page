@@ -11,7 +11,7 @@ export const de: PrivacyContent = {
     "Welche Daten Geofast: Battle of Nations erhebt, wie sie verwendet werden, mit wem sie geteilt werden und wie Sie ihre Löschung beantragen.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Datenschutzerklärung",
-  lastUpdated: "Zuletzt aktualisiert: 5. November 2026",
+  lastUpdated: "Zuletzt aktualisiert: 25. November 2026",
   sectionsLabel: "Abschnitte",
   languageLabel: "Sprache",
   legalBasisLabel: "Rechtsgrundlage:",
@@ -110,7 +110,7 @@ export const de: PrivacyContent = {
         },
         {
           type: "p",
-          text: "Wenn Sie Ihren Fortschritt geräteübergreifend behalten möchten, können Sie eine E-Mail-Adresse mit Passwort hinzufügen oder sich mit Google oder Apple anmelden. Passwörter werden gehasht gespeichert, das heißt, wir können sie nicht lesen. Von Google oder Apple erhalten wir nur, was zum Verknüpfen des Kontos nötig ist, und Ihre E-Mail-Adresse verwenden wir nur, um das Konto zu sichern und das Passwort zurückzusetzen.",
+          text: "Wenn Sie Ihren Fortschritt geräteübergreifend behalten möchten, können Sie eine E-Mail-Adresse mit Passwort hinzufügen oder sich mit Google oder Apple anmelden. Passwörter werden gehasht gespeichert, das heißt, wir können sie nicht lesen. Von Google oder Apple erhalten wir nur, was zum Verknüpfen des Kontos nötig ist, und Ihre E-Mail-Adresse verwenden wir, um das Konto zu sichern, das Passwort zurückzusetzen und Ihnen gelegentlich Neuigkeiten zum Spiel zu senden (siehe Neuigkeiten per E-Mail).",
         },
         {
           type: "p",
@@ -209,6 +209,20 @@ export const de: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Neuigkeiten per E-Mail",
+      blocks: [
+        {
+          type: "p",
+          text: "Wenn Ihr Konto eine E-Mail-Adresse hat, können wir Ihnen gelegentlich E-Mails zum Spiel senden: was neu ist, Events und Seasons, Geschenke und Angebote sowie eine Nachricht, wenn Sie eine Weile nicht gespielt haben. Jede dieser E-Mails enthält einen Abmeldelink, der mit einem Klick funktioniert; danach senden wir Ihnen keine Neuigkeiten mehr. Konto-E-Mails wie das Zurücksetzen des Passworts sind davon nicht betroffen.",
+        },
+        {
+          type: "basis",
+          text: "unser berechtigtes Interesse, Sie über das Spiel, das Sie spielen, auf dem Laufenden zu halten, mit einer Abmeldemöglichkeit in jeder E-Mail.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Optionale Belohnungsanzeigen",
       blocks: [
@@ -294,6 +308,7 @@ export const de: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Zustellung von Push-Benachrichtigungen auf Android", "Vereinigte Staaten"],
             ["Apple Push Notification Service", "Zustellung von Push-Benachrichtigungen auf iOS", "Vereinigte Staaten"],
             ["Zoho Mail", "Unsere E-Mail, einschließlich E-Mails zum Zurücksetzen des Passworts", "Europäische Union"],
+            ["Zoho Campaigns", "Versand der E-Mails mit Neuigkeiten zum Spiel", "Europäische Union"],
             [
               "Google Play und App Store",
               "Anmeldung, Zahlungen, Abonnements und Absturzberichte",

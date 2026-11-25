@@ -19,7 +19,7 @@ export const it: PrivacyContent = {
     "Quali dati raccoglie Geofast: Battle of Nations, come vengono usati, con chi vengono condivisi e come chiederne la cancellazione.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Informativa sulla privacy",
-  lastUpdated: "Ultimo aggiornamento: 5 novembre 2026",
+  lastUpdated: "Ultimo aggiornamento: 25 novembre 2026",
   sectionsLabel: "Sezioni",
   languageLabel: "Lingua",
   legalBasisLabel: "Base giuridica:",
@@ -118,7 +118,7 @@ export const it: PrivacyContent = {
         },
         {
           type: "p",
-          text: "Se vuoi conservare i tuoi progressi su più dispositivi, puoi aggiungere un indirizzo e-mail con password oppure accedere con Google o Apple. Le password sono conservate in forma di hash, il che significa che non possiamo leggerle. Da Google o Apple riceviamo solo quanto serve per collegare l'account, e usiamo il tuo indirizzo e-mail soltanto per proteggere l'account e reimpostare la password.",
+          text: "Se vuoi conservare i tuoi progressi su più dispositivi, puoi aggiungere un indirizzo e-mail con password oppure accedere con Google o Apple. Le password sono conservate in forma di hash, il che significa che non possiamo leggerle. Da Google o Apple riceviamo solo quanto serve per collegare l'account, e usiamo il tuo indirizzo e-mail per proteggere l'account, reimpostare la password e inviarti ogni tanto novità sul gioco (vedi Novità via e-mail).",
         },
         {
           type: "p",
@@ -217,6 +217,20 @@ export const it: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Novità via e-mail",
+      blocks: [
+        {
+          type: "p",
+          text: "Se il tuo account ha un indirizzo e-mail, possiamo inviarti ogni tanto e-mail sul gioco: le novità, gli eventi e le stagioni, regali e offerte, e un messaggio se manchi da un po'. Ognuna di queste e-mail contiene un link per annullare l'iscrizione con un solo clic; dopo averlo usato non ti inviamo più novità. Le e-mail dell'account, come la reimpostazione della password, non cambiano.",
+        },
+        {
+          type: "basis",
+          text: "il nostro legittimo interesse a tenerti informato sul gioco a cui giochi, con la possibilità di annullare l'iscrizione in ogni e-mail.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Annunci con ricompensa facoltativi",
       blocks: [
@@ -302,6 +316,7 @@ export const it: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Recapito delle notifiche push su Android", "Stati Uniti"],
             ["Apple Push Notification service", "Recapito delle notifiche push su iOS", "Stati Uniti"],
             ["Zoho Mail", "La nostra posta elettronica, comprese le e-mail di reimpostazione della password", "Unione europea"],
+            ["Zoho Campaigns", "Invio delle e-mail con le novità sul gioco", "Unione europea"],
             [
               "Google Play e App Store",
               "Accesso, pagamenti, abbonamenti e rapporti sugli arresti anomali",

@@ -20,7 +20,7 @@ export const pt: PrivacyContent = {
     "Quais dados o Geofast: Battle of Nations coleta, como são usados, com quem são compartilhados e como solicitar a exclusão.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Política de Privacidade",
-  lastUpdated: "Última atualização: 5 de novembro de 2026",
+  lastUpdated: "Última atualização: 25 de novembro de 2026",
   sectionsLabel: "Seções",
   languageLabel: "Idioma",
   legalBasisLabel: "Base legal:",
@@ -119,7 +119,7 @@ export const pt: PrivacyContent = {
         },
         {
           type: "p",
-          text: "Se quiser manter seu progresso em vários dispositivos, você pode adicionar um endereço de e-mail com senha ou fazer login com Google ou Apple. As senhas são armazenadas com hash, o que significa que não conseguimos lê-las. Do Google ou da Apple recebemos apenas o necessário para vincular a conta, e usamos seu endereço de e-mail somente para proteger a conta e redefinir a senha.",
+          text: "Se quiser manter seu progresso em vários dispositivos, você pode adicionar um endereço de e-mail com senha ou fazer login com Google ou Apple. As senhas são armazenadas com hash, o que significa que não conseguimos lê-las. Do Google ou da Apple recebemos apenas o necessário para vincular a conta, e usamos seu endereço de e-mail para proteger a conta, redefinir a senha e enviar de vez em quando novidades do jogo (veja Novidades por e-mail).",
         },
         {
           type: "p",
@@ -218,6 +218,20 @@ export const pt: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Novidades por e-mail",
+      blocks: [
+        {
+          type: "p",
+          text: "Se a sua conta tem um endereço de e-mail, podemos enviar de vez em quando e-mails sobre o jogo: o que há de novo, eventos e temporadas, presentes e ofertas, e um aviso se você está ausente há algum tempo. Cada um desses e-mails traz um link para cancelar a inscrição com um clique; depois de usá-lo, não enviamos mais novidades. Os e-mails da conta, como a redefinição de senha, não são afetados.",
+        },
+        {
+          type: "basis",
+          text: "nosso legítimo interesse em manter você informado sobre o jogo que você joga, com a opção de cancelar a inscrição em cada e-mail.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Anúncios recompensados opcionais",
       blocks: [
@@ -303,6 +317,7 @@ export const pt: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Entrega de notificações push no Android", "Estados Unidos"],
             ["Apple Push Notification service", "Entrega de notificações push no iOS", "Estados Unidos"],
             ["Zoho Mail", "Nosso e-mail, incluindo os e-mails de redefinição de senha", "União Europeia"],
+            ["Zoho Campaigns", "Envio dos e-mails com novidades do jogo", "União Europeia"],
             [
               "Google Play e App Store",
               "Login, pagamentos, assinaturas e relatórios de falhas",

@@ -19,7 +19,7 @@ export const pl: PrivacyContent = {
     "Jakie dane zbiera Geofast: Battle of Nations, jak są wykorzystywane, komu są udostępniane i jak zażądać ich usunięcia.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Polityka prywatności",
-  lastUpdated: "Ostatnia aktualizacja: 5 listopada 2026 r.",
+  lastUpdated: "Ostatnia aktualizacja: 25 listopada 2026 r.",
   sectionsLabel: "Sekcje",
   languageLabel: "Język",
   legalBasisLabel: "Podstawa prawna:",
@@ -118,7 +118,7 @@ export const pl: PrivacyContent = {
         },
         {
           type: "p",
-          text: "Jeśli chcesz zachować postępy na różnych urządzeniach, możesz dodać adres e-mail z hasłem albo zalogować się przez Google lub Apple. Hasła są przechowywane w postaci skrótu (hash), co oznacza, że nie możemy ich odczytać. Od Google lub Apple otrzymujemy tylko to, co jest potrzebne do połączenia konta, a Twojego adresu e-mail używamy wyłącznie do zabezpieczenia konta i resetowania hasła.",
+          text: "Jeśli chcesz zachować postępy na różnych urządzeniach, możesz dodać adres e-mail z hasłem albo zalogować się przez Google lub Apple. Hasła są przechowywane w postaci skrótu (hash), co oznacza, że nie możemy ich odczytać. Od Google lub Apple otrzymujemy tylko to, co jest potrzebne do połączenia konta, a Twojego adresu e-mail używamy do zabezpieczenia konta, resetowania hasła oraz do wysyłania Ci od czasu do czasu nowości o grze (zobacz Nowości e-mailem).",
         },
         {
           type: "p",
@@ -217,6 +217,20 @@ export const pl: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Nowości e-mailem",
+      blocks: [
+        {
+          type: "p",
+          text: "Jeśli Twoje konto ma adres e-mail, możemy od czasu do czasu wysyłać Ci wiadomości o grze: co nowego, wydarzenia i sezony, prezenty i oferty oraz wiadomość, gdy nie było Cię przez dłuższy czas. Każda taka wiadomość zawiera link do rezygnacji, który działa po jednym kliknięciu; po jego użyciu nie wysyłamy już nowości. Nie dotyczy to wiadomości związanych z kontem, takich jak reset hasła.",
+        },
+        {
+          type: "basis",
+          text: "nasz prawnie uzasadniony interes polegający na informowaniu Cię o grze, w którą grasz, z możliwością rezygnacji w każdej wiadomości.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Opcjonalne reklamy z nagrodą",
       blocks: [
@@ -302,6 +316,7 @@ export const pl: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Dostarczanie powiadomień push na Androidzie", "Stany Zjednoczone"],
             ["Apple Push Notification service", "Dostarczanie powiadomień push na iOS", "Stany Zjednoczone"],
             ["Zoho Mail", "Nasza poczta e-mail, w tym wiadomości do resetowania hasła", "Unia Europejska"],
+            ["Zoho Campaigns", "Wysyłanie wiadomości e-mail z nowościami o grze", "Unia Europejska"],
             [
               "Google Play i App Store",
               "Logowanie, płatności, subskrypcje i raporty o awariach",

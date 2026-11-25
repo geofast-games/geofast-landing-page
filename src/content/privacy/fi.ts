@@ -20,7 +20,7 @@ export const fi: PrivacyContent = {
     "Mitä tietoja Geofast: Battle of Nations kerää, miten niitä käytetään, kenelle niitä luovutetaan ja miten pyydät niiden poistamista.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Tietosuojakäytäntö",
-  lastUpdated: "Päivitetty viimeksi: 5. marraskuuta 2026",
+  lastUpdated: "Päivitetty viimeksi: 25. marraskuuta 2026",
   sectionsLabel: "Osiot",
   languageLabel: "Kieli",
   legalBasisLabel: "Oikeusperuste:",
@@ -119,7 +119,7 @@ export const fi: PrivacyContent = {
         },
         {
           type: "p",
-          text: "Jos haluat säilyttää edistymisesi laitteesta toiseen, voit lisätä sähköpostiosoitteen ja salasanan tai kirjautua Google- tai Apple-tilillä. Salasanat tallennetaan tiivisteinä (hash), mikä tarkoittaa, että emme voi lukea niitä. Googlelta tai Applelta saamme vain sen, mitä tilin liittämiseen tarvitaan, ja käytämme sähköpostiosoitettasi vain tilin suojaamiseen ja salasanan nollaamiseen.",
+          text: "Jos haluat säilyttää edistymisesi laitteesta toiseen, voit lisätä sähköpostiosoitteen ja salasanan tai kirjautua Google- tai Apple-tilillä. Salasanat tallennetaan tiivisteinä (hash), mikä tarkoittaa, että emme voi lukea niitä. Googlelta tai Applelta saamme vain sen, mitä tilin liittämiseen tarvitaan, ja käytämme sähköpostiosoitettasi tilin suojaamiseen, salasanan nollaamiseen ja pelin uutisten lähettämiseen silloin tällöin (katso Uutiset sähköpostitse).",
         },
         {
           type: "p",
@@ -218,6 +218,20 @@ export const fi: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Uutiset sähköpostitse",
+      blocks: [
+        {
+          type: "p",
+          text: "Jos tililläsi on sähköpostiosoite, voimme lähettää sinulle silloin tällöin sähköpostia pelistä: mitä uutta on, tapahtumat ja kaudet, lahjat ja tarjoukset sekä viestin, jos olet ollut poissa jonkin aikaa. Jokaisessa tällaisessa viestissä on peruutuslinkki, joka toimii yhdellä napsautuksella, ja sen jälkeen emme lähetä sinulle enää uutisia. Tiliin liittyvät viestit, kuten salasanan nollaus, eivät muutu.",
+        },
+        {
+          type: "basis",
+          text: "oikeutettu etumme pitää sinut ajan tasalla pelaamastasi pelistä, ja voit peruuttaa tilauksen jokaisesta viestistä.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Vapaaehtoiset palkintomainokset",
       blocks: [
@@ -303,6 +317,7 @@ export const fi: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Push-ilmoitusten välitys Androidilla", "Yhdysvallat"],
             ["Apple Push Notification service", "Push-ilmoitusten välitys iOS:llä", "Yhdysvallat"],
             ["Zoho Mail", "Sähköpostimme, mukaan lukien salasanan nollausviestit", "Euroopan unioni"],
+            ["Zoho Campaigns", "Pelin uutisia sisältävien sähköpostien lähettäminen", "Euroopan unioni"],
             [
               "Google Play ja App Store",
               "Kirjautuminen, maksut, tilaukset ja kaatumisraportit",

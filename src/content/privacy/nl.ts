@@ -12,7 +12,7 @@ export const nl: PrivacyContent = {
     "Welke gegevens Geofast: Battle of Nations verzamelt, hoe ze worden gebruikt, met wie ze worden gedeeld en hoe je verwijdering aanvraagt.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Privacyverklaring",
-  lastUpdated: "Laatst bijgewerkt: 5 november 2026",
+  lastUpdated: "Laatst bijgewerkt: 25 november 2026",
   sectionsLabel: "Onderdelen",
   languageLabel: "Taal",
   legalBasisLabel: "Rechtsgrond:",
@@ -111,7 +111,7 @@ export const nl: PrivacyContent = {
         },
         {
           type: "p",
-          text: "Wil je je voortgang op meerdere apparaten behouden, dan kun je een e-mailadres met wachtwoord toevoegen of je aanmelden met Google of Apple. Wachtwoorden worden gehasht opgeslagen, wat betekent dat wij ze niet kunnen lezen. Van Google of Apple ontvangen we alleen wat nodig is om het account te koppelen, en je e-mailadres gebruiken we alleen om het account te beveiligen en het wachtwoord te resetten.",
+          text: "Wil je je voortgang op meerdere apparaten behouden, dan kun je een e-mailadres met wachtwoord toevoegen of je aanmelden met Google of Apple. Wachtwoorden worden gehasht opgeslagen, wat betekent dat wij ze niet kunnen lezen. Van Google of Apple ontvangen we alleen wat nodig is om het account te koppelen, en je e-mailadres gebruiken we om het account te beveiligen, het wachtwoord te resetten en je af en toe nieuws over de game te sturen (zie Nieuws per e-mail).",
         },
         {
           type: "p",
@@ -210,6 +210,20 @@ export const nl: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Nieuws per e-mail",
+      blocks: [
+        {
+          type: "p",
+          text: "Als je account een e-mailadres heeft, kunnen we je af en toe e-mails over de game sturen: wat er nieuw is, events en seizoenen, cadeaus en aanbiedingen, en een bericht als je een tijd weg bent geweest. Elke e-mail van dit soort bevat een afmeldlink die met één klik werkt; daarna sturen we je geen nieuws meer. Accountmails, zoals het resetten van je wachtwoord, vallen hier niet onder.",
+        },
+        {
+          type: "basis",
+          text: "ons gerechtvaardigd belang om je op de hoogte te houden van de game die je speelt, met een afmeldmogelijkheid in elke e-mail.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Optionele beloningsadvertenties",
       blocks: [
@@ -295,6 +309,7 @@ export const nl: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Bezorging van pushmeldingen op Android", "Verenigde Staten"],
             ["Apple Push Notification service", "Bezorging van pushmeldingen op iOS", "Verenigde Staten"],
             ["Zoho Mail", "Onze e-mail, inclusief e-mails om je wachtwoord te resetten", "Europese Unie"],
+            ["Zoho Campaigns", "Het versturen van de e-mails met nieuws over de game", "Europese Unie"],
             [
               "Google Play en de App Store",
               "Aanmelden, betalingen, abonnementen en crashrapporten",

@@ -12,7 +12,7 @@ export const fr: PrivacyContent = {
     "Quelles données Geofast: Battle of Nations collecte, comment elles sont utilisées, avec qui elles sont partagées et comment en demander la suppression.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Politique de confidentialité",
-  lastUpdated: "Dernière mise à jour : 5 novembre 2026",
+  lastUpdated: "Dernière mise à jour : 25 novembre 2026",
   sectionsLabel: "Sections",
   languageLabel: "Langue",
   legalBasisLabel: "Base légale :",
@@ -111,7 +111,7 @@ export const fr: PrivacyContent = {
         },
         {
           type: "p",
-          text: "Si vous souhaitez conserver votre progression d'un appareil à l'autre, vous pouvez ajouter une adresse e-mail avec mot de passe ou vous connecter avec Google ou Apple. Les mots de passe sont stockés hachés, ce qui signifie que nous ne pouvons pas les lire. De Google ou d'Apple, nous ne recevons que ce qui est nécessaire pour lier le compte, et nous n'utilisons votre adresse e-mail que pour sécuriser le compte et réinitialiser le mot de passe.",
+          text: "Si vous souhaitez conserver votre progression d'un appareil à l'autre, vous pouvez ajouter une adresse e-mail avec mot de passe ou vous connecter avec Google ou Apple. Les mots de passe sont stockés hachés, ce qui signifie que nous ne pouvons pas les lire. De Google ou d'Apple, nous ne recevons que ce qui est nécessaire pour lier le compte, et nous utilisons votre adresse e-mail pour sécuriser le compte, réinitialiser le mot de passe et vous envoyer de temps en temps des nouvelles du jeu (voir Nouvelles par e-mail).",
         },
         {
           type: "p",
@@ -210,6 +210,20 @@ export const fr: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Nouvelles par e-mail",
+      blocks: [
+        {
+          type: "p",
+          text: "Si votre compte a une adresse e-mail, nous pouvons vous envoyer de temps en temps des e-mails sur le jeu : les nouveautés, les événements et les saisons, des cadeaux et des offres, et un message si vous êtes absent depuis un moment. Chacun de ces e-mails contient un lien de désinscription qui fonctionne en un clic ; après l'avoir utilisé, vous ne recevez plus de nouvelles. Les e-mails liés au compte, comme la réinitialisation du mot de passe, ne sont pas concernés.",
+        },
+        {
+          type: "basis",
+          text: "notre intérêt légitime à vous tenir informé du jeu auquel vous jouez, avec une possibilité de désinscription dans chaque e-mail.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Publicités récompensées facultatives",
       blocks: [
@@ -295,6 +309,7 @@ export const fr: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Acheminement des notifications push sur Android", "États-Unis"],
             ["Service Apple Push Notification", "Acheminement des notifications push sur iOS", "États-Unis"],
             ["Zoho Mail", "Notre messagerie, y compris les e-mails de réinitialisation du mot de passe", "Union européenne"],
+            ["Zoho Campaigns", "Envoi des e-mails de nouvelles du jeu", "Union européenne"],
             [
               "Google Play et l'App Store",
               "Connexion, paiements, abonnements et rapports de plantage",

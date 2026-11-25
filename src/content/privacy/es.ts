@@ -18,7 +18,7 @@ export const es: PrivacyContent = {
     "Qué datos recoge Geofast: Battle of Nations, cómo se usan, con quién se comparten y cómo solicitar su supresión.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Política de privacidad",
-  lastUpdated: "Última actualización: 5 de noviembre de 2026",
+  lastUpdated: "Última actualización: 25 de noviembre de 2026",
   sectionsLabel: "Secciones",
   languageLabel: "Idioma",
   legalBasisLabel: "Base jurídica:",
@@ -117,7 +117,7 @@ export const es: PrivacyContent = {
         },
         {
           type: "p",
-          text: "Si quieres conservar tu progreso en varios dispositivos, puedes añadir una dirección de correo electrónico con contraseña o iniciar sesión con Google o Apple. Las contraseñas se almacenan cifradas con hash, lo que significa que no podemos leerlas. De Google o Apple recibimos solo lo necesario para vincular la cuenta, y usamos tu dirección de correo únicamente para proteger la cuenta y restablecer la contraseña.",
+          text: "Si quieres conservar tu progreso en varios dispositivos, puedes añadir una dirección de correo electrónico con contraseña o iniciar sesión con Google o Apple. Las contraseñas se almacenan cifradas con hash, lo que significa que no podemos leerlas. De Google o Apple recibimos solo lo necesario para vincular la cuenta, y usamos tu dirección de correo para proteger la cuenta, restablecer la contraseña y enviarte de vez en cuando novedades del juego (consulta Novedades por correo).",
         },
         {
           type: "p",
@@ -216,6 +216,20 @@ export const es: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Novedades por correo",
+      blocks: [
+        {
+          type: "p",
+          text: "Si tu cuenta tiene una dirección de correo, podemos enviarte de vez en cuando correos sobre el juego: qué hay de nuevo, eventos y temporadas, regalos y ofertas, y un aviso si llevas un tiempo sin jugar. Cada uno de estos correos incluye un enlace para darte de baja con un solo clic, y después de usarlo no te enviamos más novedades. Los correos de la cuenta, como el restablecimiento de la contraseña, no se ven afectados.",
+        },
+        {
+          type: "basis",
+          text: "nuestro interés legítimo en mantenerte informado sobre el juego al que juegas, con una opción de baja en cada correo.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Anuncios con recompensa opcionales",
       blocks: [
@@ -301,6 +315,7 @@ export const es: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Entrega de notificaciones push en Android", "Estados Unidos"],
             ["Apple Push Notification service", "Entrega de notificaciones push en iOS", "Estados Unidos"],
             ["Zoho Mail", "Nuestro correo electrónico, incluidos los correos de restablecimiento de contraseña", "Unión Europea"],
+            ["Zoho Campaigns", "Envío de los correos con novedades del juego", "Unión Europea"],
             [
               "Google Play y la App Store",
               "Inicio de sesión, pagos, suscripciones e informes de fallos",

@@ -22,7 +22,7 @@ export const ja: PrivacyContent = {
     "Geofast: Battle of Nationsが収集するデータ、その利用方法、共有先、削除の請求方法について説明します。",
   gameName: "Geofast: Battle of Nations",
   policyName: "プライバシーポリシー",
-  lastUpdated: "最終更新日：2026年11月5日",
+  lastUpdated: "最終更新日：2026年11月25日",
   sectionsLabel: "セクション",
   languageLabel: "言語",
   legalBasisLabel: "法的根拠：",
@@ -121,7 +121,7 @@ export const ja: PrivacyContent = {
         },
         {
           type: "p",
-          text: "複数の端末で進行状況を引き継ぎたい場合は、メールアドレスとパスワードを追加するか、GoogleまたはAppleでサインインできます。パスワードはハッシュ化して保存されるため、私たちは読み取ることができません。GoogleまたはAppleからは、アカウントの紐づけに必要な情報のみを受け取り、メールアドレスはアカウントの保護とパスワードのリセットにのみ使用します。",
+          text: "複数の端末で進行状況を引き継ぎたい場合は、メールアドレスとパスワードを追加するか、GoogleまたはAppleでサインインできます。パスワードはハッシュ化して保存されるため、私たちは読み取ることができません。GoogleまたはAppleからは、アカウントの紐づけに必要な情報のみを受け取り、メールアドレスはアカウントの保護、パスワードのリセット、およびゲームに関するお知らせをときどきお送りするために使用します（「メールでのお知らせ」をご覧ください）。",
         },
         {
           type: "p",
@@ -220,6 +220,20 @@ export const ja: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "メールでのお知らせ",
+      blocks: [
+        {
+          type: "p",
+          text: "アカウントにメールアドレスが登録されている場合、ゲームに関するメールをときどきお送りすることがあります。新しい内容、イベントやシーズン、ギフトや特典、しばらくプレイされていない場合のお知らせなどです。これらのメールには必ずワンクリックで配信を停止できるリンクがあり、ご利用後はお知らせをお送りしません。パスワードのリセットなど、アカウントに関するメールには影響しません。",
+        },
+        {
+          type: "basis",
+          text: "すべてのメールで配信を停止できる方法で、プレイ中のゲームについてお知らせするという、私たちの正当な利益。",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "任意のリワード広告",
       blocks: [
@@ -305,6 +319,7 @@ export const ja: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Androidでのプッシュ通知の配信", "米国"],
             ["Apple Push Notification service", "iOSでのプッシュ通知の配信", "米国"],
             ["Zoho Mail", "パスワードリセットメールを含む私たちのメール", "欧州連合"],
+            ["Zoho Campaigns", "ゲームのお知らせメールの送信", "欧州連合"],
             [
               "Google PlayおよびApp Store",
               "サインイン、支払い、サブスクリプション、クラッシュレポート",

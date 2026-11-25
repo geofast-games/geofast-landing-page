@@ -20,7 +20,7 @@ export const id: PrivacyContent = {
     "Data apa yang dikumpulkan Geofast: Battle of Nations, bagaimana data itu digunakan, dengan siapa dibagikan, dan cara meminta penghapusan.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Kebijakan Privasi",
-  lastUpdated: "Terakhir diperbarui: 5 November 2026",
+  lastUpdated: "Terakhir diperbarui: 25 November 2026",
   sectionsLabel: "Bagian",
   languageLabel: "Bahasa",
   legalBasisLabel: "Dasar hukum:",
@@ -119,7 +119,7 @@ export const id: PrivacyContent = {
         },
         {
           type: "p",
-          text: "Jika Anda ingin mempertahankan kemajuan di beberapa perangkat, Anda dapat menambahkan alamat email dengan kata sandi atau masuk dengan Google atau Apple. Kata sandi disimpan dalam bentuk hash, yang berarti kami tidak dapat membacanya. Dari Google atau Apple, kami hanya menerima apa yang diperlukan untuk menautkan akun, dan kami menggunakan alamat email Anda hanya untuk mengamankan akun dan mengatur ulang kata sandi.",
+          text: "Jika Anda ingin mempertahankan kemajuan di beberapa perangkat, Anda dapat menambahkan alamat email dengan kata sandi atau masuk dengan Google atau Apple. Kata sandi disimpan dalam bentuk hash, yang berarti kami tidak dapat membacanya. Dari Google atau Apple, kami hanya menerima apa yang diperlukan untuk menautkan akun, dan kami menggunakan alamat email Anda untuk mengamankan akun, mengatur ulang kata sandi, dan sesekali mengirimkan kabar tentang gim (lihat Kabar lewat email).",
         },
         {
           type: "p",
@@ -218,6 +218,20 @@ export const id: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Kabar lewat email",
+      blocks: [
+        {
+          type: "p",
+          text: "Jika akun Anda memiliki alamat email, kami dapat sesekali mengirimkan email tentang gim: apa yang baru, event dan musim, hadiah dan penawaran, serta pesan jika Anda sudah lama tidak bermain. Setiap email seperti ini memiliki tautan berhenti berlangganan yang berfungsi dengan satu klik, dan setelah Anda menggunakannya kami tidak mengirimkan kabar lagi. Email akun seperti pengaturan ulang kata sandi tidak terpengaruh.",
+        },
+        {
+          type: "basis",
+          text: "kepentingan kami yang sah untuk memberi Anda informasi tentang gim yang Anda mainkan, dengan pilihan berhenti berlangganan di setiap email.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Iklan berhadiah opsional",
       blocks: [
@@ -303,6 +317,7 @@ export const id: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Penyampaian notifikasi push di Android", "Amerika Serikat"],
             ["Apple Push Notification service", "Penyampaian notifikasi push di iOS", "Amerika Serikat"],
             ["Zoho Mail", "Email kami, termasuk email pengaturan ulang kata sandi", "Uni Eropa"],
+            ["Zoho Campaigns", "Pengiriman email kabar tentang gim", "Uni Eropa"],
             [
               "Google Play dan App Store",
               "Masuk, pembayaran, langganan, dan laporan kerusakan",

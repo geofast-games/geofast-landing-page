@@ -23,7 +23,7 @@ export const ko: PrivacyContent = {
     "Geofast: Battle of Nations가 수집하는 데이터, 그 이용 방법, 공유 대상, 삭제 요청 방법을 안내합니다.",
   gameName: "Geofast: Battle of Nations",
   policyName: "개인정보 처리방침",
-  lastUpdated: "최종 업데이트: 2026년 11월 5일",
+  lastUpdated: "최종 업데이트: 2026년 11월 25일",
   sectionsLabel: "항목",
   languageLabel: "언어",
   legalBasisLabel: "법적 근거:",
@@ -122,7 +122,7 @@ export const ko: PrivacyContent = {
         },
         {
           type: "p",
-          text: "여러 기기에서 진행 상황을 유지하려면 이메일 주소와 비밀번호를 추가하거나 Google 또는 Apple로 로그인할 수 있습니다. 비밀번호는 해시 처리되어 저장되므로 저희도 읽을 수 없습니다. Google이나 Apple로부터는 계정 연결에 필요한 정보만 받으며, 이메일 주소는 계정 보호와 비밀번호 재설정에만 사용합니다.",
+          text: "여러 기기에서 진행 상황을 유지하려면 이메일 주소와 비밀번호를 추가하거나 Google 또는 Apple로 로그인할 수 있습니다. 비밀번호는 해시 처리되어 저장되므로 저희도 읽을 수 없습니다. Google이나 Apple로부터는 계정 연결에 필요한 정보만 받으며, 이메일 주소는 계정 보호, 비밀번호 재설정, 그리고 가끔 게임 소식을 보내 드리는 데 사용합니다(이메일 소식 참조).",
         },
         {
           type: "p",
@@ -221,6 +221,20 @@ export const ko: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "이메일 소식",
+      blocks: [
+        {
+          type: "p",
+          text: "계정에 이메일 주소가 있으면 게임에 관한 이메일을 가끔 보내 드릴 수 있습니다. 새로운 내용, 이벤트와 시즌, 선물과 혜택, 그리고 한동안 접속하지 않으셨을 때의 안내입니다. 이러한 이메일에는 모두 한 번의 클릭으로 수신을 거부할 수 있는 링크가 있으며, 이를 사용하신 뒤에는 소식을 더 보내지 않습니다. 비밀번호 재설정과 같은 계정 관련 이메일에는 영향이 없습니다.",
+        },
+        {
+          type: "basis",
+          text: "모든 이메일에서 수신을 거부할 수 있는 방식으로, 플레이 중인 게임에 관한 소식을 알려 드리려는 저희의 정당한 이익.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "선택형 보상 광고",
       blocks: [
@@ -306,6 +320,7 @@ export const ko: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Android 푸시 알림 전달", "미국"],
             ["Apple Push Notification service", "iOS 푸시 알림 전달", "미국"],
             ["Zoho Mail", "비밀번호 재설정 이메일을 포함한 저희 이메일", "유럽연합"],
+            ["Zoho Campaigns", "게임 소식 이메일 발송", "유럽연합"],
             [
               "Google Play 및 App Store",
               "로그인, 결제, 구독, 충돌 보고서",

@@ -20,7 +20,7 @@ export const sv: PrivacyContent = {
     "Vilka uppgifter Geofast: Battle of Nations samlar in, hur de används, vem de delas med och hur du begär radering.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Integritetspolicy",
-  lastUpdated: "Senast uppdaterad: 5 november 2026",
+  lastUpdated: "Senast uppdaterad: 25 november 2026",
   sectionsLabel: "Avsnitt",
   languageLabel: "Språk",
   legalBasisLabel: "Rättslig grund:",
@@ -119,7 +119,7 @@ export const sv: PrivacyContent = {
         },
         {
           type: "p",
-          text: "Om du vill behålla dina framsteg mellan enheter kan du lägga till en e-postadress med lösenord eller logga in med Google eller Apple. Lösenord lagras hashade, vilket innebär att vi inte kan läsa dem. Från Google eller Apple får vi bara det som behövs för att koppla kontot, och vi använder din e-postadress enbart för att skydda kontot och återställa lösenordet.",
+          text: "Om du vill behålla dina framsteg mellan enheter kan du lägga till en e-postadress med lösenord eller logga in med Google eller Apple. Lösenord lagras hashade, vilket innebär att vi inte kan läsa dem. Från Google eller Apple får vi bara det som behövs för att koppla kontot, och vi använder din e-postadress för att skydda kontot, återställa lösenordet och ibland skicka nyheter om spelet (se Nyheter via e-post).",
         },
         {
           type: "p",
@@ -218,6 +218,20 @@ export const sv: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Nyheter via e-post",
+      blocks: [
+        {
+          type: "p",
+          text: "Om ditt konto har en e-postadress kan vi ibland skicka e-post om spelet: vad som är nytt, event och säsonger, gåvor och erbjudanden, och ett meddelande om du har varit borta ett tag. Varje sådant meddelande har en avregistreringslänk som fungerar med ett klick, och efter det skickar vi inga fler nyheter. Kontomeddelanden, till exempel återställning av lösenord, påverkas inte.",
+        },
+        {
+          type: "basis",
+          text: "vårt berättigade intresse av att hålla dig informerad om det spel du spelar, med möjlighet att avregistrera dig i varje meddelande.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Valfria belöningsannonser",
       blocks: [
@@ -303,6 +317,7 @@ export const sv: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Leverans av pushnotiser på Android", "USA"],
             ["Apple Push Notification service", "Leverans av pushnotiser på iOS", "USA"],
             ["Zoho Mail", "Vår e-post, inklusive e-post för återställning av lösenord", "Europeiska unionen"],
+            ["Zoho Campaigns", "Utskick av e-post med nyheter om spelet", "Europeiska unionen"],
             [
               "Google Play och App Store",
               "Inloggning, betalningar, prenumerationer och kraschrapporter",

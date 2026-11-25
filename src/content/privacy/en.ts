@@ -13,7 +13,7 @@ export const en: PrivacyContent = {
     "What data Geofast: Battle of Nations collects, how it is used, who it is shared with, and how to request deletion.",
   gameName: "Geofast: Battle of Nations",
   policyName: "Privacy Policy",
-  lastUpdated: "Last updated: November 5, 2026",
+  lastUpdated: "Last updated: November 25, 2026",
   sectionsLabel: "Sections",
   languageLabel: "Language",
   legalBasisLabel: "Legal basis:",
@@ -112,7 +112,7 @@ export const en: PrivacyContent = {
         },
         {
           type: "p",
-          text: "If you want to keep your progress across devices, you can add an email address and password or sign in with Google or Apple. Passwords are stored hashed, which means we cannot read them. From Google or Apple we receive only what is needed to link the account, and we use your email address only to secure the account and reset the password.",
+          text: "If you want to keep your progress across devices, you can add an email address and password or sign in with Google or Apple. Passwords are stored hashed, which means we cannot read them. From Google or Apple we receive only what is needed to link the account, and we use your email address to secure the account, to reset the password, and to send you occasional news about the game (see Email news).",
         },
         {
           type: "p",
@@ -211,6 +211,20 @@ export const en: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "Email news",
+      blocks: [
+        {
+          type: "p",
+          text: "If your account has an email address, we may send you occasional emails about the game: what is new, events and seasons, gifts and offers, and a note if you have been away for a while. Every such email has an unsubscribe link that works in one click, and after you use it we send you no more news. Account emails such as password resets are not affected.",
+        },
+        {
+          type: "basis",
+          text: "our legitimate interest in keeping you informed about the game you play, with an opt-out in every email.",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "Optional rewarded ads",
       blocks: [
@@ -296,6 +310,7 @@ export const en: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "Delivering push notifications on Android", "United States"],
             ["Apple Push Notification service", "Delivering push notifications on iOS", "United States"],
             ["Zoho Mail", "Our email, including password reset emails", "European Union"],
+            ["Zoho Campaigns", "Sending the game news emails", "European Union"],
             [
               "Google Play and the App Store",
               "Sign-in, payments, subscriptions and crash reports",

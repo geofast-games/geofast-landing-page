@@ -26,7 +26,7 @@ export const zhHant: PrivacyContent = {
     "Geofast: Battle of Nations 收集哪些資料、如何使用、與誰分享，以及如何申請刪除。",
   gameName: "Geofast: Battle of Nations",
   policyName: "隱私政策",
-  lastUpdated: "最後更新：2026年11月5日",
+  lastUpdated: "最後更新：2026年11月25日",
   sectionsLabel: "章節",
   languageLabel: "語言",
   legalBasisLabel: "法律依據：",
@@ -125,7 +125,7 @@ export const zhHant: PrivacyContent = {
         },
         {
           type: "p",
-          text: "如果您希望在多部裝置之間保留進度，可以新增電子郵件地址和密碼，或使用Google或Apple登入。密碼以雜湊形式儲存，這表示我們無法讀取。我們從Google或Apple僅取得連結帳戶所需的資訊，並且僅將您的電子郵件地址用於保護帳戶和重設密碼。",
+          text: "如果您希望在多部裝置之間保留進度，可以新增電子郵件地址和密碼，或使用Google或Apple登入。密碼以雜湊形式儲存，這表示我們無法讀取。我們從Google或Apple僅取得連結帳戶所需的資訊，並且將您的電子郵件地址用於保護帳戶、重設密碼，以及偶爾向您傳送遊戲資訊（見「郵件資訊」）。",
         },
         {
           type: "p",
@@ -224,6 +224,20 @@ export const zhHant: PrivacyContent = {
       ],
     },
     {
+      id: "email-news",
+      title: "郵件資訊",
+      blocks: [
+        {
+          type: "p",
+          text: "如果您的帳戶有電子郵件地址，我們可能偶爾向您傳送有關遊戲的郵件：新內容、活動和賽季、禮物和優惠，以及在您離開一段時間後的提醒。每封此類郵件都附有一鍵取消訂閱的連結，您使用後我們將不再向您傳送資訊。重設密碼等帳戶郵件不受影響。",
+        },
+        {
+          type: "basis",
+          text: "我們讓您了解所玩遊戲的合法利益，且每封郵件均可取消訂閱。",
+        },
+      ],
+    },
+    {
       id: "ads",
       title: "選擇性的獎勵廣告",
       blocks: [
@@ -309,6 +323,7 @@ export const zhHant: PrivacyContent = {
             ["Google Firebase Cloud Messaging", "在Android上傳送推播通知", "美國"],
             ["Apple Push Notification service", "在iOS上傳送推播通知", "美國"],
             ["Zoho Mail", "我們的電子郵件，包括密碼重設郵件", "歐盟"],
+            ["Zoho Campaigns", "傳送遊戲資訊郵件", "歐盟"],
             [
               "Google Play和App Store",
               "登入、付款、訂閱和當機報告",
